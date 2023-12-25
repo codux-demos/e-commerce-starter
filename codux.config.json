@@ -23,5 +23,14 @@
   "styling": {
     "solution": "scss modules"
   },
+  "styleFilesConfig": {
+    "commonStyleFilePattern": "**/theme.module.scss"
+  },
+  "resolve": {
+    "alias": {
+      "@styles": "./src/styles",
+      "@styles/*": "./src/styles/*"
+    }
+  },
   "svgLoader": "both"
 }
