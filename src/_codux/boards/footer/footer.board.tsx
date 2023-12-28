@@ -3,6 +3,10 @@ import { Footer } from '../../../components/footer/footer';
 
 export default createBoard({
     name: 'Footer',
-    Board: () => <Footer />,
+    Board: () => (
+        <div style={{ width: '100vw' }}>
+            <Footer />
+        </div>
+    ),
     isSnippet: true,
 });
