@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import styles from './footer.module.scss';
 import { ReactComponent as FacebookIcon } from '../../assets/facebook.svg';
-import { ReactComponent as InstagramIcon } from '../../assets/instagram.svg';
 import { ReactComponent as TwitterxIcon } from '../../assets/twitterx.svg';
 import { ReactComponent as DiscordIcon } from '../../assets/discord.svg';
 import { ReactComponent as YoutubeIcon } from '../../assets/youtube.svg';
