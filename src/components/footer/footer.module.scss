@@ -1,17 +1,31 @@
 @import '@styles/theme.module.scss';
 
 .root {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-right: 5rem;
-  padding-left: 3rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 3.5em;
+    padding-left: 3em;
+    padding-top: 2em;
+    padding-bottom: 1.2em;
 }
 
 .details {
+    font: $details-font;
 }
 
 .social {
-  display: flex;
-  column-gap: 2rem;
+    display: flex;
+    height: 30px;
+    column-gap: 0.8em;
+}
+
+.small {
+    font: $small-font;
+    margin-top: 18px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
 }

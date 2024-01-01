@@ -1,5 +1,12 @@
 import classNames from 'classnames';
 import styles from './footer.module.scss';
+import { ReactComponent as FacebookIcon } from '../../assets/facebook.svg';
+import { ReactComponent as InstagramIcon } from '../../assets/instagram.svg';
+import { ReactComponent as TwitterxIcon } from '../../assets/twitterx.svg';
+import { ReactComponent as DiscordIcon } from '../../assets/discord.svg';
+import { ReactComponent as YoutubeIcon } from '../../assets/youtube.svg';
+import { ReactComponent as MediumIcon } from '../../assets/medium.svg';
+import { ReactComponent as GithubIcon } from '../../assets/github.svg';
 
 export interface FooterProps {
     className?: string;
@@ -12,12 +19,37 @@ export interface FooterProps {
 export const Footer = ({ className }: FooterProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.details}>Contact Jane Doe</div>
+            <div className={styles.details}>
+                <div>Contact Jane Doe</div>
+                <div className={styles.small}>
+                    Mail: info@mysite.com
+                    <br />
+                    Tel: 123-456-7890
+                    <br />
+                    500 Terry Francine Street,
+                    <br />
+                    San Francisco, CA 94158
+                </div>
+            </div>
             <div className={styles.social}>
-                <a href="/">Link</a>
-                <a href="/">Link</a>
-                <a href="/">Link</a>
-                <a href="/">Link</a>
+                <a href="/">
+                    <TwitterxIcon className={styles.icon} />
+                </a>
+                <a href="/">
+                    <FacebookIcon className={styles.icon} />
+                </a>
+                <a href="/">
+                    <DiscordIcon className={styles.icon} />
+                </a>
+                <a href="/">
+                    <YoutubeIcon className={styles.icon} />
+                </a>
+                <a href="/">
+                    <MediumIcon className={styles.icon} />
+                </a>
+                <a href="/">
+                    <GithubIcon className={styles.icon} />
+                </a>
             </div>
         </div>
     );
