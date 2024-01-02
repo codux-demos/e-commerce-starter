@@ -11,7 +11,7 @@ export interface HeaderProps {
  */
 export const Header = ({ className }: HeaderProps) => {
     return <div className={classNames(styles.root, className)}>
-        <a href="/">Name</a>
+        <a href="/" className={styles.logo}>Logo</a>
         <div className={styles.menu}>
             <a href="/">Home</a>
             <a href="/">About</a>

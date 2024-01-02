@@ -3,13 +3,19 @@
 .root {
     display: flex;
     flex-direction: row;
-    padding-left: 2rem;
+    padding-left: 3em;
     justify-content: space-between;
-    padding-right: 2rem;
-    height: 80px;
+    padding-right: 3em;
+    align-items: center;
+    height: 4em;
+    font: $button-font;
 }
 
 .menu {
     display: flex;
     column-gap: 2rem;
+    font-family: $my-prettyfont;
+    font: $button-font;
 }
+
+.logo {}
