@@ -22,6 +22,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                 </div>
             </div>
             <button className={styles.button}>Learn more</button>
+            <img src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg" alt="" className={styles.image} />
         </div>
     );
 };

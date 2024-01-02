@@ -1,44 +1,49 @@
 @import '@styles/theme.module.scss';
 
 .root {
-  font: $large-font;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1em;
-  background-color: $snow-white;
-  padding-top: 2em;
-  padding-bottom: 1em;
+    font: $large-font;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    background-color: $snow-white;
+    padding-top: 2em;
+    padding-bottom: 1em;
 }
 
 .title {
-  font: $title-font;
-  text-align: center;
-  letter-spacing: 0.4rem;
+    font: $title-font;
+    text-align: center;
+    letter-spacing: 0.4rem;
 }
 
 .paragraph {
-  font: $paragraph-font;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1em;
+    font: $paragraph-font;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
 }
 
 .text {
-  width: 70%;
+    width: 70%;
 }
 
 .button {
-  font: $button-font;
-  text-align: center;
-  background-color: $black;
-  color: $white;
-  border-radius: 9999px;
-  align-self: center;
-  padding-right: 26px;
-  padding-left: 26px;
-  padding-bottom: 12px;
-  padding-top: 12px;
+    font: $button-font;
+    text-align: center;
+    background-color: $black;
+    color: $white;
+    border-radius: 9999px;
+    align-self: center;
+    padding-right: 26px;
+    padding-left: 26px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+.image {
+    width: 777px;
+    align-self: center;
 }
