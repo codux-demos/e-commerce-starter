@@ -2,14 +2,12 @@
 
 .root {
     font: $large-font;
-    margin-top: 1em;
-    margin-bottom: 2em;
     display: flex;
     flex-direction: column;
-    row-gap: 1em;
+    row-gap: 0.5em;
     background-color: $snow-white;
     padding-top: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 }
 
 .title {
@@ -23,11 +21,11 @@
     text-align: center;
     display: flex;
     justify-content: center;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .text {
-    width: 70%;
+    width: 60%;
 }
 
 .button {
@@ -44,6 +42,8 @@
 }
 
 .image {
-    width: 777px;
     align-self: center;
+    height: 14em;
+    margin-top: 1em;
+    width: 24em;
 }
