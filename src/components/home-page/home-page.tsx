@@ -12,7 +12,7 @@ export interface HomePageProps {
 export const HomePage = ({ className }: HomePageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.title}>I&apos;M A TITLE</div>
+            <div className={styles.title}>This Is Home Page</div>
             <div className={styles.paragraph}>
                 <div className={styles.text}>
                     I’m a paragraph. Add your own text and edit me on properties panel on the right.

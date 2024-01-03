@@ -1,12 +1,13 @@
 import { createBoard } from '@wixc3/react-board';
 import { PageNoRouting } from '../../board-wrappers/page-no-routing';
 import { HomePage } from '../../../components/home-page/home-page';
+import { ProductsPage } from '../../../components/products-page/products-page';
 
 export default createBoard({
-    name: 'Home Page Mobile',
+    name: 'Product Page',
     Board: () => (
         <PageNoRouting>
-            <HomePage />
+            <ProductsPage />
         </PageNoRouting>
     ),
     isSnippet: false,
@@ -17,7 +18,5 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
-        windowWidth: 414,
-        windowHeight: 896
     },
 });
