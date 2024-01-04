@@ -31,7 +31,20 @@ export const ConnectionComponent = () => {
     return (
         <div>
             hello, world
-            <div>{myProducts.map((item) => item.name)}</div>
+            <div>
+                {myProducts.map((item) => (
+                    <div
+                        style={{
+                            display: 'block',
+                            border: '1px solid blue',
+                            padding: '10px',
+                            margin: '10px',
+                        }}
+                    >
+                        {item.name}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
