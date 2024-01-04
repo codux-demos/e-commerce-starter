@@ -14,6 +14,7 @@ export const Header = ({ className }: HeaderProps) => {
         <a href="/" className={styles.logo}>Logo</a>
         <div className={styles.menu}>
             <a href="/">Home</a>
+            <a href="/">Products</a>
             <a href="/">About</a>
         </div></div>;
 };
