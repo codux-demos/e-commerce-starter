@@ -1,0 +1,17 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-container {
+    display: flex;
+    gap: 24px;
+    overflow: auto;
+}
+
+.gallery-card {
+    width: 241px;
+}
