@@ -29,9 +29,8 @@ export const ProductPage = ({ className }: ProductPageProps) => {
     }
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.title}>This Is Product Details</div>
-            <div>Id: {productId}</div>
-            <div>Title: {product.name}</div>
+            <div className={styles.title}>{product.name}</div>
+            <div className={styles.description}>{product.description}</div>
             {product.price && (
                 <div>
                     Price: {product.price?.currency}{' '}

@@ -9,7 +9,7 @@ export interface ProductsPageProps {
 export const ProductsPage = ({ className }: ProductsPageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.title}>This Is Products Page</div>
+            <div className={styles.title}>All Products</div>
             <ProductList />
         </div>
     );
