@@ -1,6 +1,9 @@
 @import '@styles/theme.module.scss';
 
-.root {}
+.root {
+    border: 0.8px solid rgb(237, 236, 236);
+    cursor: pointer;
+}
 
 .item-description {
     font-size: 17px;
@@ -16,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 20px;
+    padding: 16px 20px;
     max-width: 241px;
     height: 100%;
 }

@@ -7,6 +7,8 @@ export default createBoard({
         description='Shel 50" Class LED 4K UHD Smart TV'
         currency="$"
         price={85}
-        rating={4.8} />,
+        rating={4.1}
+        raters={2}
+    />,
     isSnippet: true,
 });

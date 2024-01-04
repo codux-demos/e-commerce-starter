@@ -9,16 +9,17 @@ export interface GalleryCardProps {
     currency: string;
     description: string;
     rating: number;
+    raters: number;
 }
 
 
-export const GalleryCard = ({ className, price, currency, description, rating }: GalleryCardProps) => {
+export const GalleryCard = ({ className, price, currency, description, rating, raters }: GalleryCardProps) => {
     return <div className={classNames(styles.root, className)}>
         <CardImage />
         <div className={styles['card-content']}>
             <p className={styles['item-description']}>{description}</p>
             <p className={styles['item-price']}>{currency}{price}</p>
-            <StarRating rating={rating}/>
+            <StarRating rating={rating} raters={raters}/>
         </div>
     </div>;
 };
