@@ -11,4 +11,9 @@
     border-radius: 35px;
     justify-content: center;
     font-size: 17px;
+
+    &:hover {
+        background-color: $black;
+        cursor: pointer;
+    }
 }
