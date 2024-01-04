@@ -13,7 +13,9 @@ export interface ProductListProps {
 }
 
 export const ProductList = ({ className }: ProductListProps) => {
-    const [myProducts, setMyProducts] = useState<products.Product[]>([]);
+    const [myProducts, setMyProducts] = useState<
+        Array<products.Product & { rating?: number; raters?: number }>
+    >([]);
 
     const wixApi = useContext(WixAPIContext);
 
@@ -35,8 +37,8 @@ export const ProductList = ({ className }: ProductListProps) => {
                                 key={item._id}
                                 name={item.name}
                                 price={item.price ?? undefined}
-                                rating={undefined}
-                                raters={undefined}
+                                rating={item.rating ?? undefined}
+                                raters={item.raters ?? undefined}
                             />
                         </Link>
                     )

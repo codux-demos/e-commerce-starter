@@ -5,7 +5,9 @@ export function createProducts(numOfItems?: number) {
     return Array.from(new Array(numOfItems || 10)).map(createProduct);
 }
 
-export function createProduct(id?: string): products.Product {
+export function createProduct(
+    id?: string
+): products.Product & { rating?: number; raters?: number } {
     return {
         _id: id || faker.string.uuid(),
         slug: faker.lorem.word(),
@@ -29,7 +31,7 @@ export function createProduct(id?: string): products.Product {
                 }),
             },
         },
-        // rating: faker.number.float({ min: 0, max: 5, precision: 0.1 }),
-        // rater: faker.number.int({ min: 0, max: 1000 }),
+        rating: faker.number.float({ min: 0, max: 5, precision: 0.1 }),
+        raters: faker.number.int({ min: 0, max: 1000 }),
     };
 }
