@@ -1,0 +1,25 @@
+@import '@styles/theme.module.scss';
+
+.root {
+    border: 0.8px solid rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+.item-description {
+    font-size: 17px;
+    color: $black;
+}
+
+.item-price {
+    color: $purple;
+    font-size: 20px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 16px 20px;
+    max-width: 241px;
+    height: 100%;
+}
