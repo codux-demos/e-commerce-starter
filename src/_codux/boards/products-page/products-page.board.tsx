@@ -1,13 +1,13 @@
 import { createBoard } from '@wixc3/react-board';
-import { PageNoRouting } from '../../board-wrappers/page-no-routing';
+import { PageWrapper } from '../../board-wrappers/page-wrapper';
 import { ProductsPage } from '../../../pages/products-page/products-page';
 
 export default createBoard({
     name: 'Products Page',
     Board: () => (
-        <PageNoRouting>
+        <PageWrapper>
             <ProductsPage />
-        </PageNoRouting>
+        </PageWrapper>
     ),
     isSnippet: false,
     environmentProps: {
