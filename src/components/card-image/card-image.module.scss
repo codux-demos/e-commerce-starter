@@ -1,0 +1,20 @@
+@import '@styles/theme.module.scss';
+
+.root {
+    overflow: hidden;
+}
+
+.image-container {
+    width: 241px;
+    height: 241px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 400ms ease;
+
+    &:hover {
+        scale: 150%;
+    }
+
+}
+
+.card-image {}
