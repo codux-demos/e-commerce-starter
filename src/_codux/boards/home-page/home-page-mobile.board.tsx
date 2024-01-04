@@ -1,13 +1,13 @@
 import { createBoard } from '@wixc3/react-board';
-import { PageNoRouting } from '../../board-wrappers/page-no-routing';
+import { PageWrapper } from '../../board-wrappers/page-wrapper';
 import { HomePage } from '../../../pages/home-page/home-page';
 
 export default createBoard({
     name: 'Home Page Mobile',
     Board: () => (
-        <PageNoRouting>
+        <PageWrapper>
             <HomePage />
-        </PageNoRouting>
+        </PageWrapper>
     ),
     isSnippet: false,
     environmentProps: {
