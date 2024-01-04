@@ -9,9 +9,11 @@
 .items-container {
     display: flex;
     gap: 24px;
-    overflow: auto;
+    overflow: hidden;
 }
 
-.gallery-card {
-    width: 241px;
+.gallery-card {}
+
+.carousel {
+    display: flex;
 }
