@@ -31,12 +31,7 @@ export const ProductPage = ({ className }: ProductPageProps) => {
         <div className={classNames(styles.root, className)}>
             <div className={styles.title}>{product.name}</div>
             <div className={styles.description}>{product.description}</div>
-            {product.price && (
-                <div>
-                    Price: {product.price?.currency}{' '}
-                    {product.price?.price ?? ''}
-                </div>
-            )}
+            {product.price && <div>Price: {product.price?.formatted?.price}</div>}
         </div>
     );
 };
