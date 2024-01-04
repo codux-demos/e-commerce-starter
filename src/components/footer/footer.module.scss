@@ -1,4 +1,6 @@
 @import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
 
 .root {
     display: flex;
@@ -32,3 +34,5 @@
         row-gap: 24px;
     }
 }
+
+.test {}

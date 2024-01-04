@@ -6,6 +6,7 @@ import { ReactComponent as DiscordIcon } from '../../assets/discord.svg';
 import { ReactComponent as YoutubeIcon } from '../../assets/youtube.svg';
 import { ReactComponent as MediumIcon } from '../../assets/medium.svg';
 import { ReactComponent as GithubIcon } from '../../assets/github.svg';
+import StyleGuide_module from '../../styles/styleGuide.module.scss';
 
 export interface FooterProps {
     className?: string;
@@ -30,7 +31,7 @@ export const Footer = ({ className }: FooterProps) => {
                     San Francisco, CA 94158
                 </div>
             </div>
-            <div className={styles.social}>
+            <div className={classNames(styles.social, StyleGuide_module.common)}>
                 <a href="/">
                     <TwitterxIcon className={styles.icon} />
                 </a>
