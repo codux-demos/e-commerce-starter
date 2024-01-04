@@ -4,22 +4,35 @@ import { CardImage } from '../card-image/card-image';
 import { StarRating } from '../star-rating/star-rating';
 
 export interface GalleryCardProps {
+    name: string;
     className?: string;
-    price: number;
-    currency: string;
-    description: string;
-    rating: number;
-    raters: number;
+    price?: number;
+    currency?: string;
+    rating?: number;
+    raters?: number;
 }
 
-
-export const GalleryCard = ({ className, price, currency, description, rating, raters }: GalleryCardProps) => {
-    return <div className={classNames(styles.root, className)}>
-        <CardImage />
-        <div className={styles['card-content']}>
-            <p className={styles['item-description']}>{description}</p>
-            <p className={styles['item-price']}>{currency}{price}</p>
-            <StarRating rating={rating} raters={raters}/>
+export const GalleryCard = ({
+    name,
+    className,
+    price,
+    currency,
+    rating,
+    raters,
+}: GalleryCardProps) => {
+    return (
+        <div className={classNames(styles.root, className)}>
+            <CardImage />
+            <div className={styles['card-content']}>
+                <p className={styles['item-name']}>{name}</p>
+                {price && currency && (
+                    <p className={styles['item-price']}>
+                        {currency}{' '}
+                        {price}
+                    </p>
+                )}
+                {rating && raters && <StarRating rating={rating} raters={raters} />}
+            </div>
         </div>
-    </div>;
+    );
 };

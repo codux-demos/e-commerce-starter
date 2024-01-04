@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './products-page.module.scss';
-import { ConnectionComponent } from '../../components/connection-component/connection-component';
+import { ProductList } from '../../components/product-list/product-list';
 
 export interface ProductsPageProps {
     className?: string;
@@ -10,7 +10,7 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles.title}>This Is Products Page</div>
-            <ConnectionComponent />
+            <ProductList />
         </div>
     );
 };

@@ -2,6 +2,8 @@
 
 .root {
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .image-container {

@@ -11,7 +11,7 @@ export const ROUTES = {
     products: { path: PRODUCTS, to: () => PRODUCTS },
     product: {
         path: PRODUCT,
-        to: (productId: number) => generatePath(PRODUCT, { id: productId.toString() }),
+        to: (productId: string) => generatePath(PRODUCT, { id: productId }),
     },
 };
 
