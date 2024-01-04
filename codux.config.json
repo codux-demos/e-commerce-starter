@@ -24,7 +24,7 @@
     "solution": "scss modules"
   },
   "styleFilesConfig": {
-    "commonStyleFilePattern": "**/theme.module.scss"
+    "commonStyleFilePattern": "**/styleGuide.module.scss"
   },
   "resolve": {
     "alias": {
