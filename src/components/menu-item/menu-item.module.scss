@@ -1,0 +1,23 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {
+    background-color: transparen;
+    background-image: linear-gradient(transparent, transparent);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+
+    &:hover {
+        color: $purple;
+    }
+
+    height:40px;
+    display:flex;
+    align-items:center;
+    padding-right:15px;
+    padding-left:15px;
+}
