@@ -6,23 +6,23 @@ import { products } from '@wix/stores';
 
 export interface GalleryCardProps {
     name: string;
-    src?: string;
+    imageUrl?: string;
     className?: string;
     price?: products.PriceData;
     rating?: number;
-    raters?: number;
+    ratingCount?: number;
 }
 
-export const GalleryCard = ({ name, src, className, price, rating, raters }: GalleryCardProps) => {
+export const GalleryCard = ({ name, imageUrl, className, price, rating, ratingCount }: GalleryCardProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <CardImage src={src} />
+            <CardImage src={imageUrl} alt={name} />
             <div className={styles['card-content']}>
                 <p className={styles['item-name']}>{name}</p>
                 {price?.formatted && (
                     <p className={styles['item-price']}>{price.formatted.price}</p>
                 )}
-                {rating && raters && <StarRating rating={rating} raters={raters} />}
+                {rating && ratingCount && <StarRating rating={rating} ratingCount={ratingCount} />}
             </div>
         </div>
     );

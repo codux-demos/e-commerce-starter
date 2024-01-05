@@ -20,8 +20,8 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
         getAllProducts: async () => {
             return (await wixClient.products.queryProducts().find()).items;
         },
-        getProduct: async (id: string) => {
-            return (await wixClient.products.getProduct(id)).product;
+        getProduct: async (id: string | undefined) => {
+            return id ? (await wixClient.products.getProduct(id)).product : undefined;
         }
     };
 }

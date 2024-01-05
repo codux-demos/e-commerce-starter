@@ -14,7 +14,7 @@ export interface ProductListProps {
 
 export const ProductList = ({ className }: ProductListProps) => {
     const [myProducts, setMyProducts] = useState<
-        Array<products.Product & { rating?: number; raters?: number }>
+        Array<products.Product & { rating?: number; ratingCount?: number }>
     >([]);
 
     const wixApi = useContext(WixAPIContext);
@@ -31,14 +31,13 @@ export const ProductList = ({ className }: ProductListProps) => {
                 (item) =>
                     item._id &&
                     item.name && (
-                        <Link to={ROUTES.product.to(item._id)} key={`link_${item._id}`}>
+                        <Link to={ROUTES.product.to(item._id)} key={item._id}>
                             <GalleryCard
-                                src={item.media?.mainMedia?.image?.url}
-                                key={item._id}
+                                imageUrl={item.media?.mainMedia?.image?.url}
                                 name={item.name}
                                 price={item.price ?? undefined}
                                 rating={item.rating ?? undefined}
-                                raters={item.raters ?? undefined}
+                                ratingCount={item.ratingCount ?? undefined}
                             />
                         </Link>
                     )
