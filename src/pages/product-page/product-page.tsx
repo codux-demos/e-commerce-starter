@@ -11,7 +11,7 @@ export interface ProductPageProps {
 }
 
 export const ProductPage = ({ className }: ProductPageProps) => {
-    const { id: productId } = useParams<RouteParams['/products/:id']>();
+    const { id: productId } = useParams<RouteParams['/product/:id']>();
 
     const [product, setProduct] = useState<products.Product>();
 

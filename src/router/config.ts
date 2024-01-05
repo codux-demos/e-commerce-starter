@@ -3,7 +3,7 @@ import { generatePath } from 'react-router-dom';
 const HOME = '/';
 const ABOUT = '/about';
 const PRODUCTS = '/products/:category';
-const PRODUCT = `product/:id`;
+const PRODUCT = `/product/:id`;
 
 export const ROUTES = {
     home: { path: HOME, to: () => HOME },
