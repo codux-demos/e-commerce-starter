@@ -21,3 +21,24 @@
     font-weight: 400;
     font-size: 18px;
 }
+
+.imageAndName {
+    display: flex;
+}
+
+.left {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+}
+
+.right {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 50%;
+}
+
+.image {
+    width: 500px;
+    height: 500px;
+}
