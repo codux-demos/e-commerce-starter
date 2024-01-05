@@ -2,6 +2,8 @@
 
 .root {
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .image-container {
@@ -14,7 +16,18 @@
     &:hover {
         scale: 120%;
     }
-
 }
 
-.card-image {}
+.no-image {
+    width: 100%;
+    height: 100%;
+    background-color: $light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $gray;
+}
+
+.card-image {
+}

@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react';
-import { createProducts } from '../../_codux/fakeData/fakeData';
+import { createProducts, createProduct } from '../../_codux/fakeData/fakeData';
 import { WixAPIContext } from './WixAPIContextProvider';
 
 function getWixApi() {
@@ -7,6 +7,9 @@ function getWixApi() {
         getAllProducts: async () => {
             return createProducts(10);
         },
+        getProduct: async (id: string) => {
+            return createProduct(id);
+        }
     };
 }
 
