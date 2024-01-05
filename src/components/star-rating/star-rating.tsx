@@ -4,11 +4,10 @@ import styles from './star-rating.module.scss';
 export interface StarRatingProps {
     className?: string;
     rating: number;
-    raters: number;
-    path: string;
+    ratingCount: number;
 }
 
-export const StarRating = ({ className, rating, raters, path }: StarRatingProps) => {
+export const StarRating = ({ className, rating, ratingCount }: StarRatingProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['stars-container']}>
@@ -52,10 +51,8 @@ export const StarRating = ({ className, rating, raters, path }: StarRatingProps)
                 >
                     <path d={path} />{' '}
                 </svg>
-                <p className={styles['rating-text']}>
-                    {rating} ({raters})
-                </p>{' '}
-            </div>
-        </div>
+                <p className={styles['rating-text']}>{rating} ({ratingCount})</p>
+                {' '}
+            </div></div>
     );
 };

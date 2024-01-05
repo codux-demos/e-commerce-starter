@@ -3,6 +3,7 @@ import styles from './site-wrapper.module.scss';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { Outlet } from 'react-router-dom';
+import { TopMenu } from '../top-menu/top-menu';
 
 export interface SiteWrapperProps {
     className?: string;
@@ -16,6 +17,7 @@ export const SiteWrapper = ({ className }: SiteWrapperProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Header />
+            <TopMenu className={styles.topMenu} />
             <div className={styles.content}>
                 <Outlet />
             </div>
