@@ -5,7 +5,6 @@ export interface CardImageProps {
     alt?: string;
     src?: string;
     className?: string;
-    imageSrc: string;
 }
 
 export const CardImage = ({ src, alt, className }: CardImageProps) => {
