@@ -7,19 +7,11 @@ export function PageWrapper(props: { path?: string; children: React.ReactNode })
     const router = createMemoryRouter(
         [
             {
-                path: '/',
-                element: <SiteWrapper />,
-                children: [{ index: true, element: props.children }],
-            },
-            {
-                path: ROUTES.product.path,
+                path: '*',
                 element: <SiteWrapper />,
                 children: [{ index: true, element: props.children }],
             },
         ],
-        {
-            initialEntries: [props.path || '/'],
-        }
     );
 
     return (
