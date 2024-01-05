@@ -54,10 +54,9 @@ const menuItems: MenuItem[] = [
 export const TopMenu = ({ className }: TopMenuProps) => {
     return (
         <nav className={classNames(styles.root, className)}>
-            {menuItems.map((m) => {
-                console.log(m.route);
-                return <MenuItem key={m.route} title={m.title} url={m.route} />;
-            })}
+            {menuItems.map((m) => (
+                <MenuItem key={m.route} title={m.title} url={m.route} />
+            ))}
         </nav>
     );
 };
