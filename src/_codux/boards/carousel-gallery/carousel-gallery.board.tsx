@@ -49,6 +49,6 @@ export default createBoard({
         canvasMargin: {
             top: 0, right: 0, bottom: 0, left: 0
         },
-        windowWidth: 692
+        windowWidth: 806
     }
 });

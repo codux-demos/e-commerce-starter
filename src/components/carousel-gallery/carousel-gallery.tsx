@@ -1,12 +1,14 @@
 import classNames from 'classnames';
 import styles from './carousel-gallery.module.scss';
 import { GalleryCard, GalleryCardProps } from '../gallery-card/gallery-card';
+import { ButtonPrimary } from '../button-primary/button-primary';
 
 export interface CarouselGalleryProps {
     className?: string;
     items: GalleryCardProps[];
 
 }
+
 
 
 export const CarouselGallery = ({ items, className }: CarouselGalleryProps) => {
@@ -29,8 +31,7 @@ export const CarouselGallery = ({ items, className }: CarouselGalleryProps) => {
                 ))}</div>
             <button>Button</button>
         </div>
-        <div>
-            <button>Button</button>
-        </div>
-    </div>;
+        <div className={styles['gallery-footer']}>
+            <ButtonPrimary label="Primary Button" className={styles['gallery-viewall-button']} />
+        </div></div>;
 };
