@@ -13,7 +13,7 @@ export default createBoard({
                         formatted: {
                             price: '$850',
                             discountedPrice: '$850',
-                            },
+                        },
                         currency: '$',
                         price: 850,
                         discountedPrice: 850,
@@ -21,14 +21,14 @@ export default createBoard({
                     },
                     rating: 4,
                 },
-                                {
+                {
                     name: 'Samsung 24" OLED IPS Monitor',
                     ratingCount: 2,
                     price: {
                         formatted: {
                             price: '$850',
                             discountedPrice: '$850',
-                            },
+                        },
                         currency: '$',
                         price: 850,
                         discountedPrice: 850,
@@ -36,14 +36,14 @@ export default createBoard({
                     },
                     rating: 4,
                 },
-                                {
+                {
                     name: 'Samsung 24" OLED IPS Monitor',
                     ratingCount: 2,
                     price: {
                         formatted: {
                             price: '$850',
                             discountedPrice: '$850',
-                            },
+                        },
                         currency: '$',
                         price: 850,
                         discountedPrice: 850,
@@ -51,14 +51,14 @@ export default createBoard({
                     },
                     rating: 4,
                 },
-                                {
+                {
                     name: 'Samsung 24" OLED IPS Monitor',
                     ratingCount: 2,
                     price: {
                         formatted: {
                             price: '$850',
                             discountedPrice: '$850',
-                            },
+                        },
                         currency: '$',
                         price: 850,
                         discountedPrice: 850,
@@ -66,14 +66,14 @@ export default createBoard({
                     },
                     rating: 4,
                 },
-                                {
+                {
                     name: 'Samsung 24" OLED IPS Monitor',
                     ratingCount: 2,
                     price: {
                         formatted: {
                             price: '$850',
                             discountedPrice: '$850',
-                            },
+                        },
                         currency: '$',
                         price: 850,
                         discountedPrice: 850,
@@ -86,6 +86,5 @@ export default createBoard({
             title="Best Sellers"
         />
     ),
-    isSnippet: true,
-    environmentProps: {},
+    isSnippet: true
 });
