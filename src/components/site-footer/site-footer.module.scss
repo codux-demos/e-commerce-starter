@@ -2,13 +2,29 @@
 @import '@styles/styleGuide.module.scss';
 
 .root {
-    display: flex;
+    column-gap: 33px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .footerTitle {
     font: $large-text-bold;
+    margin-bottom: 39px;
+
 }
 
 .footerContent {
     font: $medium-text;
+    flex-direction: column;
+    display: flex;
+    row-gap: 11px;
+    align-self: start;
+
+}
+
+.footerColumn {
+
+    display: grid;
+    grid-auto-flow: row;
+    align-content: start;
 }
