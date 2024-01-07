@@ -10,7 +10,9 @@ export const SiteFooter = ({ className }: SiteFooterProps) => {
         <div className={styles.footerColumn}>
             <div className={styles.footerTitle}>
                 <p className={styles.footerTitle}>Store Location</p>
-                <p className={styles.footerContent}>500 Terry Francine Street San Francisco, CA 94158 info@mysite.com</p></div>
+                <p className={styles.footerContent}>500 Terry Francine Street<br />San Francisco, CA 94158 info@mysite.com</p>
+               
+            </div>
             <div className={styles.footerContent}>
                 <p className={styles.footerContent}>123-456-7890</p>
             </div></div>
