@@ -7,50 +7,85 @@ export default createBoard({
         <CarouselGallery
             items={[
                 {
-                    currency: '$',
-                    description: 'Samsung 24" OLED IPS Monitor',
-                    price: 850,
-                    raters: 2,
+                    name: 'Samsung 24" OLED IPS Monitor',
+                    ratingCount: 2,
+                    price: {
+                        formatted: {
+                            price: '$850',
+                            discountedPrice: '$850',
+                            },
+                        currency: '$',
+                        price: 850,
+                        discountedPrice: 850,
+                        pricePerUnit: 850
+                    },
                     rating: 4,
                 },
-                {
-                    currency: '$',
-                    description: 'Samsung 24" OLED IPS Monitor',
-                    price: 850,
-                    raters: 2,
+                                {
+                    name: 'Samsung 24" OLED IPS Monitor',
+                    ratingCount: 2,
+                    price: {
+                        formatted: {
+                            price: '$850',
+                            discountedPrice: '$850',
+                            },
+                        currency: '$',
+                        price: 850,
+                        discountedPrice: 850,
+                        pricePerUnit: 850
+                    },
                     rating: 4,
                 },
-                {
-                    currency: '$',
-                    description: 'Samsung 24" OLED IPS Monitor',
-                    price: 850,
-                    raters: 2,
+                                {
+                    name: 'Samsung 24" OLED IPS Monitor',
+                    ratingCount: 2,
+                    price: {
+                        formatted: {
+                            price: '$850',
+                            discountedPrice: '$850',
+                            },
+                        currency: '$',
+                        price: 850,
+                        discountedPrice: 850,
+                        pricePerUnit: 850
+                    },
                     rating: 4,
                 },
-                {
-                    currency: '$',
-                    description: 'Samsung 24" OLED IPS Monitor',
-                    price: 850,
-                    raters: 2,
+                                {
+                    name: 'Samsung 24" OLED IPS Monitor',
+                    ratingCount: 2,
+                    price: {
+                        formatted: {
+                            price: '$850',
+                            discountedPrice: '$850',
+                            },
+                        currency: '$',
+                        price: 850,
+                        discountedPrice: 850,
+                        pricePerUnit: 850
+                    },
                     rating: 4,
                 },
-                {
-                    currency: '$',
-                    description: 'Samsung 24" OLED IPS Monitor',
-                    price: 850,
-                    raters: 2,
+                                {
+                    name: 'Samsung 24" OLED IPS Monitor',
+                    ratingCount: 2,
+                    price: {
+                        formatted: {
+                            price: '$850',
+                            discountedPrice: '$850',
+                            },
+                        currency: '$',
+                        price: 850,
+                        discountedPrice: 850,
+                        pricePerUnit: 850
+                    },
                     rating: 4,
-                },
+                }
             ]}
             buttonLabel="View All"
             title="Best Sellers"
         />
     ),
     isSnippet: true,
-    environmentProps: {
-        canvasMargin: {
-            top: 0, right: 0, bottom: 0, left: 0
-        },
-        windowWidth: 806
-    }
+    environmentProps: {},
 });

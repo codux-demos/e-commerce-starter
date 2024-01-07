@@ -10,6 +10,7 @@
     display: flex;
     gap: 24px;
     overflow: hidden;
+    width: 600px;
 }
 
 .gallery-card {}
@@ -41,3 +42,9 @@
     line-height: 3;
     color: $black;
 }
+
+.gallery-side {
+    padding: 20px;
+}
+
+.icon {}
