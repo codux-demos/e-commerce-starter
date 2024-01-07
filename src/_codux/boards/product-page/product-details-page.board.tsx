@@ -1,11 +1,12 @@
 import { createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '../../board-wrappers/page-wrapper';
 import { ProductPage } from '../../../pages/product-page/product-page';
+import { ROUTES } from '../../../router/config';
 
 export default createBoard({
     name: 'Product Details Page',
     Board: () => (
-        <PageWrapper>
+        <PageWrapper path={ROUTES.product.to('1')}>
             <ProductPage />
         </PageWrapper>
     ),

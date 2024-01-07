@@ -3,7 +3,7 @@ import { ButtonPrimary } from '../../../components/button-primary/button-primary
 
 export default createBoard({
     name: 'ButtonPrimary',
-    Board: () => <ButtonPrimary label="Primary Button" />,
+    Board: () => <ButtonPrimary title={"Button primary"}/>,
     isSnippet: true,
     environmentProps: {
         canvasHeight: 214,

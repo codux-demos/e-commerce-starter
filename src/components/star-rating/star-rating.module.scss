@@ -3,19 +3,12 @@
 .root {
     padding-top: 2px;
     padding-bottom: 2px;
-    display: flex;
 }
 
 .stars-container {
     display: flex;
     padding: 2px;
     column-gap: 2px;
-    flex-direction: row;
-    align-items: center;
-}
-
-.star-icon {
-    margin: 0 2px;
 }
 
 .star-full {
@@ -23,7 +16,7 @@
 }
 
 .star-empty {
-    fill: $gray;
+    fill: rgb(148, 148, 148);
 }
 
 .star-half {}
@@ -31,4 +24,12 @@
 .rating-text {
     color: $gray;
     margin-left: 12px;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.sizer {
+    max-width: 16px;
+    max-height: 16px;
 }

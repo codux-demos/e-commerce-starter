@@ -1,3 +1,15 @@
+@import './theme.module.scss';
+
 .common {
     color: inherit;
+}
+
+.card {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: $gray;
+    padding: 5px;
 }

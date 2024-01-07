@@ -1,12 +1,12 @@
 import { createBoard } from '@wixc3/react-board';
-import { ConnectionComponent } from '../../../components/connection-component/connection-component';
+import { ProductList } from '../../../components/product-list/product-list';
 import { ComponentWrapper } from '../../board-wrappers/component-wrapper';
 
 export default createBoard({
-    name: 'ConnectionComponent',
+    name: 'ProductList',
     Board: () => (
         <ComponentWrapper>
-            <ConnectionComponent />
+            <ProductList />
         </ComponentWrapper>
     ),
     isSnippet: true,

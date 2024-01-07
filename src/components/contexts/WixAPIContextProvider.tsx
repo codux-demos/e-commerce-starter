@@ -10,7 +10,7 @@ function getWixClient() {
             currentCart,
         },
         auth: OAuthStrategy({
-            clientId: '84452635-47cb-45b8-be5b-ca3938e93193',
+            clientId: 'c2a3a73f-2a08-4355-93af-555a9740ea0c',
         }),
     });
 }
@@ -20,6 +20,9 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
         getAllProducts: async () => {
             return (await wixClient.products.queryProducts().find()).items;
         },
+        getProduct: async (id: string | undefined) => {
+            return id ? (await wixClient.products.getProduct(id)).product : undefined;
+        }
     };
 }
 
