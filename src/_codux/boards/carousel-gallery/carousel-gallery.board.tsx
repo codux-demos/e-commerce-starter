@@ -86,5 +86,8 @@ export default createBoard({
             title="Best Sellers"
         />
     ),
-    isSnippet: true
+    isSnippet: true,
+    environmentProps: {
+        windowWidth: 1452
+    }
 });

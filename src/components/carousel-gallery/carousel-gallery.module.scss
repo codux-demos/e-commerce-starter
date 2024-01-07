@@ -47,5 +47,8 @@
 }
 
 .gallery-side {
-    padding: 5vw;
+    min-width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
