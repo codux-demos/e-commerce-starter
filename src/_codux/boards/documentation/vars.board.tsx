@@ -12,6 +12,7 @@ export default createBoard({
             <h4 className={Vars_module.smallTitle}>Small Title</h4>
             <p className={Vars_module.extraLargeText}>Extra Large Text</p>
             <p className={Vars_module.largeText}>Large Text</p>
+            <p className={Vars_module.largeTextBold}>Large Text - Bold</p>
             <p className={Vars_module.MediumText}>Small Text</p>
             <p className={Vars_module.extraSmallText}>Extra Small Text</p>
         </div>
