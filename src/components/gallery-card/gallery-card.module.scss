@@ -6,20 +6,18 @@
 }
 
 .item-name {
-    font-size: 14px;
     color: $black;
+    font: $small-text;
 }
 
 .item-price {
     color: $purple;
-    font-size: 18px;
+    font: $medium-text;
 }
 
 .card-content {
     display: flex;
     flex-direction: column;
-    padding: 16px 20px;
+    padding: 1rem 1.4rem;
     max-width: 241px;
 }
-
-.rating {}
