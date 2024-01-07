@@ -1,0 +1,12 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {}
+
+.footerTitle {
+    font: $large-text-bold;
+}
+
+.footerContent {
+    font: $large-text;
+}
