@@ -6,10 +6,7 @@ export default createBoard({
     Board: () => <SiteFooter />,
     isSnippet: true,
     environmentProps: {
-        canvasWidth: 1334,
-        windowWidth: 1920,
-        windowHeight: 1080,
-        canvasHeight: 428,
+        canvasWidth: 1334, canvasHeight: 428,
         canvasMargin: {
             top: 0, right: 0, bottom: 0, left: 0
         }
