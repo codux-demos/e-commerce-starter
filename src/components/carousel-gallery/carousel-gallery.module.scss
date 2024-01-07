@@ -25,4 +25,19 @@
 .gallery-footer {
     display: flex;
     justify-content: center;
+    line-height: 1.5;
+    height: 120px;
+    align-items: center;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.gallery-title {
+    font-size: 30px;
+    line-height: 3;
+    color: $black;
 }

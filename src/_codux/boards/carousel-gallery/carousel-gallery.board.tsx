@@ -42,6 +42,8 @@ export default createBoard({
                     rating: 4,
                 },
             ]}
+            buttonLabel="View All"
+            title="Best Sellers"
         />
     ),
     isSnippet: true,

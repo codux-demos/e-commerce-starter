@@ -1,23 +1,24 @@
 import classNames from 'classnames';
 import styles from './carousel-gallery.module.scss';
 import { GalleryCard, GalleryCardProps } from '../gallery-card/gallery-card';
-import { ButtonPrimary } from '../button-primary/button-primary';
+import { ButtonPrimary } from '../button-primary/button-primary
 
 export interface CarouselGalleryProps {
     className?: string;
     items: GalleryCardProps[];
-
+    title: string;
+    buttonLabel: string;
 }
 
 
 
-export const CarouselGallery = ({ items, className }: CarouselGalleryProps) => {
+export const CarouselGallery = ({ buttonLabel, title, items, className }: CarouselGalleryProps) => {
     return <div className={classNames(styles.root, className)}>
-        <div>
-            <h1>Heading 1</h1>
+        <div className={styles['gallery-header']}>
+            <h1 className={styles['gallery-title']}>{title}</h1>
         </div>
         <div className={styles.carousel}>
-            <button>Button</button>
+            <button></button>
             <div className={styles['items-container']}>
                 {items.map(item => (
                     <GalleryCard
@@ -32,6 +33,6 @@ export const CarouselGallery = ({ items, className }: CarouselGalleryProps) => {
             <button>Button</button>
         </div>
         <div className={styles['gallery-footer']}>
-            <ButtonPrimary label="Primary Button" className={styles['gallery-viewall-button']} />
+            <ButtonPrimary label={buttonLabel} className={styles['gallery-viewall-button']} />
         </div></div>;
 };
