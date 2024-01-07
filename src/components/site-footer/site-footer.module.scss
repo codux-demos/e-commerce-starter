@@ -1,12 +1,14 @@
 @import '@styles/theme.module.scss';
 @import '@styles/styleGuide.module.scss';
 
-.root {}
+.root {
+    display: flex;
+}
 
 .footerTitle {
     font: $large-text-bold;
 }
 
 .footerContent {
-    font: $large-text;
+    font: $medium-text;
 }
