@@ -3,10 +3,10 @@ import { CartItem } from '../../../components/cart-item/cart-item';
 
 export default createBoard({
     name: 'CartItem',
-    Board: () => <CartItem />,
+    Board: () => <CartItem name="Ocean Pro 11 - 12.3 Touch Screen" price={70} prevPrice={85} />,
     isSnippet: true,
     environmentProps: {
-        canvasHeight: 496,
-        canvasWidth: 670
+        canvasHeight: 130,
+        canvasWidth: 448
     }
 });

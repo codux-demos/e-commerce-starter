@@ -11,7 +11,7 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 0px;
 }
 
 .header {
@@ -27,7 +27,7 @@
     background-origin: padding-box;
     background-clip: border-box;
     background-color: #000000;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .arrowIcon {
@@ -40,12 +40,21 @@
 
 .footer {
     padding: 16px;
-    border: 1px solid #E4E4E4;
-    border-right: 0px solid #E4E4E4;
-    border-bottom: 0px solid #E4E4E4;
-    border-left: 0px solid #E4E4E4;
+    border: 1px solid #e4e4e4;
+    border-right: 0px solid #e4e4e4;
+    border-bottom: 0px solid #e4e4e4;
+    border-left: 0px solid #e4e4e4;
 }
 
 .itemsList {
     flex-grow: 1;
+    max-height: 350px;
+    overflow: auto;
+}
+
+.total {
+}
+
+.bodyWrapper {
+    padding: 16px;
 }
