@@ -33,7 +33,7 @@ export const ProductList = ({ className }: ProductListProps) => {
                     item.name && (
                         <Link to={ROUTES.product.to(item._id)} key={item._id}>
                             <GalleryCard
-                                imageUrl={item.media?.mainMedia?.image?.url}
+                                imageUrl={item.media?.items?.at(0)?.image?.url}
                                 name={item.name}
                                 price={item.price ?? undefined}
                                 rating={item.rating ?? undefined}

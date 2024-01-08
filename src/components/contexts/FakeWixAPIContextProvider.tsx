@@ -7,9 +7,9 @@ function getWixApi() {
         getAllProducts: async () => {
             return createProducts(10);
         },
-        getProduct: async (id: string) => {
+        getProduct: async (id: string | undefined) => {
             return createProduct(id);
-        }
+        },
     };
 }
 

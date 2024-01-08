@@ -1,5 +1,6 @@
 import { products } from '@wix/stores';
 import { faker } from '@faker-js/faker';
+import { GetProductResponseNonNullableFields } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
 
 export function createProducts(numOfItems?: number) {
     return Array.from(new Array(numOfItems || 10)).map(createProduct);
@@ -7,7 +8,8 @@ export function createProducts(numOfItems?: number) {
 
 export function createProduct(
     id?: string
-): products.Product & { rating?: number; ratingCount?: number } {
+): products.Product &
+    GetProductResponseNonNullableFields['product'] & { rating?: number; ratingCount?: number } {
     return {
         _id: id ?? faker.string.uuid(),
         slug: faker.lorem.word(),
@@ -46,5 +48,6 @@ export function createProduct(
         },
         rating: faker.number.float({ min: 0, max: 5, precision: 0.1 }),
         ratingCount: faker.number.int({ min: 0, max: 1000 }),
-    };
+    } as products.Product &
+        GetProductResponseNonNullableFields['product'] & { rating?: number; ratingCount?: number };
 }
