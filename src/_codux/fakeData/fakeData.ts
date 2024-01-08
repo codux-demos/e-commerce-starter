@@ -37,6 +37,26 @@ export function createProduct(
                     },
                     title: faker.lorem.word(),
                 },
+                {
+                    image: {
+                        url: faker.image.urlLoremFlickr({
+                            category: 'product',
+                            height: 241,
+                            width: 241,
+                        }),
+                    },
+                    title: faker.lorem.word(),
+                },
+                {
+                    image: {
+                        url: faker.image.urlLoremFlickr({
+                            category: 'product',
+                            height: 241,
+                            width: 241,
+                        }),
+                    },
+                    title: faker.lorem.word(),
+                },
             ],
         },
         price: {
