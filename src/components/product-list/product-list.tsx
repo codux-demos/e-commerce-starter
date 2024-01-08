@@ -27,7 +27,7 @@ export const ProductList = ({ className }: ProductListProps) => {
     }, [wixApi]);
 
     return (
-        <div className={classNames(className, CardImage_module.root)}>
+        <div className={classNames(className, ProductList_module.root)}>
             {myProducts.map(
                 (item) =>
                     item._id &&
