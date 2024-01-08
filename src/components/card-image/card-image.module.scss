@@ -4,6 +4,7 @@
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+    gap: 2px;
 }
 
 .image-container {
@@ -29,5 +30,4 @@
     color: $gray;
 }
 
-.card-image {
-}
+.card-image {}

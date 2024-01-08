@@ -1,4 +1,8 @@
 @import '@styles/theme.module.scss';
 @import '@styles/styleGuide.module.scss';
-.root {
+
+.root {}
+
+.gallery-card-item {
+    border: 0px solid rgb(237, 236, 236);
 }
