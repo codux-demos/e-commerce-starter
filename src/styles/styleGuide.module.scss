@@ -5,11 +5,20 @@
 }
 
 .card {
-    border: 2px solid black;
-    border-radius: 4px;
+    border: 2px solid $light-gray;
+    width: 306px;
+    height: 422px;
+    text-align: start;
+    padding: 20px;
 }
 
-.button {
-    background-color: $gray;
-    padding: 5px;
+.primaryButton {
+    background-color: $purple;
+    padding: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font: $medium-text;
+    color: $white;
+    border-radius: 35px;
 }
