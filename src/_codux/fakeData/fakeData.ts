@@ -8,7 +8,8 @@ export function createProducts(numOfItems?: number) {
 
 export function createProduct(
     id?: string
-): products.Product & GetProductResponseNonNullableFields['product'] {
+): products.Product &
+    GetProductResponseNonNullableFields['product'] & { rating?: number; ratingCount?: number } {
     return {
         _id: id ?? faker.string.uuid(),
         slug: faker.lorem.word(),
@@ -45,5 +46,8 @@ export function createProduct(
                 }),
             },
         },
-    } as products.Product & GetProductResponseNonNullableFields['product'];
+        rating: faker.number.float({ min: 0, max: 5, precision: 0.1 }),
+        ratingCount: faker.number.int({ min: 0, max: 1000 }),
+    } as products.Product &
+        GetProductResponseNonNullableFields['product'] & { rating?: number; ratingCount?: number };
 }
