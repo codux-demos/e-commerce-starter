@@ -14,15 +14,28 @@ export function createProduct(
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
         media: {
-            mainMedia: {
-                image: {
-                    url: faker.image.urlLoremFlickr({
-                        category: 'product',
-                        height: 241,
-                        width: 241,
-                    }),
+            items: [
+                {
+                    image: {
+                        url: faker.image.urlLoremFlickr({
+                            category: 'product',
+                            height: 241,
+                            width: 241,
+                        }),
+                    },
+                    title: faker.lorem.word(),
                 },
-            },
+                {
+                    image: {
+                        url: faker.image.urlLoremFlickr({
+                            category: 'product',
+                            height: 241,
+                            width: 241,
+                        }),
+                    },
+                    title: faker.lorem.word(),
+                },
+            ],
         },
         price: {
             formatted: {
