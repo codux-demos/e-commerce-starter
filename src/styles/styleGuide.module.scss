@@ -21,4 +21,31 @@
     font: $medium-text;
     color: $white;
     border-radius: 35px;
+
+    &:hover {
+        background-color: $black;
+        cursor: pointer;
+    }
+}
+
+.secondaryButton {
+
+    padding: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font: $medium-text;
+    color: $black;
+    border-radius: 35px;
+
+    &:hover {
+        background-color: $white;
+        border: 1px solid $white;
+    }
+
+    background-color: rgba(255, 255, 255, 0);
+
+
+
+
 }
