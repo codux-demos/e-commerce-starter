@@ -1,7 +1,6 @@
 @import '@styles/theme.module.scss';
 @import '@styles/styleGuide.module.scss';
 
-
 .root {
     display: flex;
     justify-content: space-between;
@@ -19,7 +18,7 @@
 }
 
 .small {
-    font: $small-font;
+    font: $small-text;
     margin-top: 18px;
 }
 
@@ -35,4 +34,5 @@
     }
 }
 
-.test {}
+.test {
+}

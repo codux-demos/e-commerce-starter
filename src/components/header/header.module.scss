@@ -8,14 +8,15 @@
     padding-right: 3em;
     align-items: center;
     height: 4em;
-    font: $button-font;
+    font: $medium-text;
 }
 
 .menu {
     display: flex;
     column-gap: 2rem;
     font-family: $my-prettyfont;
-    font: $button-font;
+    font: $medium-text;
 }
 
-.logo {}
+.logo {
+}

@@ -1,17 +1,17 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    font: $large-font;
+    font: $large-text;
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-    background-color: $snow-white;
+    background-color: $white;
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
 .title {
-    font: $title-font;
+    font: $medium-title;
     text-align: center;
     letter-spacing: 0.4rem;
 }
@@ -21,7 +21,7 @@
 }
 
 .button {
-    font: $button-font;
+    font: $medium-text;
     text-align: center;
     background-color: $black;
     color: $white;

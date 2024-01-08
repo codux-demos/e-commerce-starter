@@ -1,11 +1,11 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    font: $large-font;
+    font: $large-text;
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-    background-color: $snow-white;
+    background-color: $white;
     padding-top: 2em;
     padding-bottom: 2em;
 }

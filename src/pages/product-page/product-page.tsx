@@ -5,7 +5,7 @@ import { RouteParams } from '../../router/config';
 import { useContext, useEffect, useState } from 'react';
 import { products } from '@wix/stores';
 import { WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
-import { ButtonPrimary } from '../../components/button-primary/button-primary';
+import StyleGuide_module from '../../styles/styleGuide.module.scss';
 
 export interface ProductPageProps {
     className?: string;
@@ -62,8 +62,9 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                         <label className={styles.quantityLabel}>Quantity</label>
                         <input type="number" className={styles.quantityInput} placeholder="1" />
                     </div>
-                    <ButtonPrimary title="Add to Cart" className={styles.add} />
-                    <ButtonPrimary title="Buy now" className={styles.buy} />
+                    <button className={classNames(styles.add, StyleGuide_module.primaryButton)}>
+                        Add to Cart
+                    </button>
                     <div className={styles.productInfoTitle}>Product Info</div>
                     <div className={styles.description}>{product.description}</div>
                 </div>

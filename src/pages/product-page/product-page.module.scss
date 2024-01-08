@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-    background-color: $snow-white;
+    background-color: $white;
     padding-top: 2em;
     padding-bottom: 2em;
     width: 890px;
@@ -13,7 +13,7 @@
 }
 
 .title {
-    font: $product-title-font;
+    font: $small-title;
     margin-bottom: 30px;
 }
 
@@ -67,10 +67,7 @@
 
 .add {
     margin-bottom: 10px;
-}
-
-.root .buy {
-    background-color: $black;
+    width: 100%;
 }
 
 .productInfoTitle {
