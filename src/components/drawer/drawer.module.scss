@@ -1,0 +1,51 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-image: none;
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.arrowIcon {
+    margin-right: 8px;
+}
+
+.root .footerButton {
+    border-radius: 0;
+}
+
+.footer {
+    padding: 16px;
+    border: 1px solid #E4E4E4;
+    border-right: 0px solid #E4E4E4;
+    border-bottom: 0px solid #E4E4E4;
+    border-left: 0px solid #E4E4E4;
+}
+
+.itemsList {
+    flex-grow: 1;
+}
