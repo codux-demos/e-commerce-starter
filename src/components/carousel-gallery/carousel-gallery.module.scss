@@ -1,0 +1,58 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-container {
+    display: flex;
+    gap: 5vw;
+    overflow: auto;
+    max-width: 80vw;
+
+    &::-webkit-scrollbar {
+        visibility: hidden;
+    }
+}
+
+.gallery-card {
+    width: 25vw;
+}
+
+.carousel {
+    display: flex;
+}
+
+.gallery-viewall-button {
+    height: 1rem;
+    width: 18rem;
+}
+
+.gallery-footer {
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 5vw;
+    align-items: center;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.gallery-title {
+    color: $black;
+    padding: 5vw;
+    font: $small-title;
+}
+
+.gallery-side {
+    min-width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
