@@ -32,10 +32,6 @@
     font: $large-text;
 }
 
-.largeTextBold {
-    font: $large-text-bold;
-}
-
 .MediumText {
     font: $small-text;
 }
@@ -44,6 +40,40 @@
     font: $extra-small-text;
 }
 
-.smallText {
-    font: $small-text;
+.circle {
+    width: 60px;
+    height: 60px;
+    background-color: $white;
+    border: 1px solid #bababa;
+    border-radius: 30px;
+}
+
+.circleTitle {
+    font: $extra-small-text;
+    text-align: center;
+}
+
+.purple {
+    background-color: $purple;
+}
+
+.white {
+    background-color: $white;
+}
+
+.black {
+    background-color: $black;
+}
+
+.colors {
+    display: flex;
+    column-gap: 10px;
+}
+
+.gray {
+    background-color: $gray;
+}
+
+.lightGray {
+    background-color: $light-gray;
 }

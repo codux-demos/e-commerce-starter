@@ -3,22 +3,15 @@
     flex-direction: column;
     gap: 20px;
     align-items: start;
-    padding: 50px;
+    padding: 40px;
 }
 
 .box {
-    background-color: #AD7C7C;
+    background-color: #e5e5e5;
     width: 400px;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(#E5E5E5, #E5E5E5);
-    background-position: 0%;
-    background-size: auto;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-origin: padding-box;
-    background-clip: border-box;
     column-gap: 18px;
 }
