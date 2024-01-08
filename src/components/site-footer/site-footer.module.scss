@@ -1,0 +1,30 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {
+    column-gap: 2.063rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footerTitle {
+    font: $large-text-bold;
+    margin-bottom: 2.438rem;
+
+}
+
+.footerContent {
+    font: $medium-text;
+    flex-direction: column;
+    display: flex;
+    row-gap: 0.688rem;
+    align-self: start;
+
+}
+
+.footerColumn {
+
+    display: grid;
+    grid-auto-flow: row;
+    align-content: start;
+}

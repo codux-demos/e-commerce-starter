@@ -1,19 +1,20 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    font: $large-font;
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
     background-color: $snow-white;
     padding-top: 2em;
     padding-bottom: 2em;
+    width: 890px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .title {
-    font: $title-font;
-    text-align: center;
-    letter-spacing: 0.4rem;
+    font: $product-title-font;
+    margin-bottom: 30px;
 }
 
 .description {
@@ -23,6 +24,7 @@
 
 .imageAndName {
     display: flex;
+    gap: 0px 20px;
 }
 
 .left {
@@ -40,4 +42,53 @@
 .image {
     width: 500px;
     height: 500px;
+}
+
+.price {
+    margin: 0px 0px 30px;
+}
+
+.quantity {
+    margin-bottom: 30px;
+}
+
+.quantityLabel {
+    display: block;
+}
+
+.quantityInput {
+    background-color: $white;
+    border: 1px solid $light-gray;
+    width: 5.45em;
+    padding-left: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.add {
+    margin-bottom: 10px;
+}
+
+.root .buy {
+    background-color: $black;
+}
+
+.productInfoTitle {
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.mainImage {
+    margin: 0px 0px 15px;
+}
+
+.otherImages {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.otherImage {
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
 }

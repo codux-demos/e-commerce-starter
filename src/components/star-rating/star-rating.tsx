@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './star-rating.module.scss';
-import { StarIcon } from '../star-icon/star-icon';
+import { StarIcon, StarFilledIcon } from '@radix-ui/react-icons';
 
 export interface StarRatingProps {
     className?: string;
@@ -13,7 +13,7 @@ export const StarRating = ({ className, rating, ratingCount }: StarRatingProps) 
     const fullStars: JSX.Element[] = [];
     const emptyStars: JSX.Element[] = [];
     for (let i = 0; i < fullStarsCount; i++) {
-        fullStars.push(<StarIcon key={`full-icon-${i}`} className={styles['star-full']} />);
+        fullStars.push(<StarFilledIcon key={`full-icon-${i}`} className={styles['star-full']} />);
     }
     for (let i = 0; i < 5 - fullStarsCount; i++) {
         emptyStars.push(<StarIcon key={`empty-icon-${i}`} className={styles['star-empty']} />);
