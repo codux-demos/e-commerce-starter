@@ -13,6 +13,7 @@ export interface ProductPageProps {
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
+    const [image, setImage] = useState(0);
 
     const [product, setProduct] = useState<products.Product>();
 
@@ -33,8 +34,8 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 <div className={styles.left}>
                     <div className={styles.mainImage}>
                         <img
-                            src={product.media?.items?.at(0)?.image?.url}
-                            alt={product.media?.items?.at(0)?.title}
+                            src={product.media?.items?.at(image)?.image?.url}
+                            alt={product.media?.items?.at(image)?.title}
                             className={styles.image}
                         />
                     </div>
@@ -46,6 +47,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                                     src={item.image?.url}
                                     alt={item.title}
                                     className={styles.otherImage}
+                                    onClick={() => setImage(index)}
                                 />
                             );
                         })}
