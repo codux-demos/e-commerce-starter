@@ -7,6 +7,7 @@ import classNames from 'classnames';
 import { products } from '@wix/stores';
 import { WixAPIContext } from '../contexts/WixAPIContextProvider';
 import CardImage_module from '../card-image/card-image.module.scss';
+import ProductList_module from './product-list.module.scss';
 
 export interface ProductListProps {
     className?: string;
@@ -26,7 +27,7 @@ export const ProductList = ({ className }: ProductListProps) => {
     }, [wixApi]);
 
     return (
-        <div className={classNames(className, CardImage_module.root)}>
+        <div className={classNames(className, ProductList_module.root)}>
             {myProducts.map(
                 (item) =>
                     item._id &&
@@ -38,6 +39,7 @@ export const ProductList = ({ className }: ProductListProps) => {
                                 price={item.price ?? undefined}
                                 rating={item.rating ?? undefined}
                                 ratingCount={item.ratingCount ?? undefined}
+                                className={ProductList_module['gallery-card-item']}
                             />
                         </Link>
                     )
