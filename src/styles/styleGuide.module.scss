@@ -29,7 +29,7 @@
 }
 
 .secondaryButton {
-
+    background-color: $white;
     padding: 20px;
     height: 50px;
     display: flex;
@@ -40,10 +40,11 @@
 
     &:hover {
         background-color: $white;
+        background-color: rgba(255, 255, 255, 0);
         border: 1px solid $white;
     }
 
-    background-color: rgba(255, 255, 255, 0);
+    
 
 
 
