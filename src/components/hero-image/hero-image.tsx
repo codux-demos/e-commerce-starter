@@ -7,6 +7,7 @@ export interface HeroImageProps {
     title: string;
     bottomLabel: string;
     buttonLabel: string;
+    imageUrl: string;
 }
 
 export const HeroImage = ({
@@ -15,13 +16,13 @@ export const HeroImage = ({
     buttonLabel,
     topLabel,
     className,
+    imageUrl
 }: HeroImageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['image-container']}>
                 <img
-                    src="https://static.wixstatic.com/media/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg/v1/fill/w_571,h_468,al_t,q_80,usm_0.66_1.00_0.01,enc_auto/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg"
-                    alt=""
+                    src={imageUrl}
                     className={styles.image}
                 />
                 <div className={styles.overlay}>
