@@ -1,0 +1,127 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: -300px;
+    transition: all 0.3s ease-in-out;
+    max-width: 33%;
+    min-width: 300px;
+}
+
+.open {
+    right: 0;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    position: relative;
+    background-image: linear-gradient($white, $white);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+}
+
+.body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    background-image: linear-gradient(#ffffff, #ffffff);
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+}
+
+.header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-image: none;
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: $black;
+    color: $white;
+    text-align: center;
+}
+
+.arrowIcon {
+    margin-right: 8px;
+}
+
+.root .footerButton {
+    border-radius: 0;
+}
+
+.footer {
+    padding: 16px;
+    border: 0px solid $light-gray;
+    border-top: 1px solid $light-gray;
+}
+
+.itemsList {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.total {}
+
+.bodyWrapper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.background {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: rgba(148, 148, 148, 0.5);
+    background-image: none;
+    background-position: 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    z-index: 999;
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.checkoutButton {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.placeholder {
+    text-align: center;
+    padding: 16px;
+}
+
+.title {
+    flex-grow: 1;
+    font-size: 20px;
+}
