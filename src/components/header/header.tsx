@@ -5,6 +5,7 @@ import { Logo } from '../logo/logo';
 
 export interface HeaderProps {
     className?: string;
+    toggleDrawer: () => void;
 }
 
 export const Header = ({ className }: HeaderProps) => {
