@@ -1,20 +1,66 @@
 import classNames from 'classnames';
 import styles from './home-page.module.scss';
+import { HeroImage } from '../../components/hero-image/hero-image';
+import { ROUTES } from '../../router/config';
+import { products } from '@wix/stores';
+import { useContext, useEffect, useState } from 'react';
+import { WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
+import { useNavigate } from 'react-router-dom';
 
 export interface HomePageProps {
     className?: string;
 }
 
 export const HomePage = ({ className }: HomePageProps) => {
+    const navigate = useNavigate();
+    const [products, setProducts] = useState<
+        Array<products.Product & { rating?: number; ratingCount?: number }>
+    >([]);
+
+    const wixApi = useContext(WixAPIContext);
+
+    useEffect(() => {
+        wixApi.getAllProducts().then((prods) => {
+            setProducts(prods);
+        });
+    }, [wixApi]);
+
+    console.log(products);
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.title}>This Is Home Page</div>
-            <button className={styles.button}>Learn more</button>
-            <img
-                src="https://images.unsplash.com/photo-1622542796254-5b9c46ab0d2f?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dwixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
-                alt=""
-                className={styles.image}
-            />
+            {products?.[0]?._id && (
+                <div className={styles['top-banner']}>
+                    <HeroImage
+                        title="Incredible Prices on All Your Favorite Items"
+                        topLabel="Best Prices"
+                        bottomLabel="Get more for less on selected brands"
+                        primaryButtonLabel="Shop Now"
+                        className={styles['top-banner-hero-image']}
+                        topLabelClassName={styles['top-label-highlighted']}
+                        onPrimaryButtonClick={() => navigate(ROUTES.product.to(products[0]._id!))}
+                    />
+                </div>
+            )}
+            {products?.[1]?._id && products?.[2]?._id && (
+                <div className={styles['two-hero-images']}>
+                    <HeroImage
+                        imageUrl="https://static.wixstatic.com/media/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg/v1/fill/w_1622,h_749,al_t,q_85,usm_0.66_1.00_0.01,enc_auto/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg"
+                        topLabel="Holiday Deals"
+                        bottomLabel="Selected Smartphone Brands"
+                        secondaryButtonLabel="Shop"
+                        title="Up to 30% off"
+                        onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[1]._id!))}
+                    />
+                    <HeroImage
+                        imageUrl="https://static.wixstatic.com/media/c837a6_d84a631864a442a496670bc2d787c6a0~mv2.jpg/v1/fill/w_1622,h_749,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_d84a631864a442a496670bc2d787c6a0~mv2.jpg"
+                        topLabel="Just In"
+                        bottomLabel="Top Headphone Brands"
+                        secondaryButtonLabel="Shop"
+                        title="Take Your Sound Anywhere"
+                        onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[2]._id!))}
+                    />
+                </div>
+            )}
         </div>
     );
 };

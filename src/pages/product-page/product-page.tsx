@@ -15,18 +15,24 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
     const [image, setImage] = useState(0);
 
-    const [product, setProduct] = useState<products.Product>();
+    const [product, setProduct] = useState<products.Product | null>();
 
     const wixApi = useContext(WixAPIContext);
 
     useEffect(() => {
         wixApi.getProduct(productId).then((product) => {
             setProduct(product);
+        }).catch(() => {
+            setProduct(null);
         });
     }, [wixApi]);
 
     if (!product) {
-        return <div className={classNames(styles.root, className)}>The product is not found</div>;
+        return (
+            <div className={styles['no-product']}>
+                {product === null ? 'The product is not found 😭😭😭' : 'Loading...'}
+            </div>
+        );
     }
     return (
         <div className={classNames(styles.root, className)}>
