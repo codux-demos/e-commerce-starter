@@ -21,8 +21,7 @@
     flex-direction: column;
     z-index: 1000;
     position: relative;
-    background-color: #5d4242;
-    background-image: linear-gradient(#ffffff, #ffffff);
+    background-image: linear-gradient($white, $white);
     background-position: 0%;
     background-size: auto;
     background-repeat: repeat;
@@ -36,7 +35,6 @@
     display: flex;
     flex-direction: column;
     padding: 0px;
-    background-color: #3c2a2a;
     background-image: linear-gradient(#ffffff, #ffffff);
     background-position: 0%;
     background-size: auto;
@@ -58,8 +56,8 @@
     background-attachment: scroll;
     background-origin: padding-box;
     background-clip: border-box;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: $black;
+    color: $white;
 }
 
 .arrowIcon {
@@ -72,10 +70,8 @@
 
 .footer {
     padding: 16px;
-    border: 1px solid #e4e4e4;
-    border-right: 0px solid #e4e4e4;
-    border-bottom: 0px solid #e4e4e4;
-    border-left: 0px solid #e4e4e4;
+    border: 0px solid $light-gray;
+    border-top: 1px solid $light-gray;
 }
 
 .itemsList {
@@ -83,8 +79,7 @@
     overflow: auto;
 }
 
-.total {
-}
+.total {}
 
 .bodyWrapper {
     padding: 16px;
@@ -99,7 +94,7 @@
     bottom: 0px;
     right: 0px;
     left: 0px;
-    background-color: rgba(205, 205, 205, 0.5);
+    background-color: rgba(148, 148, 148, 0.5);
     background-image: none;
     background-position: 0%;
     background-size: auto;
@@ -113,4 +108,9 @@
 
 .visible {
     display: block;
+}
+
+.checkoutButton {
+    width: 100%;
+    border-radius: 0px;
 }

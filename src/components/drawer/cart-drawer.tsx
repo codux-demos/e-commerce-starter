@@ -36,11 +36,11 @@ export const CartDrawer = ({ className, isOpen, onToggle, products }: DrawerProp
                         <div className={styles.itemsList}>
                             {products.length > 0
                                 ? products.map((item, index, array) => (
-                                      <CartItem
-                                          product={item}
-                                          isLast={index === array.length - 1}
-                                      />
-                                  ))
+                                    <CartItem
+                                        product={item}
+                                        isLast={index === array.length - 1}
+                                    />
+                                ))
                                 : 'Empty Cart'}
                         </div>
                         {totalPrice > 0 && (
@@ -53,7 +53,7 @@ export const CartDrawer = ({ className, isOpen, onToggle, products }: DrawerProp
                     </div>
                 </div>
                 <div className={styles.footer}>
-                    <button className={StyleGuide_module.primaryButton}>Checkout</button>
+                    <button className={classNames(StyleGuide_module.primaryButton, styles.checkoutButton)}>Checkout</button>
                 </div>
             </div>
             <div

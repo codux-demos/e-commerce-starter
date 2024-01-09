@@ -5,7 +5,7 @@ import { CartDrawer } from '../../../components/drawer/cart-drawer';
 export default createBoard({
     name: 'CartDrawer',
     Board: () => {
-        const [isOpen, setIsOpen] = useState(false);
+        const [isOpen, setIsOpen] = useState(true);
         const toggle = () => setIsOpen((open) => !open);
         return (
             <div>
