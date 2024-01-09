@@ -28,7 +28,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     }, [wixApi]);
 
     if (!product) {
-        return <div className={classNames(styles.root, className)}>The product is not found</div>;
+        return <div className={classNames(styles.root, className)}>Loading ...</div>;
     }
     return (
         <div className={classNames(styles.root, className)}>
