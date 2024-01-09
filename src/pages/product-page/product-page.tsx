@@ -1,3 +1,4 @@
+import React, { ReactNode, PropsWithChildren } from 'react';
 import classNames from 'classnames';
 import styles from './product-page.module.scss';
 import { useParams } from 'react-router-dom';
@@ -6,6 +7,7 @@ import { useContext, useEffect, useState } from 'react';
 import { products } from '@wix/stores';
 import { WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
 import StyleGuide_module from '../../styles/styleGuide.module.scss';
+import { Accordion } from '../../components/accordion/accordion';
 
 export interface ProductPageProps {
     className?: string;
@@ -20,11 +22,14 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const wixApi = useContext(WixAPIContext);
 
     useEffect(() => {
-        wixApi.getProduct(productId).then((product) => {
-            setProduct(product);
-        }).catch(() => {
-            setProduct(null);
-        });
+        wixApi
+            .getProduct(productId)
+            .then((product) => {
+                setProduct(product);
+            })
+            .catch(() => {
+                setProduct(null);
+            });
     }, [wixApi]);
 
     if (!product) {
@@ -71,8 +76,25 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                     <button className={classNames(styles.add, StyleGuide_module.primaryButton)}>
                         Add to Cart
                     </button>
-                    <div className={styles.productInfoTitle}>Product Info</div>
-                    <div className={styles.description}>{product.description}</div>
+                    <Accordion
+                        items={[
+                            {
+                                title: 'Product Info',
+                                description: product.description ?? 'product has no description',
+                            },
+                            {
+                                title: 'Return & Refund Policy',
+                                description:
+                                    'I`m a Return and Refund policy. I`m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.',
+                            },
+                            {
+                                title: 'Shipping Info',
+                                description:
+                                    'I`m a shipping policy. I`m a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.',
+                            },
+                        ]}
+                        className={styles.accordion}
+                    />
                 </div>
             </div>
         </div>
