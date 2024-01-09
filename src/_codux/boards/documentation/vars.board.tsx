@@ -28,6 +28,10 @@ export default createBoard({
                     <div className={Classnames(Vars_module.circle, Vars_module.lightGray)}></div>
                     <p className={Vars_module.circleTitle}>Light Gray</p>
                 </div>
+                <div>
+                    <div className={Classnames(Vars_module.circle, Vars_module['page-back'])}></div>
+                    <p className={Vars_module.circleTitle}>Page Background</p>
+                </div>
             </div>
             <h1 className={Vars_module.extraLargeTitle}>Extra Large Title</h1>
             <h2 className={Vars_module.largeTitle}>Large Title</h2>
