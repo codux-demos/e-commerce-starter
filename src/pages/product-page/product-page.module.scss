@@ -17,11 +17,6 @@
     margin-bottom: 30px;
 }
 
-.description {
-    font-weight: 400;
-    font-size: 18px;
-}
-
 .imageAndName {
     display: flex;
     gap: 0px 20px;
@@ -70,10 +65,6 @@
     width: 100%;
 }
 
-.productInfoTitle {
-    margin-top: 30px;
-    margin-bottom: 25px;
-}
 
 .mainImage {
     margin: 0px 0px 15px;
@@ -88,4 +79,8 @@
     width: 30px;
     height: 30px;
     margin-right: 3px;
+}
+
+.accordion {
+    margin-top: 42px;
 }

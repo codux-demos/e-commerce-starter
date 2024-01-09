@@ -1,0 +1,27 @@
+@import '@styles/theme.module.scss';
+@import '@styles/styleGuide.module.scss';
+
+.root {}
+
+.trigger {
+    font: $large-text;
+    width: 100%;
+}
+
+.innerHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headr {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.accordionItem {
+    border-bottom: 1px solid $gray;
+}
+
+.content {
+    margin-bottom: 15px;
+}
