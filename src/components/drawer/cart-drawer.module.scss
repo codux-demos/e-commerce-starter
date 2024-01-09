@@ -9,6 +9,7 @@
     transition: all 0.3s ease-in-out;
     max-width: 33%;
     min-width: 300px;
+    z-index: 1000;
 }
 
 .open {
@@ -19,7 +20,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    z-index: 1000;
     position: relative;
     background-image: linear-gradient($white, $white);
     background-position: 0%;
@@ -28,6 +28,7 @@
     background-attachment: scroll;
     background-origin: padding-box;
     background-clip: border-box;
+    z-index: 2;
 }
 
 .body {
@@ -109,6 +110,7 @@
 
 .visible {
     display: block;
+    z-index: 1;
 }
 
 .checkoutButton {
