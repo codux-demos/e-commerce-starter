@@ -8,7 +8,7 @@ export interface HeaderProps {
     toggleDrawer: () => void;
 }
 
-export const Header = ({ className }: HeaderProps) => {
+export const Header = ({ className, toggleDrawer }: HeaderProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <a href="/" className={styles.logo}>
@@ -17,6 +17,7 @@ export const Header = ({ className }: HeaderProps) => {
             <div className={styles.menu}>
                 <a href="/">Home</a>
                 <a href={ROUTES.about.to()}>About</a>
+                <button onClick={toggleDrawer}>Cart</button>
             </div>
         </div>
     );
