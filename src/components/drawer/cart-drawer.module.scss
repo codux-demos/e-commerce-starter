@@ -45,7 +45,7 @@
 }
 
 .header {
-    padding: 16px;
+    padding: 24px;
     display: flex;
     align-items: center;
     justify-items: center;
@@ -58,6 +58,7 @@
     background-clip: border-box;
     background-color: $black;
     color: $white;
+    text-align: center;
 }
 
 .arrowIcon {
@@ -79,8 +80,7 @@
     overflow: auto;
 }
 
-.total {
-}
+.total {}
 
 .bodyWrapper {
     padding: 16px;
@@ -114,4 +114,14 @@
 .checkoutButton {
     width: 100%;
     border-radius: 0px;
+}
+
+.placeholder {
+    text-align: center;
+    padding: 16px;
+}
+
+.title {
+    flex-grow: 1;
+    font-size: 20px;
 }

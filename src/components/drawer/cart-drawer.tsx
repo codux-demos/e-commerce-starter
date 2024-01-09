@@ -23,27 +23,28 @@ export const CartDrawer = ({ className, isOpen, onToggle, products }: DrawerProp
         [products]
     );
 
+    const isEmpty = products.length === 0;
+
     const currencySign = products[0]?.priceData?.currency;
     return (
         <div className={classNames(styles.root, { [styles.open]: isOpen }, className)}>
             <div className={styles.wrapper}>
                 <div className={styles.header}>
                     <ArrowRightIcon onClick={onToggle} className={styles.arrowIcon} />
-                    Cart
+                    <div className={styles.title}>Cart</div>
                 </div>
                 <div className={styles.body}>
                     <div className={styles.bodyWrapper}>
                         <div className={styles.itemsList}>
-                            {products.length > 0
-                                ? products.map((item, index, array) => (
-                                    <CartItem
-                                        product={item}
-                                        isLast={index === array.length - 1}
-                                    />
+                            {isEmpty ? (
+                                <div className={styles.placeholder}>Cart is empty</div>
+                            ) : (
+                                products.map((item, index, array) => (
+                                    <CartItem product={item} isLast={index === array.length - 1} />
                                 ))
-                                : 'Empty Cart'}
+                            )}
                         </div>
-                        {totalPrice > 0 && (
+                        {!isEmpty && (
                             <div className={styles.total}>
                                 <div>Subtotal</div>
                                 {totalPrice}
@@ -52,9 +53,18 @@ export const CartDrawer = ({ className, isOpen, onToggle, products }: DrawerProp
                         )}
                     </div>
                 </div>
-                <div className={styles.footer}>
-                    <button className={classNames(StyleGuide_module.primaryButton, styles.checkoutButton)}>Checkout</button>
-                </div>
+                {!isEmpty && (
+                    <div className={styles.footer}>
+                        <button
+                            className={classNames(
+                                StyleGuide_module.primaryButton,
+                                styles.checkoutButton
+                            )}
+                        >
+                            Checkout
+                        </button>
+                    </div>
+                )}
             </div>
             <div
                 onClick={onToggle}
