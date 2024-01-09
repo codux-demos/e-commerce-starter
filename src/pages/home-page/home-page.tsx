@@ -25,7 +25,6 @@ export const HomePage = ({ className }: HomePageProps) => {
         });
     }, [wixApi]);
 
-    console.log(products);
     return (
         <div className={classNames(styles.root, className)}>
             {products?.[0]?._id && (
