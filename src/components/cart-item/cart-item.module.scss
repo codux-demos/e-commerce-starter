@@ -4,7 +4,7 @@
 .root {
     display: flex;
     padding: 16px;
-    border: 0px solid #dedede;
+    border: 1px solid $light-gray;
     margin-left: 16px;
     margin-right: 16px;
     min-width: auto;
@@ -34,7 +34,7 @@
 
 .productName {
     font-size: 16px;
-    color: #6c6a6a;
+    color: $black;
 }
 
 .price {
@@ -48,9 +48,9 @@
 .prevPrice {
     text-decoration-line: line-through;
     margin-right: 4px;
-    color: #575757;
+    color: $gray;
 }
 
 .divider {
-    border-bottom: 1px solid #dedede;
+    border-bottom: 1px solid $light-gray;
 }
