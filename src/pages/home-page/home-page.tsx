@@ -3,9 +3,11 @@ import styles from './home-page.module.scss';
 import { HeroImage } from '../../components/hero-image/hero-image';
 import { ROUTES } from '../../router/config';
 import { products } from '@wix/stores';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
 import { useNavigate } from 'react-router-dom';
+import { CarouselGallery } from '../../components/carousel-gallery/carousel-gallery';
+import { GalleryCardProps } from '../../components/gallery-card/gallery-card';
 
 export interface HomePageProps {
     className?: string;
@@ -24,6 +26,20 @@ export const HomePage = ({ className }: HomePageProps) => {
             setProducts(prods);
         });
     }, [wixApi]);
+
+    const carouselItems: GalleryCardProps[] = useMemo(
+        () =>
+            products
+                .map((product) => ({
+                    name: product.name,
+                    imageUrl: product.media?.items?.[0]?.image?.url,
+                    price: product.price,
+                    rating: product.rating,
+                    ratingCount: product.ratingCount,
+                }))
+                .filter((item) => !!item.name) as GalleryCardProps[],
+        [products]
+    );
 
     return (
         <div className={classNames(styles.root, className)}>
@@ -60,6 +76,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                     />
                 </div>
             )}
+            <CarouselGallery items={carouselItems} buttonLabel="View All" title="Best Sellers" className={styles['home-page-carousel']} />
         </div>
     );
 };
