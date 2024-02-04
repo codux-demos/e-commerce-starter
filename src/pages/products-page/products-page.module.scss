@@ -1,12 +1,6 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    font: $large-text;
-    display: flex;
-    flex-direction: column;
-    background-color: $white;
-    padding: 20px;
-    gap: 2px;
 }
 
 .title {
@@ -14,4 +8,10 @@
     font-weight: 400;
     font-size: 30px;
     margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }

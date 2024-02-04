@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './carousel-gallery.module.scss';
-import { GalleryCard, GalleryCardProps } from '../gallery-card/gallery-card';
+import { ProductCard, GalleryCardProps } from '../product-card/product-card';
 import { LeftArrow } from '../left-arrow/left-arrow';
 import { RightArrow } from '../right-arrow/right-arrow';
 import StyleGuide_module from '../../styles/styleGuide.module.scss';
@@ -24,7 +24,7 @@ export const CarouselGallery = ({ buttonLabel, title, items, className }: Carous
                 </button>
                 <div className={styles['items-container']}>
                     {items.map((item) => (
-                        <GalleryCard
+                        <ProductCard
                             name={item.name}
                             imageUrl={item.imageUrl}
                             price={item.price}
@@ -39,7 +39,14 @@ export const CarouselGallery = ({ buttonLabel, title, items, className }: Carous
                 </button>
             </div>
             <div className={styles['gallery-footer']}>
-                <button className={classNames(StyleGuide_module.primaryButton, styles['gallery-viewall-button'])}>{buttonLabel}</button>
+                <button
+                    className={classNames(
+                        StyleGuide_module.primaryButton,
+                        styles['gallery-viewall-button']
+                    )}
+                >
+                    {buttonLabel}
+                </button>
             </div>
         </div>
     );

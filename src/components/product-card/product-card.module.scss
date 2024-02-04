@@ -1,0 +1,46 @@
+@import '@styles/theme.module.scss';
+
+.root {
+    border: 0.8px solid rgb(237, 236, 236);
+    cursor: pointer;
+}
+
+.itemName {
+    color: $black;
+    font: $small-text;
+}
+
+.itemPrice {
+    color: $purple;
+    font: $medium-text;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.4rem;
+    max-width: 241px;
+}
+
+.image {
+    width: 241px;
+    height: 241px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    transition: all 400ms ease;
+
+    &:hover {
+        scale: 120%;
+    }
+}
+
+.noImage {
+    width: 100%;
+    height: 100%;
+    background-color: $light-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $gray;
+}
