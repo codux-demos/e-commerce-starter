@@ -3,9 +3,8 @@ import styles from './site-wrapper.module.scss';
 import { Header } from '../header/header';
 import { Outlet } from 'react-router-dom';
 import { TopMenu } from '../top-menu/top-menu';
-import { useState } from 'react';
 import { SiteFooter } from '../site-footer/site-footer';
-import { CartDrawer } from '../drawer/cart-drawer';
+import { Cart } from '../cart/cart';
 
 export interface SiteWrapperProps {
     className?: string;
@@ -17,15 +16,11 @@ export interface SiteWrapperProps {
  */
 
 export const SiteWrapper = ({ className }: SiteWrapperProps) => {
-    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-    const toggleDrawer = () => setIsDrawerOpen((open) => !open);
-
     return (
         <div className={classNames(styles.root, className)}>
-            <Header toggleDrawer={toggleDrawer} />
+            <Header />
             <TopMenu className={styles.topMenu} />
-            <CartDrawer isOpen={isDrawerOpen} onToggle={toggleDrawer} products={[]} />
+            <Cart />
             <div className={styles.content}>
                 <Outlet />
             </div>

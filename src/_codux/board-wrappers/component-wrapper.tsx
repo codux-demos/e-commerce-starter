@@ -1,5 +1,5 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-import { FakeWixAPIContextProvider } from '../../components/contexts/FakeWixAPIContextProvider';
+import { FakeWixAPIContextProvider } from '../fakeData/FakeWixAPIContextProvider';
 
 export function ComponentWrapper(props: { children: React.ReactNode }) {
     const router = createMemoryRouter([

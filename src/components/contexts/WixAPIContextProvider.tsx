@@ -21,10 +21,26 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
             return (await wixClient.products.queryProducts().find()).items;
         },
         getProduct: async (id: string | undefined) => {
-            return id ? (await wixClient.products.getProduct(id)).product : undefined;
-        }
+            return id ? await wixClient.products.getProductPlatformized(id) : undefined;
+        },
+        getCart: () => {
+            return wixClient.currentCart.getCurrentCart();
+        },
+        updateCartItemQuantity: (id: string | undefined | null, quantity: number) => {
+            return wixClient.currentCart.updateCurrentCartLineItemQuantity([
+                {
+                    _id: id || undefined,
+                    quantity,
+                },
+            ]);
+        },
+        removeItemFromCart: (id: string) => {
+            return wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
+        },
     };
 }
+
+export type WixAPI = ReturnType<typeof getWixApi>;
 
 export const WixAPIContext = React.createContext<ReturnType<typeof getWixApi>>(
     {} as ReturnType<typeof getWixApi>
