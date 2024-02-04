@@ -11,34 +11,37 @@
 }
 
 .drawer {
-    right: -20rem;
+    right: -30rem;
     height: 100%;
-    width: 20rem;
+    width: 30rem;
     background-color: $white;
     transition: right 0.3s ease-in-out;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
 
     &.open {
         right: 0;
     }
-
-    position: absolute;
 }
 
 .header {
     padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-items: center;
     background-color: $black;
     color: $white;
-    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrowIcon {
-    margin-right: 8px;
+    position: absolute;
+    left: 0px;
+    margin: 0rem 0rem 0rem 1rem;
 }
 
 .body {
-    padding: 1.5rem;
-    background-color: $white;
+    position: relative;
+    flex-grow: 1;
 }

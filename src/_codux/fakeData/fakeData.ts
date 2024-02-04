@@ -4,8 +4,6 @@ import { PaymentOptionType } from '@wix/ecom/build/cjs/src/ecom-v1-cart-cart.pub
 import { WixAPI } from '../../api/WixAPIContextProvider';
 import { WeightUnit } from '@wix/ecom/build/cjs/src/ecom-v1-cart-current-cart.universal';
 
-faker.seed(123);
-
 type Product = Exclude<Awaited<ReturnType<WixAPI['getProduct']>>, undefined>;
 type Media = Exclude<Exclude<Product['media'], undefined>['mainMedia'], undefined>;
 type Cart = Awaited<ReturnType<WixAPI['getCart']>>;
@@ -69,7 +67,7 @@ export function createImage(): Media {
 export function createCart(products: products.Product[]): Cart {
     return {
         _id: faker.string.uuid(),
-        currency: 'USD',
+        currency: '$',
         lineItems: products.map(createCartItem),
         appliedDiscounts: [],
         conversionCurrency: 'USD',

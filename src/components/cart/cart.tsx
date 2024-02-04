@@ -9,10 +9,11 @@ import { CartItem } from './cart-item/cart-item';
 
 export interface CartProps {
     className?: string;
+    initialIsOpen?: boolean;
 }
 
-export const Cart = ({ className }: CartProps) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const Cart = ({ className, initialIsOpen }: CartProps) => {
+    const [isOpen, setIsOpen] = useState(initialIsOpen || false);
 
     const wixClient = useContext(WixAPIContext);
     const [cart, setCart] = useState<cart.Cart | null>(null);
@@ -39,23 +40,22 @@ export const Cart = ({ className }: CartProps) => {
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)}>
                     {isEmpty ? (
-                        <div className={styles.placeholder}>Cart is empty</div>
+                        <div>Cart is empty</div>
                     ) : (
-                        [
-                            <div key="items">
+                        <div className={styles.cart}>
+                            <div>
                                 {cart?.lineItems?.map((item) => (
                                     <CartItem key={item._id} cartItem={item} />
                                 ))}
-                            </div>,
-                            <div key="total" className={styles.total}>
-                                <div>Subtotal</div>
-                                {totalPrice}
-                                {cart?.currency}
-                            </div>,
-                            <button key="checkout" className={commonStyles.primaryButton}>
-                                Checkout
-                            </button>,
-                        ]
+                            </div>
+                            <div>
+                                <label>
+                                    Subtotal: {cart?.currency}
+                                    {totalPrice}
+                                </label>
+                                <button className={commonStyles.primaryButton}>Checkout</button>
+                            </div>
+                        </div>
                     )}
                 </Drawer>
             ) : null}

@@ -18,8 +18,8 @@ export const ProductCard = ({ name, imageUrl, className, price }: GalleryCardPro
                 <div className={styles.noImage}>No image</div>
             )}
             <div className={styles.cardContent}>
-                <p className={styles.itemName}>{name}</p>
-                {price?.formatted && <p className={styles.itemPrice}>{price.formatted.price}</p>}
+                <p>{name}</p>
+                {price?.formatted && <p>{price.formatted.price}</p>}
             </div>
         </div>
     );

@@ -35,11 +35,7 @@ export const HeroImage = ({
                         <div className={classNames(styles['overlay-text'], topLabelClassName)}>
                             {topLabel}
                         </div>
-                        <h1
-                            className={styles['overlay-header']}
-                        >
-                            {title}
-                        </h1>
+                        <h1 className={styles['overlay-header']}>{title}</h1>
                         <p className={styles['overlay-text']}>{bottomLabel}</p>
                         {primaryButtonLabel && (
                             <button

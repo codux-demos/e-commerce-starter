@@ -14,7 +14,6 @@
     left: 0;
     right: 0;
     padding-left: 5vw;
-    padding-top: 7vh;
 }
 
 .image-container {
@@ -28,18 +27,16 @@
 }
 
 .overlay-text {
-    font: $medium-text;
-    margin-top: 1rem;
+    margin-top: 1vw;
     display: block;
     width: fit-content;
+    font-size: 1.5vw;
 }
 
 .overlay-header {
-    font: $large-text;
-    max-width: 40%;
-    margin-top: 1rem;
-    font-size: 2.8rem;
-    min-width: 400px;
+    max-width: 60%;
+    margin-top: 1vw;
+    font-size: 3vw;
 }
 
 .overlay-button {
@@ -47,4 +44,13 @@
     padding-right: 3rem;
     padding-left: 3rem;
     height: 2rem;
+}
+
+.overlayLayout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-content: center;
+    justify-items: center;
+
 }

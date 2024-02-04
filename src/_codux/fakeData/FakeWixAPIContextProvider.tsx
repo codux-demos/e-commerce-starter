@@ -1,8 +1,10 @@
 import React, { FC, useMemo } from 'react';
 import { createProducts, createProduct, createCart } from './fakeData';
 import { WixAPI, WixAPIContext } from '../../api/WixAPIContextProvider';
+import { faker } from '@faker-js/faker';
 
 function getWixApi(): WixAPI {
+    faker.seed(123);
     const products = createProducts(10);
 
     return {
@@ -10,9 +12,11 @@ function getWixApi(): WixAPI {
             return products;
         },
         getProduct: async (id: string | undefined) => {
+            faker.seed(123);
             return createProduct(id);
         },
         getCart: () => {
+            faker.seed(123);
             return Promise.resolve(createCart([products[0], products[3]]));
         },
         //@ts-expect-error - This is a fake implementation

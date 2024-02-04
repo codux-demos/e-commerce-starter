@@ -15,7 +15,6 @@ export interface ProductPageProps {
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
-    console.log('PPPP', productId);
     const [product, setProduct] = useState<products.Product | null>();
 
     const wixApi = useContext(WixAPIContext);
@@ -46,24 +45,13 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 className={styles.left}
             />
             <div className={styles.right}>
-                <div className={styles.title}>{product.name}</div>
-                {product.price && (
-                    <div className={styles.price}>{product.price?.formatted?.price}</div>
-                )}
-                <div className={styles.quantity}>
-                    <label htmlFor="quantity" className={styles.quantityLabel}>
-                        Quantity
-                    </label>
-                    <input
-                        id="quantity"
-                        type="number"
-                        className={styles.quantityInput}
-                        placeholder="1"
-                    />
-                </div>
-                <button className={classNames(styles.add, commonStyles.primaryButton)}>
-                    Add to Cart
-                </button>
+                <div>{product.name}</div>
+                {product.price && <div>{product.price?.formatted?.price}</div>}
+                <label>
+                    Quantity: <br />
+                    <input type="number" placeholder="1" />
+                </label>
+                <button className={commonStyles.primaryButton}>Add to Cart</button>
                 <ShopTechnicalInfo />
             </div>
         </div>

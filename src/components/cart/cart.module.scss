@@ -1,4 +1,10 @@
 @import '@styles/theme.module.scss';
 
-.root {
+.cart {
+    background-color: $white;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }

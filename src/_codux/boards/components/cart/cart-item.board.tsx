@@ -8,9 +8,13 @@ const cartItem = createCartItem(product);
 export default createBoard({
     name: 'CartItem',
     Board: () => <CartItem cartItem={cartItem} />,
-    isSnippet: true,
+    isSnippet: false,
     environmentProps: {
-        canvasHeight: 130,
-        canvasWidth: 448,
+        canvasMargin: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+        },
     },
 });

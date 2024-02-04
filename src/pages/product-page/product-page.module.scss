@@ -12,40 +12,13 @@
 
 .left {
     grid-auto-flow: row;
-    flex-basis: 45%;
+    flex: 1;
 }
-
-.right {}
-
-.title {
-    font: $small-title;
-    margin-bottom: 30px;
-}
-
-.price {
-    margin: 0px 0px 30px;
-}
-
-.quantity {
-    margin-bottom: 30px;
-}
-
-.quantityLabel {
-    display: block;
-}
-
-.quantityInput {
-    background-color: $white;
-    border: 1px solid $light-gray;
-    width: 5.45em;
-    padding-left: 14px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.add {
-    margin-bottom: 10px;
-    width: 100%;
+.right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
 }
 
 .no-product {

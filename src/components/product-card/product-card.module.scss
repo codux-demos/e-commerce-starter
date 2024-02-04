@@ -1,18 +1,7 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    border: 0.8px solid rgb(237, 236, 236);
     cursor: pointer;
-}
-
-.itemName {
-    color: $black;
-    font: $small-text;
-}
-
-.itemPrice {
-    color: $purple;
-    font: $medium-text;
 }
 
 .cardContent {
@@ -27,11 +16,6 @@
     height: 241px;
     object-fit: cover;
     object-position: 50% 50%;
-    transition: all 400ms ease;
-
-    &:hover {
-        scale: 120%;
-    }
 }
 
 .noImage {

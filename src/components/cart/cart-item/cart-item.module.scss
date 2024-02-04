@@ -1,55 +1,16 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    display: flex;
-    padding: 16px;
-    border: 1px solid $light-gray;
-    margin-left: 16px;
-    margin-right: 16px;
+    padding: 0.5rem;
     min-width: auto;
     max-width: 400px;
+    display: flex;
 }
 
 .image {
-    max-width: 100%;
-    min-width: 100%;
-}
-
-.imageContainer {
-    width: 40%;
+    width: 5rem;
 }
 
 .infoContainer {
     margin-left: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    width: 100%;
-}
-
-.counter {
-    display: inline-block;
-}
-
-.productName {
-    font-size: 16px;
-    color: $black;
-}
-
-.price {
-    font-size: 17px;
-}
-
-.pricesBlock {
-    display: flex;
-}
-
-.prevPrice {
-    text-decoration-line: line-through;
-    margin-right: 4px;
-    color: $gray;
-}
-
-.divider {
-    border-bottom: 1px solid $light-gray;
 }

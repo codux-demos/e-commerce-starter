@@ -6,7 +6,7 @@ export default createBoard({
     name: 'Cart',
     Board: () => (
         <ComponentWrapper>
-            <Cart />
+            <Cart initialIsOpen />
         </ComponentWrapper>
     ),
     isSnippet: false,
