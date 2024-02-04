@@ -2,40 +2,24 @@
 
 .root {
     display: flex;
-    flex-direction: column;
-    row-gap: 0.5em;
-    padding-top: 2em;
-    padding-bottom: 2em;
-    width: 890px;
+    flex-direction: row;
     margin-right: auto;
     margin-left: auto;
+    width: 100%;
+    flex-shrink: 0;
+    column-gap: 2em;
 }
+
+.left {
+    grid-auto-flow: row;
+    flex-basis: 45%;
+}
+
+.right {}
 
 .title {
     font: $small-title;
     margin-bottom: 30px;
-}
-
-.imageAndName {
-    display: flex;
-    gap: 0px 20px;
-}
-
-.left {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 50%;
-}
-
-.right {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 50%;
-}
-
-.image {
-    width: 500px;
-    height: 500px;
 }
 
 .price {
@@ -64,27 +48,7 @@
     width: 100%;
 }
 
-
-.mainImage {
-    margin: 0px 0px 15px;
-}
-
-.otherImages {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.otherImage {
-    width: 30px;
-    height: 30px;
-    margin-right: 3px;
-}
-
 .no-product {
     padding: 30px;
     font: $large-text;
-}
-
-.accordion {
-    margin-top: 42px;
 }

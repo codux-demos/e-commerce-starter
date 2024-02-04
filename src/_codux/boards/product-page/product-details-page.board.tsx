@@ -2,6 +2,7 @@ import { createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '../../board-wrappers/page-wrapper';
 import { ProductPage } from '../../../pages/product-page/product-page';
 import { ROUTES } from '../../../router/config';
+import React from 'react';
 
 export default createBoard({
     name: 'Product Details Page',
@@ -18,6 +19,5 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
-        windowHeight: 1200
     },
 });

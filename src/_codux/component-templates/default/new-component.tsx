@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './new-component.module.scss';
+import commonStyles from '@styles/styleGuide.module.scss';
 
 export interface NewComponentProps {
     className?: string;

@@ -1,63 +1,25 @@
 import { products } from '@wix/stores';
 import { faker } from '@faker-js/faker';
-import { GetProductResponseNonNullableFields } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
+
+faker.seed(123);
 
 export function createProducts(numOfItems?: number) {
     return Array.from(new Array(numOfItems || 10)).map(createProduct);
 }
 
-export function createProduct(
-    id?: string
-): products.Product &
-    GetProductResponseNonNullableFields['product'] & { rating?: number; ratingCount?: number } {
+export function createProduct(id?: string): products.Product {
+    const numOfImages = faker.number.int({ min: 2, max: 4 });
+    const images = Array.from(new Array(numOfImages)).map(createImage);
+    const mainImage = images[faker.number.int({ min: 0, max: numOfImages - 1 })];
+
     return {
         _id: id ?? faker.string.uuid(),
         slug: faker.lorem.word(),
         name: faker.commerce.productName(),
         description: faker.commerce.productDescription(),
         media: {
-            items: [
-                {
-                    image: {
-                        url: faker.image.urlLoremFlickr({
-                            category: 'product',
-                            height: 241,
-                            width: 241,
-                        }),
-                    },
-                    title: faker.lorem.word(),
-                },
-                {
-                    image: {
-                        url: faker.image.urlLoremFlickr({
-                            category: 'product',
-                            height: 241,
-                            width: 241,
-                        }),
-                    },
-                    title: faker.lorem.word(),
-                },
-                {
-                    image: {
-                        url: faker.image.urlLoremFlickr({
-                            category: 'product',
-                            height: 241,
-                            width: 241,
-                        }),
-                    },
-                    title: faker.lorem.word(),
-                },
-                {
-                    image: {
-                        url: faker.image.urlLoremFlickr({
-                            category: 'product',
-                            height: 241,
-                            width: 241,
-                        }),
-                    },
-                    title: faker.lorem.word(),
-                },
-            ],
+            items: images,
+            mainMedia: mainImage,
         },
         price: {
             formatted: {
@@ -66,8 +28,17 @@ export function createProduct(
                 }),
             },
         },
-        rating: faker.number.float({ min: 0, max: 5, precision: 0.1 }),
-        ratingCount: faker.number.int({ min: 0, max: 1000 }),
-    } as products.Product &
-        GetProductResponseNonNullableFields['product'] & { rating?: number; ratingCount?: number };
+    };
+}
+
+export function createImage(): products.MediaItem {
+    return {
+        _id: faker.string.uuid(),
+        image: {
+            url: faker.image.urlLoremFlickr({
+                category: 'cats',
+            }),
+        },
+        title: faker.lorem.word(),
+    };
 }

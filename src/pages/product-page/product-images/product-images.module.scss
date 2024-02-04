@@ -1,0 +1,17 @@
+@import '@styles/theme.module.scss';
+
+.root {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & img {
+        width: 100%;
+    }
+
+    gap: 1rem;
+}
+
+.mainImage {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
