@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './cart-item.module.scss';
 import { cart } from '@wix/ecom';
 import { ChangeEvent, useContext } from 'react';
-import { WixAPIContext } from '../../contexts/WixAPIContextProvider';
+import { WixAPIContext } from '../../../api/WixAPIContextProvider';
 
 export interface CartItemProps {
     className?: string;

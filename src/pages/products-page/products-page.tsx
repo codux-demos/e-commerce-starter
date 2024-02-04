@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './products-page.module.scss';
 import { products } from '@wix/stores';
 import { useState, useContext, useEffect } from 'react';
-import { WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
+import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
 import { ProductCard } from '../../components/product-card/product-card';

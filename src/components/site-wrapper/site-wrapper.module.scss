@@ -4,14 +4,9 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .content {
+    min-height: min-content;
     flex-grow: 1;
-    background-color: $light-gray;
-}
-
-.topMenu {
-    background-color: $light-gray;
 }

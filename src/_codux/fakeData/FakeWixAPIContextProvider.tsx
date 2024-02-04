@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from 'react';
 import { createProducts, createProduct, createCart } from './fakeData';
-import { WixAPI, WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
+import { WixAPI, WixAPIContext } from '../../api/WixAPIContextProvider';
 
 function getWixApi(): WixAPI {
     const products = createProducts(10);

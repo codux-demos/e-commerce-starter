@@ -2,9 +2,7 @@ import classNames from 'classnames';
 import styles from './site-wrapper.module.scss';
 import { Header } from '../header/header';
 import { Outlet } from 'react-router-dom';
-import { TopMenu } from '../top-menu/top-menu';
-import { SiteFooter } from '../site-footer/site-footer';
-import { Cart } from '../cart/cart';
+import { Footer } from '../site-footer/site-footer';
 
 export interface SiteWrapperProps {
     className?: string;
@@ -19,12 +17,10 @@ export const SiteWrapper = ({ className }: SiteWrapperProps) => {
     return (
         <div className={classNames(styles.root, className)}>
             <Header />
-            <TopMenu className={styles.topMenu} />
-            <Cart />
             <div className={styles.content}>
                 <Outlet />
             </div>
-            <SiteFooter />
+            <Footer />
         </div>
     );
 };

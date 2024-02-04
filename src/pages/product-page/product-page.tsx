@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { RouteParams } from '../../router/config';
 import { useContext, useEffect, useState } from 'react';
 import { products } from '@wix/stores';
-import { WixAPIContext } from '../../components/contexts/WixAPIContextProvider';
+import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import commonStyles from '../../styles/styleGuide.module.scss';
 import { ProductImages } from './product-images/product-images';
 import { ShopTechnicalInfo } from './shop-technical-info/shop-technical-info';
@@ -15,7 +15,7 @@ export interface ProductPageProps {
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
-
+    console.log('PPPP', productId);
     const [product, setProduct] = useState<products.Product | null>();
 
     const wixApi = useContext(WixAPIContext);
