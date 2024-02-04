@@ -79,7 +79,7 @@ export function createCart(products: products.Product[]): Cart {
 
 export function createCartItem(product: products.Product): Cart['lineItems'][0] {
     const priceStr = faker.commerce.price({ symbol: '$' });
-    const price = parseFloat(priceStr);
+    const price = parseFloat(priceStr.replace('$', ''));
 
     return {
         _id: faker.string.uuid(),
