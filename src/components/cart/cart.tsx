@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './cart.module.scss';
-import commonStyles from '@styles/styleGuide.module.scss';
+import commonStyles from '@styles/common-styles.module.scss';
 import { useContext, useEffect, useState } from 'react';
 import { Drawer } from '../drawer/drawer';
 import { WixAPIContext } from '../../api/WixAPIContextProvider';

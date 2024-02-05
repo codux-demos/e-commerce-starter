@@ -1,19 +1,7 @@
 @import './theme.module.scss';
 
-.common {
-    color: inherit;
-}
-
-.card {
-    border: 2px solid $light-gray;
-    width: 306px;
-    height: 422px;
-    text-align: start;
-    padding: 20px;
-}
-
 .primaryButton {
-    background-color: $purple;
+    background-color: $bauhaus-blue;
     padding: 20px;
     height: 50px;
     display: flex;
@@ -27,7 +15,7 @@
         cursor: pointer;
     }
 
-    justify-content:center;
+    justify-content: center;
 }
 
 .secondaryButton {
@@ -45,4 +33,9 @@
         background-color: rgba(255, 255, 255, 0);
         border: 1px solid $white;
     }
+}
+
+.numberInput {
+    border: 1px solid $bauhaus-blue;
+    border-radius: 5px;
 }

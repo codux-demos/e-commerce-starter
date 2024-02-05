@@ -1,2 +1,1 @@
-import '../index.css';
-import '../styles/styleGuide.module.scss';
+import '../styles/index.css';

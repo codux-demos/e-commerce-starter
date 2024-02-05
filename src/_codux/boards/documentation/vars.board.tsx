@@ -1,42 +1,54 @@
 import { createBoard } from '@wixc3/react-board';
-import Vars_module from './vars.module.scss';
+import ThemeStyles from './vars.module.scss';
 import boardStyle from './documentation.module.scss';
 import Classnames from 'classnames';
 
 export default createBoard({
-    name: 'Vars',
+    name: 'Theme Variables',
     Board: () => (
         <div className={boardStyle.root}>
-            <div className={Vars_module.colors}>
+            <div className={ThemeStyles.colors}>
                 <div>
-                    <div className={Classnames(Vars_module.circle, Vars_module.white)}></div>
-                    <p className={Vars_module.circleTitle}>White</p>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.white)}></div>
+                    <p className={ThemeStyles.circleTitle}>White</p>
                 </div>
                 <div>
-                    <div className={Classnames(Vars_module.circle, Vars_module.purple)}></div>
-                    <p className={Vars_module.circleTitle}>Purple</p>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.black)}></div>
+                    <p className={ThemeStyles.circleTitle}>Black</p>
                 </div>
                 <div>
-                    <div className={Classnames(Vars_module.circle, Vars_module.black)}></div>
-                    <p className={Vars_module.circleTitle}>Black</p>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.disabled)}></div>
+                    <p className={ThemeStyles.circleTitle}>disabled</p>
                 </div>
                 <div>
-                    <div className={Classnames(Vars_module.circle, Vars_module.gray)}></div>
-                    <p className={Vars_module.circleTitle}>Gray</p>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.dirtyWhite)}></div>
+                    <p className={ThemeStyles.circleTitle}>Dirty White</p>
                 </div>
                 <div>
-                    <div className={Classnames(Vars_module.circle, Vars_module.lightGray)}></div>
-                    <p className={Vars_module.circleTitle}>Light Gray</p>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.blue)}></div>
+                    <p className={ThemeStyles.circleTitle}>Blue</p>
+                </div>
+                <div>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.red)}></div>
+                    <p className={ThemeStyles.circleTitle}>Red</p>
+                </div>
+                <div>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.orange)}></div>
+                    <p className={ThemeStyles.circleTitle}>Orange</p>
+                </div>
+                <div>
+                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.goldYellow)}></div>
+                    <p className={ThemeStyles.circleTitle}>Yellow</p>
                 </div>
             </div>
-            <h1 className={Vars_module.extraLargeTitle}>Extra Large Title</h1>
-            <h2 className={Vars_module.largeTitle}>Large Title</h2>
-            <h3 className={Vars_module.mediumTitle}>Medium Title</h3>
-            <h4 className={Vars_module.smallTitle}>Small Title</h4>
-            <p className={Vars_module.extraLargeText}>Extra Large Text</p>
-            <p className={Vars_module.largeText}>Large Text</p>
-            <p className={Vars_module.MediumText}>Small Text</p>
-            <p className={Vars_module.extraSmallText}>Extra Small Text</p>
+            <h1 className={ThemeStyles.extraLargeTitle}>Extra Large Title</h1>
+            <h2 className={ThemeStyles.largeTitle}>Large Title</h2>
+            <h3 className={ThemeStyles.mediumTitle}>Medium Title</h3>
+            <h4 className={ThemeStyles.smallTitle}>Small Title</h4>
+            <p className={ThemeStyles.extraLargeText}>Extra Large Text</p>
+            <p className={ThemeStyles.largeText}>Large Text</p>
+            <p className={ThemeStyles.MediumText}>Small Text</p>
+            <p className={ThemeStyles.extraSmallText}>Extra Small Text</p>
         </div>
     ),
     isSnippet: false,

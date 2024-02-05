@@ -5,7 +5,7 @@ import { RouteParams } from '../../router/config';
 import { useContext, useEffect, useState } from 'react';
 import { products } from '@wix/stores';
 import { WixAPIContext } from '../../api/WixAPIContextProvider';
-import commonStyles from '../../styles/styleGuide.module.scss';
+import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
 import { ShopTechnicalInfo } from './shop-technical-info/shop-technical-info';
 

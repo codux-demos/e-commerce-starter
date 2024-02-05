@@ -44,8 +44,8 @@
     text-align: center;
 }
 
-.purple {
-    background-color: $purple;
+.blue {
+    background-color: $bauhaus-blue;
 }
 
 .white {
@@ -61,10 +61,19 @@
     column-gap: 10px;
 }
 
-.gray {
-    background-color: $gray;
+.disabled {
+    background-color: $disabled;
 }
 
-.lightGray {
-    background-color: $light-gray;
+.dirtyWhite {
+    background-color: $bauhaus-dirtywhite;
+}
+.red {
+    background-color: $bauhaus-red;
+}
+.orange {
+    background-color: $bauhaus-orange;
+}
+.goldYellow {
+    background-color: $bauhaus-goldyellow;
 }
