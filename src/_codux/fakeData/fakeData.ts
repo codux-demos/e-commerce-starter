@@ -51,8 +51,8 @@ export function createImage(): Media {
     return {
         _id: faker.string.uuid(),
         image: {
-            url: faker.image.urlLoremFlickr({
-                category: 'cats',
+            url: faker.image.urlPicsumPhotos({
+                grayscale: true,
                 width: 640,
                 height: 480,
             }),

@@ -49,9 +49,14 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 {product.price && <div>{product.price?.formatted?.price}</div>}
                 <label>
                     Quantity: <br />
-                    <input type="number" placeholder="1" />
+                    <input className={commonStyles.numberInput} type="number" placeholder="1" />
                 </label>
-                <button className={commonStyles.primaryButton}>Add to Cart</button>
+                <button
+                    onClick={() => wixApi.addToCart(product._id!)}
+                    className={commonStyles.primaryButton}
+                >
+                    Add to Cart
+                </button>
                 <ShopTechnicalInfo />
             </div>
         </div>
