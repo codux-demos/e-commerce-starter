@@ -7,7 +7,7 @@ import { products } from '@wix/stores';
 import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
-import { ShopTechnicalInfo } from './shop-technical-info/shop-technical-info';
+import { ProductInfo } from './shop-technical-info/product-info';
 
 export interface ProductPageProps {
     className?: string;
@@ -57,7 +57,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 >
                     Add to Cart
                 </button>
-                <ShopTechnicalInfo />
+                <ProductInfo />
             </div>
         </div>
     );
