@@ -1,19 +1,19 @@
 // colors
 $white: #ffffff;
 $black: #000000;
+$charcoal-black: #282B2D;
+$snow-white: #F5F5F5;
 
-$primary: #000000;
-$secondary: #ffffff;
-$bauhaus-charcoalblack: #282b2d;
-$bauhaus-blue: #7fc2f4;
-$bauhaus-red: #ff2f2f;
-$bauhaus-orange: #ff5b2b;
-$bauhaus-goldyellow: #ffb615;
-$bauhaus-dirtywhite: #dcd9bf;
-$disabled: #d9d9d9;
 
 //fonts
 $my-prettyfont: 'DM Sans', sans-serif;
+
+//text
+$small-font: 200 1rem/1.4 $my-prettyfont;
+$large-font: 700 2rem/1.2 $my-prettyfont;
+$title-font: 300 4rem/1.4 $my-prettyfont;
+$paragraph-font: 300 1.3rem/1.3 $my-prettyfont;
+$button-font: 400 1rem/1.3 $my-prettyfont;
 
 //text
 $extra-large-title: 400 5.625rem/1.4 $my-prettyfont;
@@ -28,3 +28,5 @@ $large-text-bold: 700 1.25rem/1.4 $my-prettyfont;
 $medium-text: 400 1.063rem/1.4 $my-prettyfont;
 
 $mobile-width: 600px;
+
+
