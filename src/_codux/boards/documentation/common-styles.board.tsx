@@ -3,7 +3,7 @@ import commonStyles from '../../../styles/common-styles.module.scss';
 import boardStyle from './documentation.module.scss';
 
 export default createBoard({
-    name: 'Common Styles',
+    name: 'Theme Styles',
     Board: () => (
         <div className={boardStyle.root}>
             <div className={boardStyle.box}>

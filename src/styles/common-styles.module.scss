@@ -1,7 +1,7 @@
 @import './theme.module.scss';
 
 .primaryButton {
-    background-color: $bauhaus-blue;
+    background-color: $black;
     padding: 20px;
     height: 50px;
     display: flex;
@@ -36,6 +36,6 @@
 }
 
 .numberInput {
-    border: 1px solid $bauhaus-blue;
+    border: 1px solid $black;
     border-radius: 5px;
 }
