@@ -6,7 +6,7 @@ const product = createProduct();
 const cartItem = createCartItem(product);
 
 export default createBoard({
-    name: 'CartItem',
+    name: 'Cart Item',
     Board: () => <CartItem cartItem={cartItem} />,
     isSnippet: false,
     environmentProps: {

@@ -6,5 +6,5 @@ export interface ProductInfoProps {
 }
 
 export const ProductInfo = ({ className }: ProductInfoProps) => {
-    return <div className={classNames(styles.root, className)}>ShopTechnicalInfo</div>;
+    return <div className={classNames(styles.root, className)}>Product Details</div>;
 };

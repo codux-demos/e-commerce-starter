@@ -7,7 +7,7 @@ import { products } from '@wix/stores';
 import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
-import { ProductInfo } from './shop-technical-info/product-info';
+import { ProductInfo } from './product-info/product-info';
 
 export interface ProductPageProps {
     className?: string;
