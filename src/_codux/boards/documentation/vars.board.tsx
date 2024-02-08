@@ -24,22 +24,6 @@ export default createBoard({
                     <div className={Classnames(ThemeStyles.circle, ThemeStyles.dirtyWhite)}></div>
                     <p className={ThemeStyles.circleTitle}>Dirty White</p>
                 </div>
-                <div>
-                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.blue)}></div>
-                    <p className={ThemeStyles.circleTitle}>Blue</p>
-                </div>
-                <div>
-                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.red)}></div>
-                    <p className={ThemeStyles.circleTitle}>Red</p>
-                </div>
-                <div>
-                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.orange)}></div>
-                    <p className={ThemeStyles.circleTitle}>Orange</p>
-                </div>
-                <div>
-                    <div className={Classnames(ThemeStyles.circle, ThemeStyles.goldYellow)}></div>
-                    <p className={ThemeStyles.circleTitle}>Yellow</p>
-                </div>
             </div>
             <h1 className={ThemeStyles.extraLargeTitle}>Extra Large Title</h1>
             <h2 className={ThemeStyles.largeTitle}>Large Title</h2>

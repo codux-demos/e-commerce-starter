@@ -1,8 +1,8 @@
 import { createBoard } from '@wixc3/react-board';
-import { ShopTechnicalInfo } from '../../../../../pages/product-page/shop-technical-info/shop-technical-info';
+import { ProductInfo } from '../../../../../pages/product-page/product-info/product-info';
 
 export default createBoard({
-    name: 'ShopTechnicalInfo',
-    Board: () => <ShopTechnicalInfo />,
+    name: 'Product Info',
+    Board: () => <ProductInfo />,
     isSnippet: true,
 });
