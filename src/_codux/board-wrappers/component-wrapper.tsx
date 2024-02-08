@@ -4,7 +4,7 @@ import { FakeWixAPIContextProvider } from '../fakeData/FakeWixAPIContextProvider
 export function ComponentWrapper(props: { children: React.ReactNode }) {
     const router = createMemoryRouter([
         {
-            path: '*',
+            path: '/',
             element: props.children,
         },
     ]);

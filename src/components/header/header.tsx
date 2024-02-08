@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import styles from './header.module.scss';
 import { ROUTES } from '../../router/config';
 import { Cart } from '../cart/cart';
+import { Link } from 'react-router-dom';
 
 export interface HeaderProps {
     className?: string;
@@ -10,13 +11,13 @@ export interface HeaderProps {
 export const Header = ({ className }: HeaderProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <a href="/" className={styles.logo}>
+            <Link to="/" className={styles.logo}>
                 LOGO
-            </a>
+            </Link>
             <div className={styles.menu}>
-                <a href="/">Home</a>
-                <a href={ROUTES.products.to()}>Products</a>
-                <a href={ROUTES.about.to()}>About</a>
+                <Link to="/">Home</Link>
+                <Link to={ROUTES.products.to()}>Products</Link>
+                <Link to={ROUTES.about.to()}>About</Link>
                 <Cart />
             </div>
         </div>

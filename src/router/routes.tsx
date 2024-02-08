@@ -1,4 +1,4 @@
-import { Navigate, RouteObject } from 'react-router-dom';
+import { RouteObject } from 'react-router-dom';
 import { SiteWrapper } from '../components/site-wrapper/site-wrapper';
 import { HomePage } from '../pages/home-page/home-page';
 import { AboutPage } from '../pages/about-page/about-page';
