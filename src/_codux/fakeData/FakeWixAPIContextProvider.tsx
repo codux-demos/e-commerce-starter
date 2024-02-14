@@ -3,9 +3,14 @@ import { createProducts, createProduct, createCart } from './fakeData';
 import { WixAPI, WixAPIContext } from '../../api/WixAPIContextProvider';
 import { faker } from '@faker-js/faker';
 
-function getWixApi(): WixAPI {
+export type WixApiSettings = {
+    numberOfCartItems?: number;
+    numberOfProducts?: number;
+};
+
+function getWixApi(settings?: WixApiSettings): WixAPI {
     faker.seed(123);
-    const products = createProducts(10);
+    const products = createProducts(settings?.numberOfProducts || 10);
 
     return {
         getAllProducts: async () => {
@@ -17,7 +22,11 @@ function getWixApi(): WixAPI {
         },
         getCart: () => {
             faker.seed(123);
-            return Promise.resolve(createCart([products[0], products[3]]));
+            const productsInCart =
+                settings?.numberOfCartItems === 0
+                    ? []
+                    : products.slice(0, settings?.numberOfCartItems || 2);
+            return Promise.resolve(createCart(productsInCart));
         },
         //@ts-expect-error - This is a fake implementation
         updateCartItemQuantity: (id: string | undefined | null, quantity: number) => {
@@ -32,10 +41,13 @@ function getWixApi(): WixAPI {
     };
 }
 
-export const FakeWixAPIContextProvider: FC<{ children: React.ReactElement }> = ({ children }) => {
+export const FakeWixAPIContextProvider: FC<{
+    children: React.ReactElement;
+    settings?: WixApiSettings;
+}> = ({ children, settings }) => {
     const api = useMemo(() => {
-        return getWixApi();
-    }, []);
+        return getWixApi(settings);
+    }, [settings]);
 
     return <WixAPIContext.Provider value={api}>{children}</WixAPIContext.Provider>;
 };
