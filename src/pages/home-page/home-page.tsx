@@ -13,34 +13,30 @@ export interface HomePageProps {
 
 export const HomePage = ({ className }: HomePageProps) => {
     const navigate = useNavigate();
-    const [products, setProducts] = useState<
-        Array<products.Product & { rating?: number; ratingCount?: number }>
-    >([]);
+    const [products, setProducts] = useState<Array<products.Product>>([]);
 
     const wixApi = useContext(WixAPIContext);
 
     useEffect(() => {
-        wixApi.getAllProducts().then((prods) => {
+        wixApi.getPromotedProducts().then((prods) => {
             setProducts(prods);
         });
     }, [wixApi]);
 
     return (
         <div className={classNames(styles.root, className)}>
-            {products?.[0]?._id && (
-                <div className={styles['top-banner']}>
-                    <HeroImage
-                        title="Incredible Prices on All Your Favorite Items"
-                        topLabel="Best Prices"
-                        bottomLabel="Get more for less on selected brands"
-                        primaryButtonLabel="Shop Now"
-                        className={styles['top-banner-hero-image']}
-                        topLabelClassName={styles['top-label-highlighted']}
-                        onPrimaryButtonClick={() => navigate(ROUTES.product.to(products[0]._id!))}
-                    />
-                </div>
-            )}
-            {products?.[1]?._id && products?.[2]?._id && (
+            <div className={styles['top-banner']}>
+                <HeroImage
+                    title="Incredible Prices on All Your Favorite Items"
+                    topLabel="Best Prices"
+                    bottomLabel="Get more for less on selected brands"
+                    primaryButtonLabel="Shop Now"
+                    topLabelClassName={styles['top-label-highlighted']}
+                    onPrimaryButtonClick={() => navigate(ROUTES.products.to())}
+                    imageUrl="https://static.wixstatic.com/media/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg"
+                />
+            </div>
+            {products?.[0]?._id && products?.[1]?._id && (
                 <div className={styles['two-hero-images']}>
                     <HeroImage
                         imageUrl="https://static.wixstatic.com/media/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg/v1/fill/w_1622,h_749,al_t,q_85,usm_0.66_1.00_0.01,enc_auto/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg"
@@ -48,7 +44,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                         bottomLabel="Selected Smartphone Brands"
                         secondaryButtonLabel="Shop"
                         title="Up to 30% off"
-                        onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[1]._id!))}
+                        onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[0]._id!))}
                     />
                     <HeroImage
                         imageUrl="https://static.wixstatic.com/media/c837a6_d84a631864a442a496670bc2d787c6a0~mv2.jpg/v1/fill/w_1622,h_749,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_d84a631864a442a496670bc2d787c6a0~mv2.jpg"
@@ -56,7 +52,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                         bottomLabel="Top Headphone Brands"
                         secondaryButtonLabel="Shop"
                         title="Take Your Sound Anywhere"
-                        onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[2]._id!))}
+                        onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[1]._id!))}
                     />
                 </div>
             )}

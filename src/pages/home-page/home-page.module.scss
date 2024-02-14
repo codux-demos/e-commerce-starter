@@ -1,6 +1,7 @@
 @import '@styles/theme.module.scss';
 
-.root {}
+.root {
+}
 
 .title {
     font: $medium-title;
@@ -38,23 +39,9 @@
 }
 
 .top-banner {
-    background-repeat: no-repeat;
-    background-image: url("https://static.wixstatic.com/media/c837a6_9c1280daaeb0481abc58e6e236efdf59~mv2.png/v1/fill/w_1920,h_748,al_br,q_90,enc_auto/c837a6_9c1280daaeb0481abc58e6e236efdf59~mv2.png");
-    background-position: 50%;
-    background-size: cover;
-    background-attachment: scroll;
-    background-origin: padding-box;
-    background-clip: border-box;
     height: 565px;
     margin-bottom: 20px;
     display: block;
-}
-
-.top-banner-hero-image {
-    height: 460px;
-    color: $black !important;
-    margin-right: 100px;
-    margin-left: 100px;
 }
 
 .top-label-highlighted {

@@ -20,6 +20,9 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
             faker.seed(123);
             return createProduct(id);
         },
+        getPromotedProducts: async () => {
+            return products.slice(0, 2);
+        },
         getCart: () => {
             faker.seed(123);
             const productsInCart =

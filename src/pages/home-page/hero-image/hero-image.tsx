@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './hero-image.module.scss';
+import commonStyles from '@styles/common-styles.module.scss';
 
 export interface HeroImageProps {
     className?: string;
@@ -40,7 +41,7 @@ export const HeroImage = ({
                         {primaryButtonLabel && (
                             <button
                                 className={classNames(
-                                    styles.primaryButton,
+                                    commonStyles.primaryButton,
                                     styles['overlay-button']
                                 )}
                                 onClick={onPrimaryButtonClick}
@@ -51,7 +52,7 @@ export const HeroImage = ({
                         {secondaryButtonLabel && (
                             <button
                                 className={classNames(
-                                    styles.secondaryButton,
+                                    commonStyles.secondaryButton,
                                     styles['overlay-button']
                                 )}
                                 onClick={onSecondaryButtonClick}
