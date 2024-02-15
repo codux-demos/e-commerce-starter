@@ -1,18 +1,14 @@
 @import './theme.module.scss';
 
 .primaryButton {
-    // background-color: $black;
     padding: 20px;
-    // height: 50px;
     display: flex;
     align-items: center;
     font: $medium-text;
-    // color: $white;
-    // border-radius: 35px;
+    cursor: pointer;
 
     &:hover {
         background-color: $white;
-        cursor: pointer;
         border: 1px solid black;
         border-radius: 35px;
     }
