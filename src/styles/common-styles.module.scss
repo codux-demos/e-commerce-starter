@@ -1,18 +1,20 @@
 @import './theme.module.scss';
 
 .primaryButton {
-    background-color: $black;
+    // background-color: $black;
     padding: 20px;
-    height: 50px;
+    // height: 50px;
     display: flex;
     align-items: center;
     font: $medium-text;
-    color: $white;
-    border-radius: 35px;
+    // color: $white;
+    // border-radius: 35px;
 
     &:hover {
-        background-color: $black;
+        background-color: $white;
         cursor: pointer;
+        border: 1px solid black;
+        border-radius: 35px;
     }
 
     justify-content: center;
