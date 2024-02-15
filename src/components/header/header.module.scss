@@ -16,10 +16,10 @@
     column-gap: 2rem;
     font: $medium-text;
     align-items: center;
+    cursor: pointer;
 
     &:hover {
         background-color: $white;
-        cursor: pointer;
         border-radius: 35px;
     }
 
