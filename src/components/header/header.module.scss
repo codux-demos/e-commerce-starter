@@ -13,7 +13,6 @@
 
 .menu {
     display: flex;
-    column-gap: 2rem;
     font-family: $my-prettyfont;
     font: $medium-text;
     align-items: center;
@@ -23,7 +22,6 @@
         cursor: pointer;
         border-radius: 35px;
     }
-
 }
 
-.logo {}
+

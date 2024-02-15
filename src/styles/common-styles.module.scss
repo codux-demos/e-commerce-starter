@@ -1,14 +1,12 @@
 @import './theme.module.scss';
 
 .primaryButton {
-    // background-color: $black;
-    padding: 20px;
-    // height: 50px;
+    padding: 20px 25px;
+    height: 40px;
     display: flex;
     align-items: center;
     font: $medium-text;
-    // color: $white;
-    // border-radius: 35px;
+    border: 1px solid transparent;
 
     &:hover {
         background-color: $white;
@@ -16,8 +14,6 @@
         border: 1px solid black;
         border-radius: 35px;
     }
-
-    justify-content: center;
 }
 
 .secondaryButton {
