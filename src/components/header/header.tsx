@@ -16,9 +16,6 @@ export const Header = ({ className }: HeaderProps) => {
                 LOGO
             </Link>
             <div className={styles.menu}>
-                <Link to="/" className={CommonStyles_module.primaryButton}>
-                    Home
-                </Link>
                 <Link to={ROUTES.products.to()} className={CommonStyles_module.primaryButton}>
                     Products
                 </Link>
