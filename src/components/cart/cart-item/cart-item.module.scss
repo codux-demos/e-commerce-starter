@@ -1,16 +1,28 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    padding: 0.5rem;
     min-width: auto;
     max-width: 400px;
     display: flex;
+    padding-right: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 4vh;
 }
 
 .image {
-    width: 5rem;
+    width: 100px;
+    height: 100px;
 }
 
 .infoContainer {
-    margin-left: 8px;
+    margin-left: 1.4vw;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.price {
+    font-family: $my-prettyfont;
+    font-weight: 700;
+    margin-top: 2px;
 }

@@ -40,4 +40,10 @@
 .numberInput {
     border: 1px solid $black;
     border-radius: 5px;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    padding-left: 4%;
+    height: 35px;
+    margin-top: 2vh;
+    width: 90%;
 }
