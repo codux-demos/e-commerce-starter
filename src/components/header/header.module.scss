@@ -13,15 +13,6 @@
 
 .menu {
     display: flex;
-    font-family: $my-prettyfont;
     font: $medium-text;
     align-items: center;
-
-    &:hover {
-        background-color: $white;
-        cursor: pointer;
-        border-radius: 35px;
-    }
 }
-
-
