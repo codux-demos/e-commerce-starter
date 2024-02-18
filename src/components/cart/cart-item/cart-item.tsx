@@ -28,8 +28,7 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
             <img src={cartItem.image} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
                 <h4>{name}</h4>
-                <span>{cartItem.price?.formattedConvertedAmount}</span>
-                <br />
+                <span className={styles.price}>{cartItem.price?.formattedConvertedAmount}</span>
                 <input
                     type="number"
                     className={commonStyles.numberInput}
