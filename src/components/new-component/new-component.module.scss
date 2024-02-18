@@ -1,0 +1,14 @@
+@import '@styles/theme.module.scss';
+
+.root {}
+
+.form {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.labe {
+    grid-row-start: 7;
+    grid-row-end: 8;
+}
