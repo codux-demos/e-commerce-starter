@@ -6,5 +6,35 @@ export interface ProductInfoProps {
 }
 
 export const ProductInfo = ({ className }: ProductInfoProps) => {
-    return <div className={classNames(styles.root, className)}>Product Details</div>;
+    return (
+        <div className={classNames(styles.root, className)}>
+            <div>
+                <div className={styles['info-title']}>PRODUCT INFO</div>
+                <div className={styles['info-prgrp']}>
+                    I’m a product detail. I’m a great place to add more information about your
+                    product such as sizing, material, care and cleaning instructions. This is also a
+                    great space to write what makes this product special and how your customers can
+                    benefit from this item.
+                </div>{' '}
+            </div>
+            <div>
+                <div className={styles['info-title']}>RETURN &amp; REFUND POLICY</div>
+                <div className={styles['info-prgrp']}>
+                    I’m a Return and Refund policy. I’m a great place to let your customers know
+                    what to do in case they are dissatisfied with their purchase. Having a
+                    straightforward refund or exchange policy is a great way to build trust and
+                    reassure your customers that they can buy with confidence.
+                </div>{' '}
+            </div>
+            <div>
+                <div className={styles['info-title']}>SHIPPING INFO</div>
+                <div className={styles['info-prgrp']}>
+                    I’m a shipping policy. I’m a great place to add more information about your
+                    shipping methods, packaging and cost. Providing straightforward information
+                    about your shipping policy is a great way to build trust and reassure your
+                    customers that they can buy from you with confidence.
+                </div>
+            </div>
+        </div>
+    );
 };

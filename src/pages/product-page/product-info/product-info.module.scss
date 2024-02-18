@@ -1,4 +1,21 @@
 @import '@styles/theme.module.scss';
 
 .root {
+    font: $paragraph-font;
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 70%;
+    padding-top: 20px;
+    gap: 20px;
+    text-wrap: pretty;
+}
+
+
+.info-title {
+    font: $small-title;
+    box-shadow: inset 0 -1px black;
+}
+
+.info-prgrp {
+    font: $extra-small-text;
 }
