@@ -53,7 +53,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 </label>
                 <button
                     onClick={() => wixApi.addToCart(product._id!)}
-                    className={commonStyles.primaryButton}
+                    className={classNames(commonStyles.secondaryButton, styles.productDetailsBtn)}
                 >
                     Add to Cart
                 </button>

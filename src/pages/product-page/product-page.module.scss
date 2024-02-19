@@ -22,11 +22,16 @@
     flex: 1.2;
     display: flex;
     flex-direction: column;
-    row-gap: 0.3rem;
     padding-top: 20px;
 }
 
 .no-product {
     padding: 30px;
     font: $large-text;
+}
+
+.productDetailsBtn {
+    width: 140px;
+    margin-top: 20px;
+    height: 47px;
 }
