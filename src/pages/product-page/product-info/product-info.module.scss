@@ -3,12 +3,10 @@
 .root {
     font: $paragraph-font;
     display: grid;
-    grid-template-rows: 1fr;
     width: 70%;
     padding-top: 20px;
     gap: 10px;
     text-wrap: pretty;
-    position: absolute;
 
 }
 
