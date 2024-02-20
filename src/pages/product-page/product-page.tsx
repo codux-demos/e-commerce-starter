@@ -45,19 +45,26 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 className={styles.left}
             />
             <div className={styles.right}>
-                <div>{product.name}</div>
-                {product.price && <div>{product.price?.formatted?.price}</div>}
-                <label>
-                    Quantity: <br />
-                    <input className={commonStyles.numberInput} type="number" placeholder="1" />
-                </label>
-                <button
-                    onClick={() => wixApi.addToCart(product._id!)}
-                    className={classNames(commonStyles.secondaryButton, styles.productDetailsBtn)}
-                >
-                    Add to Cart
-                </button>
-                <ProductInfo />
+                <div>
+                    <div>{product.name}</div>
+                    {product.price && <div>{product.price?.formatted?.price}</div>}
+                    <label>
+                        Quantity: <br />
+                        <input className={commonStyles.numberInput} type="number" placeholder="1" />
+                    </label>
+                    <button
+                        onClick={() => wixApi.addToCart(product._id!)}
+                        className={classNames(
+                            commonStyles.secondaryButton,
+                            styles.productDetailsBtn
+                        )}
+                    >
+                        Add to Cart
+                    </button>
+                </div>
+                <div className={styles.productInfo}>
+                    <ProductInfo />
+                </div>
             </div>
         </div>
     );
