@@ -9,7 +9,7 @@
     }
 
     gap: 1rem;
-    grid-template-rows:minmax(20vh, 30vh);
+    grid-template-rows:minmax(20vh, 30vh) minmax(20vh, 30vh) minmax(20vh, 30vh);
 }
 
 .mainImage {
