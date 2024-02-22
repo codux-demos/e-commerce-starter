@@ -8,6 +8,9 @@ import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
 import { ProductInfo } from './product-info/product-info';
+import ProductInfo_module from './product-info/product-info.module.scss';
+import CartItem_module from '../../components/cart/cart-item/cart-item.module.scss';
+import SiteFooter_module from '../../components/site-footer/site-footer.module.scss';
 
 export interface ProductPageProps {
     className?: string;
@@ -48,7 +51,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
             </div>
             <div className={styles.right}>
                 <div className={styles.productForm}>
-                    <div>{product.name}</div>
+                    <div className={styles.productTitle}>{product.name}</div>
                     {product.price && <div>{product.price?.formatted?.price}</div>}
                     <label>
                         Quantity: <br />
