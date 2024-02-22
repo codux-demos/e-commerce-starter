@@ -52,7 +52,11 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
             <div className={styles.right}>
                 <div className={styles.productForm}>
                     <div className={styles.productTitle}>{product.name}</div>
-                    {product.price && <div>{product.price?.formatted?.price}</div>}
+                    {product.price && (
+                        <div className={CartItem_module.price}>
+                            {product.price?.formatted?.price}
+                        </div>
+                    )}
                     <label>
                         Quantity: <br />
                         <input className={commonStyles.numberInput} type="number" placeholder="1" />
