@@ -42,7 +42,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     }
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.leftPanel}>
+            <div>
                 <ProductImages
                     mainImage={product.media?.mainMedia}
                     images={product.media?.items}

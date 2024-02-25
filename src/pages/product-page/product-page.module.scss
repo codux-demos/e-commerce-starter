@@ -16,9 +16,6 @@
 
 .left {
     grid-auto-flow: row;
-    flex-basis: 1px;
-    flex-shrink: 0;
-    flex-grow: 1;
 }
 
 .right {
@@ -45,19 +42,11 @@
     display: flex;
 }
 
-.productInfo {}
-
 .productForm {
     display: flex;
     flex-direction: column;
 }
 
-.leftPanel {
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 10;
-    flex-basis: 1px;
-}
 
 .productTitle {
     font: $title-font;
