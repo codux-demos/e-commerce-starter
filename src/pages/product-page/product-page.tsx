@@ -42,13 +42,11 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     }
     return (
         <div className={classNames(styles.root, className)}>
-            <div>
-                <ProductImages
-                    mainImage={product.media?.mainMedia}
-                    images={product.media?.items}
-                    className={styles.left}
-                />
-            </div>
+            <ProductImages
+                mainImage={product.media?.mainMedia}
+                images={product.media?.items}
+                className={styles.left}
+            />
             <div className={styles.right}>
                 <div className={styles.productForm}>
                     <div className={styles.productTitle}>{product.name}</div>

@@ -3,10 +3,7 @@
 .root {
     display: flex;
     flex-direction: row;
-    margin-right: auto;
-    margin-left: auto;
     width: 100%;
-    flex-shrink: 0;
     column-gap: 2em;
     padding-right: 30px;
     padding-left: 30px;
@@ -16,6 +13,8 @@
 
 .left {
     grid-auto-flow: row;
+    flex: 2;
+
 }
 
 .right {
@@ -23,8 +22,8 @@
     flex-direction: column;
     align-items: start;
     padding-top: 20px;
-    width: 50%;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex: 1;
 }
 
 .no-product {
