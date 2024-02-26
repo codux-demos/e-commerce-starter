@@ -55,3 +55,12 @@
     background-color: $white;
     margin: 20px;
 }
+
+.overlay-header-small {
+    max-width: 100%;
+    font: $small-thin-title;
+}
+
+.overlay-text-small {
+    font: $small-paragraph-font;
+}
