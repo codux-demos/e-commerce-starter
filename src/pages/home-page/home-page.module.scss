@@ -1,7 +1,6 @@
 @import '@styles/theme.module.scss';
 
-.root {
-}
+.root {}
 
 .title {
     font: $medium-title;
@@ -49,6 +48,7 @@
     color: $white;
     padding: 0 5px;
     display: inline-block;
+    margin-bottom: 10%;
 }
 
 .home-page-carousel {
