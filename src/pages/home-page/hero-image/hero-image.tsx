@@ -36,8 +36,8 @@ export const HeroImage = ({
                 <div className={styles.overlay}>
                     <div>
                         <div className={HomePage_module['top-label-highlighted']}>{topLabel}</div>
-                        <h1 className={HomePage_module['overlay-text-small']}>{title}</h1>
-                        <p className={HomePage_module['overlay-header-small']}>{bottomLabel}</p>
+                        <h1 className={styles['overlay-text']}>{title}</h1>
+                        <p className={styles['overlay-header']}>{bottomLabel}</p>
                         {primaryButtonLabel && (
                             <button
                                 className={CommonStyles_module.secondaryButton}
