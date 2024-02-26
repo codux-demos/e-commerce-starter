@@ -2,16 +2,17 @@
 
 .root {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     & img {
         width: 100%;
     }
 
     gap: 1rem;
+    grid-template-rows:minmax(20vh, 30vh);
 }
 
 .mainImage {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
 }
