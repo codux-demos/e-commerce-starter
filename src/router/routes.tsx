@@ -11,10 +11,10 @@ export const routes: RouteObject[] = [
         path: '/',
         element: <SiteWrapper />,
         children: [
-            { path: ROUTES.home.path, index: true, element: <HomePage /> },
-            { path: ROUTES.products.path, element: <ProductsPage /> },
-            { path: ROUTES.product.path, element: <ProductPage /> },
-            { path: ROUTES.about.path, element: <AboutPage /> },
+            { path: ROUTES.home.route, index: true, element: <HomePage /> },
+            { path: ROUTES.products.route, element: <ProductsPage /> },
+            { path: ROUTES.product.route, element: <ProductPage /> },
+            { path: ROUTES.about.route, element: <AboutPage /> },
         ],
     },
 ];

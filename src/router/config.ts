@@ -6,11 +6,11 @@ const PRODUCTS = '/products';
 const PRODUCT = `/product/:id`;
 
 export const ROUTES = {
-    home: { path: HOME, to: () => HOME },
-    about: { path: ABOUT, to: () => ABOUT },
-    products: { path: PRODUCTS, to: () => PRODUCTS },
+    home: { route: HOME, to: () => HOME },
+    about: { route: ABOUT, to: () => ABOUT },
+    products: { route: PRODUCTS, to: () => PRODUCTS },
     product: {
-        path: PRODUCT,
+        route: PRODUCT,
         to: (productId: string) => generatePath(PRODUCT, { id: productId }),
     },
 };
