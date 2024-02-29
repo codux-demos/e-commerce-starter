@@ -1,6 +1,8 @@
 @import '@styles/theme.module.scss';
 
-.root {}
+.root {
+    padding-bottom: 90px;
+}
 
 .title {
     font: $medium-title;
