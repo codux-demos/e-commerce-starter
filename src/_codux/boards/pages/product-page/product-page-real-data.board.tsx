@@ -1,13 +1,13 @@
 import { createBoard } from '@wixc3/react-board';
-import { PageWrapper } from '../../../board-wrappers/page-wrapper';
 import { ProductPage } from '../../../../pages/product-page/product-page';
+import { PageWrapperRealData } from '../../../board-wrappers/page-wrapper-real-data';
 
 export default createBoard({
-    name: 'Product Details Page',
+    name: 'Product Page Real Data',
     Board: () => (
-        <PageWrapper>
+        <PageWrapperRealData>
             <ProductPage />
-        </PageWrapper>
+        </PageWrapperRealData>
     ),
     isSnippet: false,
     environmentProps: {
@@ -17,7 +17,5 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
-        windowWidth: 1024,
-        windowHeight: 768,
     },
 });
