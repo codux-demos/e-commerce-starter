@@ -1,6 +1,7 @@
 @import '@styles/theme.module.scss';
 
 .root {
+    padding-bottom: 90px;
 }
 
 .title {
@@ -49,9 +50,19 @@
     color: $white;
     padding: 0 5px;
     display: inline-block;
+    margin-bottom: 5%;
 }
 
 .home-page-carousel {
     background-color: $white;
     margin: 20px;
+}
+
+.overlay-header-small {
+    max-width: 100%;
+    font: $small-thin-title;
+}
+
+.overlay-text-small {
+    font: $small-paragraph-font;
 }
