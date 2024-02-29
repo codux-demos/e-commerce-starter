@@ -3,6 +3,7 @@
 .root {
     position: relative;
     color: $white;
+    border: 5px solid black;
 }
 
 .overlay {
@@ -16,8 +17,10 @@
 }
 
 .image-container {
-    display: flex;
+    // display: flex;
     overflow: hidden;
+    color: $white;
+    position: relative;
 }
 
 .image {
@@ -54,4 +57,21 @@
     height: 100%;
     align-content: center;
     justify-items: center;
+}
+
+.top-label-highlighted {
+    background-color: red;
+    color: $white;
+    padding: 0 5px;
+    display: inline-block;
+    margin-bottom: 5%;
+}
+
+.overlay-text-small {
+    font: $small-paragraph-font;
+}
+
+.overlay-header-small {
+    max-width: 100%;
+    font: $small-thin-title;
 }
