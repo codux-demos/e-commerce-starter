@@ -36,7 +36,11 @@ export function createProduct(id?: string): Product {
             discountedPrice: parseFloat(price),
         },
         productType: products.ProductType.digital,
-        additionalInfoSections: [],
+        additionalInfoSections: [
+            { title: 'PRODUCT INFO', description: faker.lorem.paragraph() },
+            { title: 'RETURN & REFUND POLICY', description: faker.lorem.paragraph() },
+            { title: 'SHIPPING INFO', description: faker.lorem.paragraph() },
+        ],
         collectionIds: [],
         customTextFields: [],
         inventoryItemId: '',
