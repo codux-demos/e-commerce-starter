@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './home-page.module.scss';
+import { Card } from './card/card';
 import { HeroImage } from './hero-image/hero-image';
 import { ROUTES } from '../../router/config';
 import { products } from '@wix/stores';
@@ -38,15 +39,15 @@ export const HomePage = ({ className }: HomePageProps) => {
             </div>
             {products?.[0]?._id && products?.[1]?._id && (
                 <div className={styles['two-hero-images']}>
-                    <HeroImage
+                    <Card
                         imageUrl="https://static.wixstatic.com/media/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg/v1/fill/w_1622,h_749,al_t,q_85,usm_0.66_1.00_0.01,enc_auto/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg"
                         topLabel="Holiday Deals"
-                        bottomLabel="Selected Smartphone Brands"
+                        bottomLabel="Top Smartphone Brands"
                         secondaryButtonLabel="Shop"
                         title="Up to 30% off"
                         onSecondaryButtonClick={() => navigate(ROUTES.product.to(products[0]._id!))}
                     />
-                    <HeroImage
+                    <Card
                         imageUrl="https://static.wixstatic.com/media/c837a6_d84a631864a442a496670bc2d787c6a0~mv2.jpg/v1/fill/w_1622,h_749,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_d84a631864a442a496670bc2d787c6a0~mv2.jpg"
                         topLabel="Just In"
                         bottomLabel="Top Headphone Brands"
