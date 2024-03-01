@@ -24,7 +24,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
             return (await wixClient.products.queryProducts().find()).items;
         },
         getPromotedProducts: async () => {
-            return (await wixClient.products.queryProducts().limit(2).find()).items;
+            return (await wixClient.products.queryProducts().limit(4).find()).items;
         },
         getProduct: async (id: string | undefined) => {
             return id

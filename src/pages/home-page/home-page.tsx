@@ -5,7 +5,7 @@ import { ROUTES } from '../../router/config';
 import { products } from '@wix/stores';
 import { useContext, useEffect, useState } from 'react';
 import { WixAPIContext } from '../../api/WixAPIContextProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../components/product-card/product-card';
 
 export interface HomePageProps {
@@ -40,14 +40,19 @@ export const HomePage = ({ className }: HomePageProps) => {
                     <p>This is a paragraph.</p>Heading 1
                 </h1>
             </div>
-            {products?.[0]?._id && products?.[1]?._id && (
-                <div className={styles['two-hero-images']}>
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                </div>
-            )}
+            <div>
+                {products.map((product) =>
+                    product._id && product.name ? (
+                        <Link to={ROUTES.product.to(product._id)} key={product._id}>
+                            <ProductCard
+                                imageUrl={product.media?.items?.at(0)?.image?.url}
+                                name={product.name}
+                                price={product.price ?? undefined}
+                            />
+                        </Link>
+                    ) : null
+                )}
+            </div>
         </div>
     );
 };
