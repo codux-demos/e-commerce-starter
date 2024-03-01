@@ -10,8 +10,8 @@ export interface ProductInfoProps {
 export const ProductInfo = ({ className, productInfo }: ProductInfoProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            {productInfo?.map((info) => (
-                <div>
+            {productInfo?.map((info, index) => (
+                <div key={info.title || index}>
                     <div className={styles['info-title']}>{info.title}</div>
                     <div className={styles['info-prgrp']}>{info.description}</div>
                 </div>
