@@ -19,7 +19,7 @@ export const ProductCard = ({ name, imageUrl, className, price }: GalleryCardPro
                 <div className={styles.noImage}>No image</div>
             )}
             <div className={styles.cardContent}>
-                <p>{name}</p>
+                <p className={styles.description}>{name}</p>
                 {price?.formatted && (
                     <p className={CommonStyles_module.price}>{price.formatted.price}</p>
                 )}
