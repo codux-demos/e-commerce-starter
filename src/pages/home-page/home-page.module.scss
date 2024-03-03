@@ -2,6 +2,8 @@
 
 .root {
     padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -65,4 +67,22 @@
 
 .overlay-text-small {
     font: $small-paragraph-font;
+}
+.cardsLayout {
+    display: flex;
+    flex-direction: row;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    column-gap: 20px;
+}
+.HPprgrp {
+    font: $large-paragraph;
+    margin-bottom: 40px;
+}
+.hero-paragraph {
+    text-align: center;
+}
+.hero-title {
+    margin-top: 80px;
+    font: $extra-large-thin-title;
 }
