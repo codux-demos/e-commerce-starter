@@ -26,7 +26,7 @@ export const HomePage = ({ className }: HomePageProps) => {
 
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles['top-banner']}>
+            <div className={styles['hero-paragraph']}>
                 <HeroImage
                     title="Incredible Prices on All Your Favorite Items"
                     topLabel="Best Prices"
@@ -34,13 +34,13 @@ export const HomePage = ({ className }: HomePageProps) => {
                     primaryButtonLabel="Shop Now"
                     topLabelClassName={styles['top-label-highlighted']}
                     onPrimaryButtonClick={() => navigate(ROUTES.products.to())}
-                    imageUrl="https://static.wixstatic.com/media/c22c23_e140bfa8cd6f4cb2ac5ee6e204f64073~mv2.jpg"
+                    imageUrl="https://images.unsplash.com/photo-1622542796254-5b9c46ab0d2f?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dwixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
                 />
-                <h1>
-                    <p>This is a paragraph.</p>Heading 1
+                <h1 className={styles['hero-title']}>
+                    Heading 1<p className={styles.HPprgrp}>This is a paragraph.</p>
                 </h1>
             </div>
-            <div>
+            <div className={styles.cardsLayout}>
                 {products.map((product) =>
                     product._id && product.name ? (
                         <Link to={ROUTES.product.to(product._id)} key={product._id}>
@@ -50,7 +50,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                                 price={product.price ?? undefined}
                             />
                         </Link>
-                    ) : null
+                    ) : null,
                 )}
             </div>
         </div>

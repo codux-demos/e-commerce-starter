@@ -23,6 +23,8 @@
 .image {
     object-fit: cover;
     object-position: 50% 0%;
+    height: 600px;
+    width: 100vw;
 }
 
 .overlay-text {
@@ -31,7 +33,7 @@
     font-size: 1.5vw;
     font: $paragraph-font;
     margin-bottom: 0.6em;
-    margin-top: 0.6em;
+    margin-top: 2em;
 }
 
 .overlay-header {
@@ -39,6 +41,7 @@
     font-size: 3vw;
     font: $extra-large-thin-title;
     margin-bottom: 0.8em;
+    text-align: start;
 }
 
 .overlay-button {

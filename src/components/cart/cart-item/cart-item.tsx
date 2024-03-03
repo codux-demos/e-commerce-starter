@@ -27,14 +27,16 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
         <div className={classNames(styles.root, { [styles.divider]: !isLast }, className)}>
             <img src={cartItem.image} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
-                <h4>{name}</h4>
-                <span className={styles.price}>{cartItem.price?.formattedConvertedAmount}</span>
+                <h4 className={styles.description}>{name}</h4>
+                <span className={commonStyles.price}>
+                    {cartItem.price?.formattedConvertedAmount}
+                </span>
                 <input
                     type="number"
-                    className={commonStyles.numberInput}
                     value={cartItem.quantity}
                     onChange={updateQuantity}
                     min={0}
+                    className={commonStyles.numberInput}
                 />
             </div>
         </div>
