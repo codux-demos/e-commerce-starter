@@ -65,7 +65,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                     </button>
                 </div>
                 <div className={styles.productInfo}>
-                    <ProductInfo />
+                    <ProductInfo productInfo={product.additionalInfoSections} />
                 </div>
             </div>
         </div>

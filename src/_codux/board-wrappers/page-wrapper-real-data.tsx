@@ -1,19 +1,47 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { SiteWrapper } from '../../components/site-wrapper/site-wrapper';
-import { WixAPIContextProvider } from '../../api/WixAPIContextProvider';
+import { WixAPI, WixAPIContext, WixAPIContextProvider } from '../../api/WixAPIContextProvider';
+import { useContext, useEffect, useState } from 'react';
 
-export function PageWrapperRealData(props: { path?: string; children: React.ReactNode }) {
-    const router = createMemoryRouter([
-        {
-            path: '/',
-            element: <SiteWrapper />,
-            children: [{ index: true, element: props.children }],
-        },
-    ]);
+type Props = {
+    path?: string | ((wixClient: WixAPI) => Promise<string>);
+    route?: string;
+    children: React.ReactNode;
+};
 
+export function PageWrapperRealData(props: Props) {
     return (
         <WixAPIContextProvider>
-            <RouterProvider router={router} />
+            <PartialRouterProvider {...props} />
         </WixAPIContextProvider>
     );
+}
+
+function PartialRouterProvider(props: Props) {
+    const wixClient = useContext(WixAPIContext);
+    const [path, setPath] = useState<string | undefined>(undefined);
+    useEffect(() => {
+        if (props.path) {
+            if (typeof props.path === 'function') {
+                props.path(wixClient).then(setPath);
+            } else {
+                setPath(props.path);
+            }
+        }
+    }, [props.path]);
+
+    if (!path && props.path) return null;
+
+    const router = createMemoryRouter(
+        [
+            {
+                path: '/',
+                element: <SiteWrapper />,
+                children: [{ index: true, element: props.children, path: props.route }],
+            },
+        ],
+        { initialEntries: [path ?? '/'] }
+    );
+
+    return <RouterProvider router={router} />;
 }

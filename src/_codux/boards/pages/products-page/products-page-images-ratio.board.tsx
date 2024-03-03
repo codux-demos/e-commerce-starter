@@ -1,12 +1,16 @@
 import { createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '../../../board-wrappers/page-wrapper';
-import { ProductPage } from '../../../../pages/product-page/product-page';
+import { ProductsPage } from '../../../../pages/products-page/products-page';
 
 export default createBoard({
-    name: 'Product Details Page',
+    name: 'Products Page Images Ratio',
     Board: () => (
-        <PageWrapper>
-            <ProductPage />
+        <PageWrapper
+            settings={{
+                differentRatioImages: true,
+            }}
+        >
+            <ProductsPage />
         </PageWrapper>
     ),
     isSnippet: false,
@@ -17,7 +21,5 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
-        windowWidth: 1024,
-        windowHeight: 768,
     },
 });

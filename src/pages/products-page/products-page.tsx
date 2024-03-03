@@ -34,9 +34,10 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
                                     imageUrl={item.media?.items?.at(0)?.image?.url}
                                     name={item.name}
                                     price={item.price ?? undefined}
+                                    className={styles.productCard}
                                 />
                             </Link>
-                        )
+                        ),
                 )}
             </div>
         </div>

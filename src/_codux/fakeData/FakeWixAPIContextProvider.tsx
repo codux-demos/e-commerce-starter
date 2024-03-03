@@ -6,11 +6,16 @@ import { faker } from '@faker-js/faker';
 export type WixApiSettings = {
     numberOfCartItems?: number;
     numberOfProducts?: number;
+    differentRatioImages?: boolean;
 };
 
 function getWixApi(settings?: WixApiSettings): WixAPI {
     faker.seed(123);
-    const products = createProducts(settings?.numberOfProducts || 10);
+    const products = createProducts(
+        settings?.numberOfProducts || 10,
+        settings?.differentRatioImages
+    );
+    console.log('products', products);
 
     return {
         getAllProducts: async () => {
@@ -18,10 +23,10 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
         },
         getProduct: async (id: string | undefined) => {
             faker.seed(123);
-            return createProduct(id);
+            return createProduct(id, settings?.differentRatioImages);
         },
         getPromotedProducts: async () => {
-            return products.slice(0, 2);
+            return products.slice(0, 4);
         },
         getCart: () => {
             faker.seed(123);
