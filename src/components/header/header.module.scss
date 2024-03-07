@@ -5,7 +5,7 @@
     flex-direction: row;
     padding-left: 1em;
     justify-content: space-between;
-    padding-right: 3em;
+    padding-right: 1em;
     align-items: center;
     height: 4em;
     font: $medium-text;
@@ -21,5 +21,4 @@
         background-color: $white;
         border-radius: 35px;
     }
-
 }
