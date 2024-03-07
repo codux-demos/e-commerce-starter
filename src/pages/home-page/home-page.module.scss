@@ -87,3 +87,37 @@
     margin-top: 80px;
     font: $extra-large-thin-title;
 }
+
+// --- MEDIA QUERIES ---
+
+@media (1400px <=width) {
+    .root {
+      background-color: aqua;
+    }
+
+    .content {
+        max-width: 1400px;
+    }
+
+}
+
+@media (980px <=width < 1400px) {
+    .root {
+      background-color: red;
+    }
+
+}
+
+@media (420px <=width < 980px) {
+    .root {
+      background-color: plum;
+
+    }
+}
+
+@media (width < 420px) {
+    .root {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

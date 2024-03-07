@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './hero-image.module.scss';
 import commonStyles from '@styles/common-styles.module.scss';
 import CommonStyles_module from '../../../styles/common-styles.module.scss';
-import heroImage from '../../../assets/img/heroImage04.png';
+import heroImage from '../../../assets/img/[1024_640]_heroImage04.jpg';
 
 export interface HeroImageProps {
     className?: string;
