@@ -48,6 +48,8 @@ export const HomePage = ({ className }: HomePageProps) => {
                                 imageUrl={product.media?.items?.at(0)?.image?.url}
                                 name={product.name}
                                 price={product.price ?? undefined}
+                                    className={styles.productCard}
+
                             />
                         </Link>
                     ) : null,

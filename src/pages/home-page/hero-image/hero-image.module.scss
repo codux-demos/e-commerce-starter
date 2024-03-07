@@ -82,11 +82,27 @@
     .root {
         background-color: plum;
     }
+
+     .overlay-text {
+        display: block;
+        width: fit-content;
+        font-size: 0.4vw;
+        font: $paragraph-font;
+        margin-bottom: 0.6em;
+        margin-top: 2em;
+        text-align: start;
+    }
+
+    .overlay-header {
+        max-width: 60%;
+        font: $small-thin-title;
+        margin-bottom: 0.8em;
+        text-align: start;
+    }
 }
 
 @media (width < 420px) {
     .root {
-        padding-left: 24px;
-        padding-right: 24px;
+
     }
 }

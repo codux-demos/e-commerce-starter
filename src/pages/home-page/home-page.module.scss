@@ -70,11 +70,13 @@
     font: $small-paragraph-font;
 }
 .cardsLayout {
-    display: flex;
+    display: grid;
     flex-direction: row;
     padding-left: 8vw;
     padding-right: 8vw;
     column-gap: 20px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .HPprgrp {
     font: $large-paragraph;
@@ -82,46 +84,51 @@
 }
 .hero-paragraph {
     text-align: center;
+    width: 100vw;
 }
 .hero-title {
     margin-top: 80px;
     font: $extra-large-thin-title;
 }
 
+.productCard {
+    height: 300px;
+    width: 20vw;
+}
+
 // --- MEDIA QUERIES ---
 
 @media (1400px <=width) {
     .root {
-      background-color: aqua;
+        background-color: aqua;
     }
 
     .content {
         max-width: 1400px;
     }
-
 }
 
 @media (980px <=width < 1400px) {
     .root {
-      background-color: red;
+        background-color: red;
     }
 
-.cardsLayout {
-    padding-left: 4vw;
-    padding-right: 4vw;
-}
+    .cardsLayout {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        width: 100vw;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 @media (420px <=width < 980px) {
     .root {
-      background-color: plum;
-
+        background-color: plum;
     }
 }
 
 @media (width < 420px) {
     .root {
-        padding-left: 24px;
-        padding-right: 24px;
     }
 }

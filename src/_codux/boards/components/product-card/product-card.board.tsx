@@ -8,7 +8,6 @@ export default createBoard({
     name: 'Product Card',
     Board: () => (
         <ProductCard
-            imageUrl={noImage}
             name='Shel 50" Class LED 4K UHD Smart TV'
             price={{ formatted: { price: '$85' } }}
             className={ProductCard_board_module.productCard}
