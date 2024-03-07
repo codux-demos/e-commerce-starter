@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     padding: 1rem 1.4rem;
-    max-width: 241px;
+    font-size: 24px;
 }
 
 .image {
@@ -30,4 +30,44 @@
 .description {
     text-align: left;
     font: $medium-title;
+}
+
+// --- MEDIA QUERIES ---
+
+@media (1400px <=width) {
+    .root {
+        background-color: aqua;
+    }
+
+    .content {
+        max-width: 1400px;
+    }
+}
+
+@media (980px <=width < 1400px) {
+    .root {
+        background-color: red;
+    }
+
+    .cardContent {
+        font-size: 24px;
+    }
+
+    .cardsLayout {
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+}
+
+@media (420px <=width < 980px) {
+    .root {
+        background-color: plum;
+    }
+}
+
+@media (width < 420px) {
+    .root {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
