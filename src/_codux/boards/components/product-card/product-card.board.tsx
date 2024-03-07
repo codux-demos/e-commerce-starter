@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
 import { ProductCard } from '../../../../components/product-card/product-card';
 import ProductCard_board_module from './product-card.board.module.scss';
-import noImage from '../../../../assets/img/noImage/[200_260]_noImage.jpg';
+import noImage from '../../../../assets/img/noImage/[160_200]_noImage.svg';
 
 
 export default createBoard({
