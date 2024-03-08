@@ -10,11 +10,6 @@ export default createBoard({
     Board: () => <CartItem cartItem={cartItem} />,
     isSnippet: false,
     environmentProps: {
-        canvasMargin: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
         },
     },
 });

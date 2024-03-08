@@ -15,9 +15,11 @@ export function ProductImages(props: {
                 alt={props.mainImage?.title}
                 className={styles.mainImage}
             />
-            {restImages?.map((item, index) => {
-                return <img key={index} src={item.image?.url} alt={item.title} />;
-            })}
+            <div className={styles.images}>
+                {restImages?.map((item, index) => {
+                    return <img key={index} src={item.image?.url} alt={item.title} />;
+                })}
+            </div>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
 
     & img {
@@ -9,10 +9,17 @@
     }
 
     gap: 1rem;
-    grid-template-rows:minmax(20vh, 30vh);
+    grid-template-rows: minmax(20vh, 30vh);
+    flex-direction: column;
 }
 
 .mainImage {
     grid-column-start: 1;
     grid-column-end: 4;
+}
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 12px;
 }
