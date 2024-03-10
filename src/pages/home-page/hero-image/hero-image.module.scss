@@ -29,12 +29,11 @@
 
 .overlay-text {
     display: block;
+    text-align: start;
     width: fit-content;
-    font-size: 1.5vw;
     font: $paragraph-font;
     margin-bottom: 0.6em;
     margin-top: 2em;
-    text-align: start;
 }
 
 .overlay-header {
@@ -84,25 +83,30 @@
     }
 
      .overlay-text {
-        display: block;
-        width: fit-content;
-        font-size: 0.4vw;
-        font: $paragraph-font;
+        font: $medium-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
-        text-align: start;
     }
 
     .overlay-header {
         max-width: 60%;
         font: $small-thin-title;
         margin-bottom: 0.8em;
-        text-align: start;
     }
 }
 
 @media (width < 420px) {
     .root {
+    }
+         .overlay-text {
+        font: $small-paragraph-font;
+        margin-bottom: 0.6em;
+        margin-top: 2em;
+    }
 
+    .overlay-header {
+        max-width: 60%;
+        font: $small-thin-title;
+        margin-bottom: 0.8em;
     }
 }
