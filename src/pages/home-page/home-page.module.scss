@@ -70,11 +70,13 @@
     font: $small-paragraph-font;
 }
 .cardsLayout {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     padding-left: 8vw;
     padding-right: 8vw;
     column-gap: 20px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
 }
 .HPprgrp {
     font: $large-paragraph;
@@ -82,8 +84,76 @@
 }
 .hero-paragraph {
     text-align: center;
+    width: 100vw;
 }
 .hero-title {
     margin-top: 80px;
     font: $extra-large-thin-title;
+}
+
+.productCard {
+    width: 20vw;
+}
+
+// --- MEDIA QUERIES ---
+
+@media (1400px <=width) {
+    .root {
+        background-color: aqua;
+    }
+
+    .content {
+        max-width: 1400px;
+    }
+}
+
+/*
+@media (980px <=width < 1400px) {
+    .root {
+        background-color: red;
+    }
+}
+*/
+
+@media (420px <=width < 980px) {
+    .root {
+        background-color: plum;
+    }
+
+    .cardsLayout {
+        padding-left: 4vw;
+        padding-right: 4vw;
+        column-gap: 4vw;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .productCard {
+        width: 40vw;
+    }
+
+    .HPprgrp {
+        font: $medium-paragraph-font;
+        margin-bottom: 40px;
+    }
+}
+
+@media (width < 420px) {
+    .root {
+        background-color: yellow;
+    }
+    .cardsLayout {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        column-gap: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .productCard {
+        width: 90vw;
+    }
+
+    .HPprgrp {
+        font: $small-paragraph-font;
+        margin-bottom: 40px;
+    }
 }
