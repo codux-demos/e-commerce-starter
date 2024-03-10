@@ -16,13 +16,13 @@ export const Header = ({ className }: HeaderProps) => {
                 LOGO
             </Link>
             <div className={styles.menu}>
-                <Link to="/" className={CommonStyles_module.primaryButton}>
+                <Link to="/" className={CommonStyles_module.secondaryButton}>
                     Home
                 </Link>
-                <Link to={ROUTES.products.to()} className={CommonStyles_module.primaryButton}>
+                <Link to={ROUTES.products.to()} className={CommonStyles_module.secondaryButton}>
                     Products
                 </Link>
-                <Link to={ROUTES.about.to()} className={CommonStyles_module.primaryButton}>
+                <Link to={ROUTES.about.to()} className={CommonStyles_module.secondaryButton}>
                     About
                 </Link>
                 <Cart />

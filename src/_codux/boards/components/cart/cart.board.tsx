@@ -5,7 +5,7 @@ import { CartDrawer } from '../../../../components/cart/cart-drawer';
 export default createBoard({
     name: 'Cart',
     Board: () => (
-        <ComponentWrapper settings={{ numberOfCartItems: 3 }}>
+        <ComponentWrapper settings={{ numberOfCartItems: 5 }}>
             <CartDrawer />
         </ComponentWrapper>
     ),
