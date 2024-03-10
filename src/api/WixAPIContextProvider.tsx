@@ -2,8 +2,14 @@ import { currentCart } from '@wix/ecom';
 import { OAuthStrategy, createClient } from '@wix/sdk';
 import { products } from '@wix/stores';
 import React, { FC, useMemo } from 'react';
+import Cookies from 'js-cookie';
 
-// const refreshToken = JSON.parse(Cookies.get(WIX_REFRESH_TOKEN) || '{}');
+export const WIX_SESSION_TOKEN = 'wix_refreshToken';
+
+function getTokens() {
+    const tokens = Cookies.get(WIX_SESSION_TOKEN);
+    return tokens ? JSON.parse(tokens) : undefined;
+}
 
 function getWixClient() {
     return createClient({
@@ -13,7 +19,7 @@ function getWixClient() {
         },
         auth: OAuthStrategy({
             clientId: '84452635-47cb-45b8-be5b-ca3938e93193',
-            // tokens: { refreshToken, accessToken: { value: '', expiresAt: 0 } },
+            tokens: getTokens(),
         }),
     });
 }
@@ -31,7 +37,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                 ? (await wixClient.products.queryProducts().eq('_id', id).limit(1).find()).items[0]
                 : undefined;
         },
-        getCart: () => {
+        getCart: async () => {
             return wixClient.currentCart.getCurrentCart();
         },
         updateCartItemQuantity: (id: string | undefined | null, quantity: number) => {
@@ -45,18 +51,20 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
         removeItemFromCart: (id: string) => {
             return wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
         },
-        addToCart: (id: string) => {
-            return wixClient.currentCart.addToCurrentCart({
+        addToCart: async (id: string) => {
+            await wixClient.currentCart.addToCurrentCart({
                 lineItems: [
                     {
                         catalogReference: {
                             catalogItemId: id,
-                            appId: '215238eb-22a5-4c36-9e7b-e7c08025e04e',
+                            appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
                         },
                         quantity: 1,
                     },
                 ],
             });
+            const tokens = wixClient.auth.getTokens();
+            Cookies.set(WIX_SESSION_TOKEN, JSON.stringify(tokens));
         },
     };
 }
