@@ -5,7 +5,7 @@ import { ROUTES } from '../../../../router/config';
 import { WixAPI } from '../../../../api/WixAPIContextProvider';
 
 export default createBoard({
-    name: 'Product Details Page Real Data',
+    name: 'Page Product Details Real Data',
     Board: () => {
         async function getProductPath(wixClient: WixAPI) {
             const productId = await wixClient
