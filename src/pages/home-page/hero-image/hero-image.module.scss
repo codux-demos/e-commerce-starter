@@ -1,5 +1,6 @@
 @import '@styles/theme.module.scss';
 
+
 .root {
     position: relative;
     color: $white;
@@ -63,7 +64,8 @@
 
 @media (1400px <=width) {
     .root {
-        background-color: aqua;
+        background-color: yellow;
+        background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
     }
 
     .content {
