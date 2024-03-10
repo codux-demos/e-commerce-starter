@@ -3,6 +3,7 @@ import commonStyles from '@styles/common-styles.module.scss';
 import { useState } from 'react';
 import { CartDrawer } from './cart-drawer';
 import { Drawer } from '../drawer/drawer';
+import CommonStyles_module from '../../styles/common-styles.module.scss';
 
 export interface CartProps {
     className?: string;
@@ -14,10 +15,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
 
     return (
         <>
-            <button
-                onClick={() => setIsOpen(true)}
-                className={classNames(commonStyles.primaryButton, className)}
-            >
+            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.secondaryButton}>
                 Cart
             </button>
             {isOpen ? (
