@@ -14,7 +14,6 @@
 .left {
     grid-auto-flow: row;
     flex: 2;
-
 }
 
 .right {
@@ -34,7 +33,7 @@
 .productDetailsBtn {
     width: 140px;
     margin-top: 20px;
-    height: 47px;
+    height: 40px;
 }
 
 .productInfo {
@@ -45,7 +44,6 @@
     display: flex;
     flex-direction: column;
 }
-
 
 .productTitle {
     font: $title-font;
