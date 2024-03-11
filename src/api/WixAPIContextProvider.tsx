@@ -74,7 +74,10 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
 }
 
 export type WixAPI = ReturnType<typeof getWixApi>;
-export type Cart = Awaited<ReturnType<WixAPI['getCart']>>;
+//we add subtotal here, because it's missing on the original cart type but exists on the returned value.
+export type Cart = Awaited<ReturnType<WixAPI['getCart']>> & {
+    subtotal: Cart['lineItems'][0]['price'];
+};
 
 export const WixAPIContext = React.createContext<ReturnType<typeof getWixApi>>(
     {} as ReturnType<typeof getWixApi>

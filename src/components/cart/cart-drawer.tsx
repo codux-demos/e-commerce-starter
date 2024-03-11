@@ -8,11 +8,6 @@ export function CartDrawer() {
 
     const isEmpty = !cart?.lineItems || cart.lineItems.length === 0;
 
-    const totalPrice = cart?.lineItems?.reduce((acc, { price }) => {
-        const itemPrice = price?.convertedAmount ? parseFloat(price?.convertedAmount) : 0;
-        return acc + itemPrice;
-    }, 0);
-
     return isEmpty ? (
         <div>Cart is empty</div>
     ) : (
@@ -23,10 +18,7 @@ export function CartDrawer() {
                 ))}
             </div>
             <div>
-                <label>
-                    Subtotal: {cart?.currency}
-                    {totalPrice}
-                </label>
+                <label>Subtotal: {cart.subtotal?.formattedConvertedAmount}</label>
                 <button className={commonStyles.primaryButton}>Checkout</button>
             </div>
         </div>

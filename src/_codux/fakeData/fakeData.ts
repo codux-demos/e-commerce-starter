@@ -86,6 +86,12 @@ export function createCart(products: products.Product[]): Cart {
         appliedDiscounts: [],
         conversionCurrency: 'USD',
         weightUnit: WeightUnit.KG,
+        subtotal: {
+            amount: '100',
+            convertedAmount: '100',
+            formattedConvertedAmount: '$100',
+            formattedAmount: '$100',
+        },
     };
 }
 
