@@ -1,31 +1,22 @@
 import classNames from 'classnames';
 import styles from './products-page.module.scss';
-import { products } from '@wix/stores';
-import { useState, useContext, useEffect } from 'react';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
 import { ProductCard } from '../../components/product-card/product-card';
+import { useProducts } from '../../api/api-hooks';
 
 export interface ProductsPageProps {
     className?: string;
 }
 
 export const ProductsPage = ({ className }: ProductsPageProps) => {
-    const [myProducts, setMyProducts] = useState<products.Product[]>([]);
+    const { data: myProducts } = useProducts();
 
-    const wixApi = useContext(WixAPIContext);
-
-    useEffect(() => {
-        wixApi.getAllProducts().then((products) => {
-            setMyProducts(products);
-        });
-    }, [wixApi]);
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles.title}>All Products</div>
             <div className={styles.gallery}>
-                {myProducts.map(
+                {myProducts?.map(
                     (item) =>
                         item._id &&
                         item.name && (
@@ -37,7 +28,7 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
                                     className={styles.productCard}
                                 />
                             </Link>
-                        ),
+                        )
                 )}
             </div>
         </div>

@@ -1,19 +1,10 @@
-import { cart } from '@wix/ecom';
-import { Drawer } from '../drawer/drawer';
 import { CartItem } from './cart-item/cart-item';
 import commonStyles from '@styles/common-styles.module.scss';
 import styles from './cart.module.scss';
-import { useContext, useState, useEffect } from 'react';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
+import { useCart } from '../../api/api-hooks';
 
 export function CartDrawer() {
-    const wixClient = useContext(WixAPIContext);
-    const [cart, setCart] = useState<cart.Cart | null>(null);
-    useEffect(() => {
-        wixClient.getCart().then((_cart) => {
-            setCart(_cart);
-        });
-    }, [wixClient]);
+    const { data: cart } = useCart();
 
     const isEmpty = !cart?.lineItems || cart.lineItems.length === 0;
 
