@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from 'react';
-import { createProducts, createProduct, createCart } from './fakeData';
+import { createProducts, createProduct, createCart, getCartTotals } from './fakeData';
 import { WixAPI, WixAPIContext } from '../../api/WixAPIContextProvider';
 import { faker } from '@faker-js/faker';
 
@@ -15,7 +15,6 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
         settings?.numberOfProducts || 10,
         settings?.differentRatioImages
     );
-    console.log('products', products);
 
     return {
         getAllProducts: async () => {
@@ -35,6 +34,10 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
                     ? []
                     : products.slice(0, settings?.numberOfCartItems || 2);
             return Promise.resolve(createCart(productsInCart));
+        },
+        getCartTotals: () => {
+            faker.seed(123);
+            return Promise.resolve(getCartTotals(settings?.numberOfCartItems || 2));
         },
         //@ts-expect-error - This is a fake implementation
         updateCartItemQuantity: (id: string | undefined | null, quantity: number) => {

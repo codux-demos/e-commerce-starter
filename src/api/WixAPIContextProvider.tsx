@@ -38,8 +38,11 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                 ? (await wixClient.products.queryProducts().eq('_id', id).limit(1).find()).items[0]
                 : undefined;
         },
-        getCart: async () => {
+        getCart: () => {
             return wixClient.currentCart.getCurrentCart();
+        },
+        getCartTotals: () => {
+            return wixClient.currentCart.estimateCurrentCartTotals();
         },
         updateCartItemQuantity: async (id: string | undefined | null, quantity: number) => {
             const result = await wixClient.currentCart.updateCurrentCartLineItemQuantity([
@@ -74,10 +77,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
 }
 
 export type WixAPI = ReturnType<typeof getWixApi>;
-//we add subtotal here, because it's missing on the original cart type but exists on the returned value.
-export type Cart = Awaited<ReturnType<WixAPI['getCart']>> & {
-    subtotal: Cart['lineItems'][0]['price'];
-};
+export type Cart = Awaited<ReturnType<WixAPI['getCart']>>;
 
 export const WixAPIContext = React.createContext<ReturnType<typeof getWixApi>>(
     {} as ReturnType<typeof getWixApi>
@@ -98,7 +98,7 @@ export const WixAPIContextProvider: FC<{ children: React.ReactElement }> = ({ ch
                 revalidateIfStale: false,
                 revalidateOnFocus: false,
                 revalidateOnReconnect: true,
-                refreshInterval: 60 * MINUTE,
+                refreshInterval: 5 * MINUTE,
             }}
         >
             <WixAPIContext.Provider value={api}>{children}</WixAPIContext.Provider>

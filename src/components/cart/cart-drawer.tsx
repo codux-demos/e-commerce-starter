@@ -1,10 +1,11 @@
 import { CartItem } from './cart-item/cart-item';
 import commonStyles from '@styles/common-styles.module.scss';
 import styles from './cart.module.scss';
-import { useCart } from '../../api/api-hooks';
+import { useCart, useCartTotals } from '../../api/api-hooks';
 
 export function CartDrawer() {
     const { data: cart } = useCart();
+    const { data: cartTotals } = useCartTotals();
 
     const isEmpty = !cart?.lineItems || cart.lineItems.length === 0;
 
@@ -18,7 +19,9 @@ export function CartDrawer() {
                 ))}
             </div>
             <div>
-                <label>Subtotal: {cart.subtotal?.formattedConvertedAmount}</label>
+                <label>
+                    Subtotal: {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
+                </label>
                 <button className={commonStyles.primaryButton}>Checkout</button>
             </div>
         </div>
