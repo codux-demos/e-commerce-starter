@@ -12,8 +12,12 @@ export function getImageHttpUrl(url?: string, width?: number, height?: number) {
         return wixMedia.getScaledToFillImageUrl(url, width || 400, height || 100, {});
     }
 
-    if (width && height) {
-        return url.replace(/(w_)\d+/, `$1${width}`).replace(/(h_)\d+/, `$1${height}`);
+    let newUrl = url;
+    if (width) {
+        newUrl = newUrl.replace(/(w_)\d+/, `$1${width}`);
     }
-    return url;
+    if (height) {
+        newUrl = newUrl.replace(/(h_)\d+/, `$1${height}`);
+    }
+    return newUrl;
 }

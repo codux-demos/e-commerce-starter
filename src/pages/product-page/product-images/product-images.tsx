@@ -1,6 +1,7 @@
 import { products } from '@wix/stores';
 import styles from './product-images.module.scss';
 import cx from 'classnames';
+import { getImageHttpUrl } from '../../../api/wix-image';
 
 export function ProductImages(props: {
     mainImage?: products.MediaItem;
@@ -16,7 +17,9 @@ export function ProductImages(props: {
                 className={styles.mainImage}
             />
             {restImages?.map((item, index) => {
-                return <img key={index} src={item.image?.url} alt={item.title} />;
+                return (
+                    <img key={index} src={getImageHttpUrl(item.image?.url, 500)} alt={item.title} />
+                );
             })}
         </div>
     );
