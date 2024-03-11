@@ -10,7 +10,7 @@ export default createBoard({
             name='Shel 50" Class LED 4K UHD Smart TV'
             price={{ formatted: { price: '$85' } }}
             className={ProductCard_board_module.productCard}
-            imageUrl=""
+            imageUrl="https://wixmp-b7f7090100b13623109851bc.wixmp.com/layouters-starters/img_01.jpg"
         />
     ),
     isSnippet: true,
