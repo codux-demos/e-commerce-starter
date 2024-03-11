@@ -4,6 +4,7 @@ import { cart } from '@wix/ecom';
 import { ChangeEvent, useContext } from 'react';
 import { WixAPIContext } from '../../../api/WixAPIContextProvider';
 import commonStyles from '../../../styles/common-styles.module.scss';
+import { media as wixMedia } from '@wix/sdk';
 
 export interface CartItemProps {
     className?: string;
@@ -13,8 +14,10 @@ export interface CartItemProps {
 
 export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
     const wixClient = useContext(WixAPIContext);
-
     const name = cartItem.productName?.translated || '';
+    const imageUrl = cartItem.image
+        ? wixMedia.getScaledToFillImageUrl(cartItem.image, 100, 100, {})
+        : '';
 
     function updateQuantity(e: ChangeEvent<HTMLInputElement>) {
         const newQuantity = parseInt(e.target.value, 10);
@@ -25,7 +28,7 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
 
     return (
         <div className={classNames(styles.root, { [styles.divider]: !isLast }, className)}>
-            <img src={cartItem.image} alt={name || ''} className={styles.image} />
+            <img src={imageUrl} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
                 <h4 className={styles.description}>{name}</h4>
                 <span className={commonStyles.price}>
