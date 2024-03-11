@@ -2,11 +2,9 @@ import classNames from 'classnames';
 import styles from './home-page.module.scss';
 import { HeroImage } from './hero-image/hero-image';
 import { ROUTES } from '../../router/config';
-import { products } from '@wix/stores';
-import { useContext, useEffect, useState } from 'react';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../components/product-card/product-card';
+import { usePromotedProducts } from '../../api/api-hooks';
 
 export interface HomePageProps {
     className?: string;
@@ -14,15 +12,8 @@ export interface HomePageProps {
 
 export const HomePage = ({ className }: HomePageProps) => {
     const navigate = useNavigate();
-    const [products, setProducts] = useState<Array<products.Product>>([]);
 
-    const wixApi = useContext(WixAPIContext);
-
-    useEffect(() => {
-        wixApi.getPromotedProducts().then((prods) => {
-            setProducts(prods);
-        });
-    }, [wixApi]);
+    const { data: products } = usePromotedProducts();
 
     return (
         <div className={classNames(styles.root, className)}>
@@ -41,7 +32,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                 </h1>
             </div>
             <div className={styles.cardsLayout}>
-                {products.map((product) =>
+                {products?.map((product) =>
                     product._id && product.name ? (
                         <Link to={ROUTES.product.to(product._id)} key={product._id}>
                             <ProductCard
@@ -51,7 +42,7 @@ export const HomePage = ({ className }: HomePageProps) => {
                                 className={styles.productCard}
                             />
                         </Link>
-                    ) : null,
+                    ) : null
                 )}
             </div>
         </div>

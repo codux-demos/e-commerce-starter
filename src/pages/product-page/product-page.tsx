@@ -2,12 +2,11 @@ import classNames from 'classnames';
 import styles from './product-page.module.scss';
 import { useParams } from 'react-router-dom';
 import { RouteParams } from '../../router/config';
-import { useContext, useEffect, useState } from 'react';
-import { products } from '@wix/stores';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
 import { ProductInfo } from './product-info/product-info';
+import { useAddToCart, useProduct } from '../../api/api-hooks';
+import { useRef } from 'react';
 
 export interface ProductPageProps {
     className?: string;
@@ -15,20 +14,10 @@ export interface ProductPageProps {
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
-    const [product, setProduct] = useState<products.Product | null>();
 
-    const wixApi = useContext(WixAPIContext);
-
-    useEffect(() => {
-        wixApi
-            .getProduct(productId)
-            .then((product) => {
-                setProduct(product);
-            })
-            .catch(() => {
-                setProduct(null);
-            });
-    }, [wixApi]);
+    const { data: product } = useProduct(productId);
+    const { trigger: addToCart } = useAddToCart();
+    const quantityInput = useRef<HTMLInputElement>(null);
 
     if (!product) {
         return (
@@ -37,6 +26,15 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
             </div>
         );
     }
+
+    function addToCartHandler() {
+        if (!product?._id) {
+            return;
+        }
+        const quantity = parseInt(quantityInput.current?.value || '1', 10);
+        addToCart({ id: product._id, quantity });
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <ProductImages
@@ -52,11 +50,16 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                     )}
                     <label>
                         Quantity: <br />
-                        <input className={commonStyles.numberInput} type="number" placeholder="1" />
+                        <input
+                            ref={quantityInput}
+                            className={commonStyles.numberInput}
+                            type="number"
+                            placeholder="1"
+                        />
                     </label>
                     <button
-                        onClick={() => wixApi.addToCart(product._id!)}
-                        className={classNames(styles.productDetailsBtn, commonStyles.primaryButton)}
+                        onClick={addToCartHandler}
+                        className={classNames(commonStyles.primaryButton, styles.productDetailsBtn)}
                     >
                         Add to Cart
                     </button>

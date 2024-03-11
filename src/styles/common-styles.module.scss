@@ -33,6 +33,22 @@
     }
 }
 
+.secondaryButton {
+    padding: 20px 25px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font: $medium-text;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        border: 1px solid black;
+        border-radius: 35px;
+    }
+}
+
 .numberInput {
     border: 1px solid $black;
     border-radius: 5px;

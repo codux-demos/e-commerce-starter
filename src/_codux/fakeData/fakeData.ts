@@ -1,12 +1,12 @@
 import { products } from '@wix/stores';
-import { faker, he } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { PaymentOptionType } from '@wix/ecom/build/cjs/src/ecom-v1-cart-cart.public';
-import { WixAPI } from '../../api/WixAPIContextProvider';
+import { Cart, WixAPI } from '../../api/WixAPIContextProvider';
 import { WeightUnit } from '@wix/ecom/build/cjs/src/ecom-v1-cart-current-cart.universal';
 
 type Product = Exclude<Awaited<ReturnType<WixAPI['getProduct']>>, undefined>;
 type Media = Exclude<Exclude<Product['media'], undefined>['mainMedia'], undefined>;
-type Cart = Awaited<ReturnType<WixAPI['getCart']>>;
+type CartTotals = Exclude<Awaited<ReturnType<WixAPI['getCartTotals']>>, undefined>;
 
 export function createProducts(
     numOfItems?: number,
@@ -90,10 +90,21 @@ export function createCart(products: products.Product[]): Cart {
     };
 }
 
-export function createCartItem(product: products.Product): Cart['lineItems'][0] {
-    const priceStr = faker.commerce.price({ symbol: '$' });
-    const price = parseFloat(priceStr.replace('$', ''));
+export function getCartTotals(numOfProducts: number): CartTotals {
+    return {
+        currency: '$',
+        additionalFees: [],
+        appliedDiscounts: [],
+        calculatedLineItems: [],
+        violations: [],
+        weightUnit: WeightUnit.KG,
+        priceSummary: {
+            subtotal: createPrice(),
+        },
+    };
+}
 
+export function createCartItem(product: products.Product): Cart['lineItems'][0] {
     return {
         _id: faker.string.uuid(),
         productName: {
@@ -103,13 +114,20 @@ export function createCartItem(product: products.Product): Cart['lineItems'][0] 
         quantity: faker.number.int({ min: 1, max: 10 }),
         image: product.media!.mainMedia!.image!.url!,
         paymentOption: PaymentOptionType.FULL_PAYMENT_ONLINE,
-        price: {
-            amount: price.toString(),
-            convertedAmount: price.toString(),
-            formattedConvertedAmount: priceStr,
-            formattedAmount: priceStr,
-        },
+        price: createPrice(),
         descriptionLines: [],
         url: '',
+    };
+}
+
+function createPrice() {
+    const priceStr = faker.commerce.price({ symbol: '$' });
+    const price = parseFloat(priceStr.replace('$', ''));
+
+    return {
+        amount: price.toString(),
+        convertedAmount: price.toString(),
+        formattedConvertedAmount: priceStr,
+        formattedAmount: priceStr,
     };
 }
