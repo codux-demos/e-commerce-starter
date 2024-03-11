@@ -29,8 +29,7 @@
   "resolve": {
     "alias": {
       "@styles": "./src/styles",
-      "@styles/*": "./src/styles/*",
-      "@wix/sdk": "./src/_codux/fakeData/sdk.ts"
+      "@styles/*": "./src/styles/*"
     }
   },
   "svgLoader": "both"
