@@ -16,7 +16,7 @@ export function CartDrawer() {
     ) : (
         <div className={styles.cart}>
             <div>{cart?.lineItems?.map((item) => <CartItem key={item._id} cartItem={item} />)}</div>
-            <div>
+            <div className={CartDrawer_module['subtotal-chekout']}>
                 <label>
                     Subtotal: {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
                 </label>

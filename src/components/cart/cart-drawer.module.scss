@@ -16,3 +16,9 @@
     align-content: center;
     height: 100%;
 }
+.subtotal-chekout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: end;
+}
