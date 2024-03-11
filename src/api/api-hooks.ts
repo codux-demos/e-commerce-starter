@@ -1,8 +1,9 @@
 import { useContext } from 'react';
 import useSwr, { Key, useSWRConfig } from 'swr';
 import useSWRMutation from 'swr/mutation';
-import { Cart, WixAPIContext } from './WixAPIContextProvider';
+import { WixAPIContext } from './WixAPIContextProvider';
 import { products } from '@wix/stores';
+import { findItemIdInCart } from './cart-helpers';
 
 type ProductsMap = { [k: string]: products.Product };
 const PRODUCTS_MAP_KEY = 'map';
@@ -50,9 +51,21 @@ type Args = { id: string; quantity: number };
 
 export const useAddToCart = () => {
     const wixApi = useContext(WixAPIContext);
+    const { data: cart } = useCart();
     return useSWRMutation(
         'cart',
-        (_key: Key, { arg }: { arg: Args }) => wixApi.addToCart(arg.id, arg.quantity),
+        (_key: Key, { arg }: { arg: Args }) => {
+            if (!cart) {
+                return wixApi.addToCart(arg.id, arg.quantity);
+            }
+            const itemInCart = findItemIdInCart(cart, arg.id);
+            return itemInCart
+                ? wixApi.updateCartItemQuantity(
+                      itemInCart._id,
+                      (itemInCart.quantity || 0) + arg.quantity
+                  )
+                : wixApi.addToCart(arg.id, arg.quantity);
+        },
         {
             revalidate: false,
             populateCache: true,

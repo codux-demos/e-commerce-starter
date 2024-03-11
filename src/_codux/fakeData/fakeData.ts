@@ -1,12 +1,11 @@
 import { products } from '@wix/stores';
-import { faker, he } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { PaymentOptionType } from '@wix/ecom/build/cjs/src/ecom-v1-cart-cart.public';
-import { WixAPI } from '../../api/WixAPIContextProvider';
+import { Cart, WixAPI } from '../../api/WixAPIContextProvider';
 import { WeightUnit } from '@wix/ecom/build/cjs/src/ecom-v1-cart-current-cart.universal';
 
 type Product = Exclude<Awaited<ReturnType<WixAPI['getProduct']>>, undefined>;
 type Media = Exclude<Exclude<Product['media'], undefined>['mainMedia'], undefined>;
-type Cart = Awaited<ReturnType<WixAPI['getCart']>>;
 
 export function createProducts(
     numOfItems?: number,
