@@ -59,10 +59,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                     </label>
                     <button
                         onClick={addToCartHandler}
-                        className={classNames(
-                            commonStyles.secondaryButton,
-                            styles.productDetailsBtn
-                        )}
+                        className={classNames(commonStyles.primaryButton, styles.productDetailsBtn)}
                     >
                         Add to Cart
                     </button>

@@ -1,8 +1,7 @@
 @import './theme.module.scss';
 
 .primaryButton {
-
-        background-color: $charcoal-black;
+    background-color: $charcoal-black;
     padding: 20px;
     height: 40px;
     display: flex;
@@ -14,7 +13,23 @@
     &:hover {
         background-color: $white;
         background-color: rgba(255, 255, 255, 0);
-        border: 1px solid $white;
+        border: 1px solid $charcoal-black;
+        color: $charcoal-black;
+    }
+}
+
+.secondaryButton {
+    padding: 20px 25px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font: $medium-text;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        border: 1px solid black;
+        border-radius: 35px;
     }
 }
 
