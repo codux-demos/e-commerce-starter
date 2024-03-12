@@ -56,13 +56,14 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
         removeItemFromCart: (id: string) => {
             return wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
         },
-        addToCart: async (id: string, quantity: number) => {
+        addToCart: async (id: string, quantity: number, options?: Record<string, string>) => {
             const result = await wixClient.currentCart.addToCurrentCart({
                 lineItems: [
                     {
                         catalogReference: {
                             catalogItemId: id,
                             appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+                            options: { options: options },
                         },
                         quantity: quantity,
                     },
@@ -99,6 +100,7 @@ export const WixAPIContextProvider: FC<{ children: React.ReactElement }> = ({ ch
                 revalidateOnFocus: false,
                 revalidateOnReconnect: true,
                 refreshInterval: 5 * MINUTE,
+                keepPreviousData: true,
             }}
         >
             <WixAPIContext.Provider value={api}>{children}</WixAPIContext.Provider>

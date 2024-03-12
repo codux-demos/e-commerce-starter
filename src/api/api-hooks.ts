@@ -62,17 +62,17 @@ export const useAddToCart = () => {
     const { data: cart } = useCart();
     return useSWRMutation(
         'cart',
-        (_key: Key, { arg }: { arg: Args }) => {
+        (_key: Key, { arg }: { arg: Args & { options?: Record<string, string> } }) => {
             if (!cart) {
-                return wixApi.addToCart(arg.id, arg.quantity);
+                return wixApi.addToCart(arg.id, arg.quantity, arg.options);
             }
-            const itemInCart = findItemIdInCart(cart, arg.id);
+            const itemInCart = findItemIdInCart(cart, arg.id, arg.options);
             return itemInCart
                 ? wixApi.updateCartItemQuantity(
                       itemInCart._id,
                       (itemInCart.quantity || 0) + arg.quantity
                   )
-                : wixApi.addToCart(arg.id, arg.quantity);
+                : wixApi.addToCart(arg.id, arg.quantity, arg.options);
         },
         {
             revalidate: false,

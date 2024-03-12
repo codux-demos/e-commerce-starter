@@ -7,6 +7,7 @@ import { ProductImages } from './product-images/product-images';
 import { ProductInfo } from './product-info/product-info';
 import { useAddToCart, useProduct } from '../../api/api-hooks';
 import { useRef } from 'react';
+import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
 
 export interface ProductPageProps {
     className?: string;
@@ -32,7 +33,16 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
             return;
         }
         const quantity = parseInt(quantityInput.current?.value || '1', 10);
-        addToCart({ id: product._id, quantity });
+        const options: Record<string, string> = {};
+        //we are selecting here the first option for each product
+        //most products in the default store do not have options.
+        //but, for those who do, we need to specify the option value when we add to cart.
+        product.productOptions?.forEach((option) => {
+            if (option.name && option.choices?.length && option.choices[0].value) {
+                options[option.name] = option.choices[0].value;
+            }
+        });
+        addToCart({ id: product._id, quantity, options });
     }
 
     return (
