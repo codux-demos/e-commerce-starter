@@ -27,7 +27,10 @@ export const Drawer = ({ className, onClose: onclose, title, children }: DrawerP
 
     return (
         <div onClick={handleClose} className={styles.background}>
-            <div className={cx(styles.drawer, className, { [styles.open]: isOpen })}>
+            <div
+                className={cx(styles.drawer, className, { [styles.open]: isOpen })}
+                onClick={(e) => e.stopPropagation()}
+            >
                 <div className={styles.header}>
                     <ArrowRightIcon className={styles.arrowIcon} onClick={handleClose} />
                     <h3>{title}</h3>

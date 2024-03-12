@@ -46,8 +46,8 @@ export const HeroImage = ({
                         {secondaryButtonLabel && (
                             <button
                                 className={classNames(
-                                    commonStyles.secondaryButton,
-                                    styles['overlay-button'],
+                                    CommonStyles_module.primaryButton,
+                                    styles['overlay-button']
                                 )}
                                 onClick={onSecondaryButtonClick}
                             >

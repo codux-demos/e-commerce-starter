@@ -63,7 +63,8 @@
 
 @media (1400px <=width) {
     .root {
-        background-color: aqua;
+        background-color: yellow;
+        background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
     }
 
     .content {
@@ -82,7 +83,7 @@
         background-color: plum;
     }
 
-     .overlay-text {
+    .overlay-text {
         font: $medium-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
@@ -98,7 +99,7 @@
 @media (width < 420px) {
     .root {
     }
-         .overlay-text {
+    .overlay-text {
         font: $small-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
