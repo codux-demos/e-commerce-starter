@@ -5,7 +5,7 @@ import { Cart } from '../../../../components/cart/cart';
 export default createBoard({
     name: 'Cart',
     Board: () => (
-        <ComponentWrapper settings={{ numberOfCartItems: 5 }}>
+        <ComponentWrapper settings={{ numberOfCartItems: 3 }}>
             <Cart initialIsOpen={true} />
         </ComponentWrapper>
     ),

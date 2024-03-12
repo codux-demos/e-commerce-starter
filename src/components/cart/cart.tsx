@@ -37,7 +37,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
                     {isEmpty ? (
-                        <div>Cart is empty</div>
+                        <div className={styles.emptyCart}>Cart is empty</div>
                     ) : (
                         <div className={styles.cart}>
                             <div>
@@ -45,7 +45,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                                     <CartItem key={item._id} cartItem={item} />
                                 ))}
                             </div>
-                            <div>
+                            <div className={styles['subtotal-chekout']}>
                                 <label>
                                     Subtotal:{' '}
                                     {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
