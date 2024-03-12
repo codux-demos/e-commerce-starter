@@ -3,7 +3,7 @@ import { PageWrapperRealData } from '../../../board-wrappers/page-wrapper-real-d
 import { HomePage } from '../../../../pages/home-page/home-page';
 
 export default createBoard({
-    name: 'Home Page Real Data',
+    name: 'Page Home',
     Board: () => (
         <PageWrapperRealData>
             <HomePage />

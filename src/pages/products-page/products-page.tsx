@@ -5,13 +5,18 @@ import { ROUTES } from '../../router/config';
 import { ProductCard } from '../../components/product-card/product-card';
 import { useProducts } from '../../api/api-hooks';
 import { getImageHttpUrl } from '../../api/wix-image';
+import commonStyles from '../../styles/common-styles.module.scss';
 
 export interface ProductsPageProps {
     className?: string;
 }
 
 export const ProductsPage = ({ className }: ProductsPageProps) => {
-    const { data: myProducts } = useProducts();
+    const { data: myProducts, isLoading } = useProducts();
+
+    if (!myProducts && isLoading) {
+        return <div className={commonStyles.loading}>Loading...</div>;
+    }
 
     return (
         <div className={classNames(styles.root, className)}>

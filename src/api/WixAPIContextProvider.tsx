@@ -1,6 +1,7 @@
 import { currentCart } from '@wix/ecom';
 import { OAuthStrategy, createClient } from '@wix/sdk';
 import { products } from '@wix/stores';
+import { redirects } from '@wix/redirects';
 import React, { FC, useMemo } from 'react';
 import Cookies from 'js-cookie';
 import { SWRConfig } from 'swr';
@@ -17,6 +18,7 @@ function getWixClient() {
         modules: {
             products,
             currentCart,
+            redirects,
         },
         auth: OAuthStrategy({
             clientId: '84452635-47cb-45b8-be5b-ca3938e93193',
@@ -53,16 +55,18 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
             ]);
             return result.cart;
         },
-        removeItemFromCart: (id: string) => {
-            return wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
+        removeItemFromCart: async (id: string) => {
+            const result = await wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
+            return result.cart;
         },
-        addToCart: async (id: string, quantity: number) => {
+        addToCart: async (id: string, quantity: number, options?: Record<string, string>) => {
             const result = await wixClient.currentCart.addToCurrentCart({
                 lineItems: [
                     {
                         catalogReference: {
                             catalogItemId: id,
                             appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
+                            options: { options: options },
                         },
                         quantity: quantity,
                     },
@@ -72,6 +76,26 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
             Cookies.set(WIX_SESSION_TOKEN, JSON.stringify(tokens));
 
             return result.cart;
+        },
+
+        checkout: async () => {
+            let checkoutId;
+            try {
+                const result = await wixClient.currentCart.createCheckoutFromCurrentCart({
+                    channelType: currentCart.ChannelType.WEB,
+                });
+                checkoutId = result.checkoutId;
+            } catch (e) {
+                return { success: false, url: '' };
+            }
+            const { redirectSession } = await wixClient.redirects.createRedirectSession({
+                ecomCheckout: { checkoutId },
+                callbacks: {
+                    postFlowUrl: window.location.origin,
+                    // thankYouPageUrl: `${window.location.origin}/stores-success`,
+                },
+            });
+            return { success: true, url: redirectSession?.fullUrl };
         },
     };
 }
@@ -99,6 +123,7 @@ export const WixAPIContextProvider: FC<{ children: React.ReactElement }> = ({ ch
                 revalidateOnFocus: false,
                 revalidateOnReconnect: true,
                 refreshInterval: 5 * MINUTE,
+                keepPreviousData: true,
             }}
         >
             <WixAPIContext.Provider value={api}>{children}</WixAPIContext.Provider>

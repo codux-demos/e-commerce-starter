@@ -15,14 +15,14 @@ export interface ProductPageProps {
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
 
-    const { data: product } = useProduct(productId);
+    const { data: product, isLoading } = useProduct(productId);
     const { trigger: addToCart } = useAddToCart();
     const quantityInput = useRef<HTMLInputElement>(null);
 
     if (!product) {
         return (
-            <div className={styles['no-product']}>
-                {product === null ? 'The product is not found' : 'Loading...'}
+            <div className={commonStyles.loading}>
+                {isLoading ? 'Loading...' : 'The product is not found'}
             </div>
         );
     }
@@ -32,7 +32,16 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
             return;
         }
         const quantity = parseInt(quantityInput.current?.value || '1', 10);
-        addToCart({ id: product._id, quantity });
+        const options: Record<string, string> = {};
+        //we are selecting here the first option for each product
+        //most products in the default store do not have options.
+        //but, for those who do, we need to specify the option value when we add to cart.
+        product.productOptions?.forEach((option) => {
+            if (option.name && option.choices?.length && option.choices[0].value) {
+                options[option.name] = option.choices[0].value;
+            }
+        });
+        addToCart({ id: product._id, quantity, options });
     }
 
     return (

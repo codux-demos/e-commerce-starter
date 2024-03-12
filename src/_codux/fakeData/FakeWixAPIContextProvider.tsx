@@ -16,7 +16,7 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
         settings?.differentRatioImages
     );
 
-    return {
+    const api: WixAPI = {
         getAllProducts: async () => {
             return products;
         },
@@ -39,17 +39,25 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
             faker.seed(123);
             return Promise.resolve(getCartTotals(settings?.numberOfCartItems || 2));
         },
-        //@ts-expect-error - This is a fake implementation
+        addToCart: (id: string, quantity: number) => {
+            alert(`Add item ${id} to cart with quantity ${quantity}`);
+            return api.getCart();
+        },
         updateCartItemQuantity: (id: string | undefined | null, quantity: number) => {
             alert(`Update item ${id} to quantity ${quantity}`);
-            return Promise.resolve();
+            return api.getCart();
         },
-        //@ts-expect-error - This is a fake implementation
         removeItemFromCart: (id: string) => {
             alert(`Remove item ${id}`);
-            return Promise.resolve();
+            return api.getCart();
+        },
+        checkout: () => {
+            alert('Checkout');
+            return Promise.resolve({ success: true, url: '' });
         },
     };
+
+    return api;
 }
 
 export const FakeWixAPIContextProvider: FC<{
