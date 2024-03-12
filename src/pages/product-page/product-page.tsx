@@ -7,7 +7,6 @@ import { ProductImages } from './product-images/product-images';
 import { ProductInfo } from './product-info/product-info';
 import { useAddToCart, useProduct } from '../../api/api-hooks';
 import { useRef } from 'react';
-import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
 
 export interface ProductPageProps {
     className?: string;

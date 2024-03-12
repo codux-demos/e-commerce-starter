@@ -14,13 +14,19 @@ export function ProductImages(props: {
             <img
                 src={props.mainImage?.image?.url}
                 alt={props.mainImage?.title}
-                className={styles.mainImage}
+                className={styles.img}
             />
-            {restImages?.map((item, index) => {
-                return (
-                    <img key={index} src={getImageHttpUrl(item.image?.url, 500)} alt={item.title} />
-                );
-            })}
+            <div className={styles['image-grid']}>
+                {restImages?.map((item, index) => {
+                    return (
+                        <img
+                            key={index}
+                            src={getImageHttpUrl(item.image?.url, 500)}
+                            alt={item.title}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 }

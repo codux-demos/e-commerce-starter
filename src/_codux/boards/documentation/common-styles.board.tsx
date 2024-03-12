@@ -11,6 +11,7 @@ export default createBoard({
                 <button className={commonStyles.secondaryButton}>Secondary Button</button>
             </div>
             <div className={boardStyle.box}>
+                Input Number
                 <input type="number" className={commonStyles.numberInput} />
             </div>
         </div>
