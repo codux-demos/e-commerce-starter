@@ -53,8 +53,9 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
             ]);
             return result.cart;
         },
-        removeItemFromCart: (id: string) => {
-            return wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
+        removeItemFromCart: async (id: string) => {
+            const result = await wixClient.currentCart.removeLineItemsFromCurrentCart([id]);
+            return result.cart;
         },
         addToCart: async (id: string, quantity: number, options?: Record<string, string>) => {
             const result = await wixClient.currentCart.addToCurrentCart({

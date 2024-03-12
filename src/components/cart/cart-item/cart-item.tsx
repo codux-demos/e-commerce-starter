@@ -4,7 +4,8 @@ import { cart } from '@wix/ecom';
 import { ChangeEvent } from 'react';
 import commonStyles from '../../../styles/common-styles.module.scss';
 import { getImageHttpUrl } from '../../../api/wix-image';
-import { useUpdateCartItemQuantity } from '../../../api/api-hooks';
+import { useRemoveItemFromCart, useUpdateCartItemQuantity } from '../../../api/api-hooks';
+import { TrashIcon } from '@radix-ui/react-icons';
 
 export interface CartItemProps {
     className?: string;
@@ -17,6 +18,7 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
     const imageUrl = getImageHttpUrl(cartItem.image, 100, 100);
 
     const { trigger: updateQuantity } = useUpdateCartItemQuantity();
+    const { trigger: removeItem } = useRemoveItemFromCart();
 
     function updateQuantityHandler(e: ChangeEvent<HTMLInputElement>) {
         if (!cartItem._id) {
@@ -44,6 +46,9 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
                     className={commonStyles.numberInput}
                 />
             </div>
+            <button onClick={() => removeItem(cartItem._id!)} aria-label="Remove item">
+                <TrashIcon />
+            </button>
         </div>
     );
 };

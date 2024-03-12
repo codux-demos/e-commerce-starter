@@ -92,3 +92,15 @@ export const useUpdateCartItemQuantity = () => {
         }
     );
 };
+
+export const useRemoveItemFromCart = () => {
+    const wixApi = useContext(WixAPIContext);
+    return useSWRMutation(
+        'cart',
+        (_key: Key, { arg }: { arg: string }) => wixApi.removeItemFromCart(arg),
+        {
+            revalidate: false,
+            populateCache: true,
+        }
+    );
+};
