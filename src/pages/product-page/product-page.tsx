@@ -15,14 +15,14 @@ export interface ProductPageProps {
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
     const { id: productId } = useParams<RouteParams['/product/:id']>();
 
-    const { data: product } = useProduct(productId);
+    const { data: product, isLoading } = useProduct(productId);
     const { trigger: addToCart } = useAddToCart();
     const quantityInput = useRef<HTMLInputElement>(null);
 
     if (!product) {
         return (
-            <div className={styles['no-product']}>
-                {product === null ? 'The product is not found' : 'Loading...'}
+            <div className={commonStyles.loading}>
+                {isLoading ? 'Loading...' : 'The product is not found'}
             </div>
         );
     }

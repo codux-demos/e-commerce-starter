@@ -5,14 +5,20 @@ import { useEffect, useState } from 'react';
 
 export interface DrawerProps {
     className?: string;
-    isOpen?: boolean;
+    initialIsOpen?: boolean;
     onClose?: () => void;
     title: string;
     children?: React.ReactNode;
 }
 
-export const Drawer = ({ className, onClose: onclose, title, children }: DrawerProps) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const Drawer = ({
+    className,
+    onClose: onclose,
+    title,
+    children,
+    initialIsOpen,
+}: DrawerProps) => {
+    const [isOpen, setIsOpen] = useState(initialIsOpen ?? false);
 
     useEffect(() => {
         setIsOpen(true);

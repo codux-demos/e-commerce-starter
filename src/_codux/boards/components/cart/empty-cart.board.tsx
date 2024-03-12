@@ -1,12 +1,12 @@
 import { createBoard } from '@wixc3/react-board';
 import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
-import { CartDrawer } from '../../../../components/cart/cart-drawer';
+import { Cart } from '../../../../components/cart/cart';
 
 export default createBoard({
     name: 'Empty Cart',
     Board: () => (
         <ComponentWrapper settings={{ numberOfCartItems: 0 }}>
-            <CartDrawer />
+            <Cart initialIsOpen={true} />
         </ComponentWrapper>
     ),
     isSnippet: false,
