@@ -5,7 +5,12 @@ import { Cart } from '../../../../components/cart/cart';
 export default createBoard({
     name: 'Cart',
     Board: () => (
-        <ComponentWrapper settings={{ numberOfCartItems: 5 }}>
+        <ComponentWrapper
+            settings={{
+                numberOfCartItems: 5,
+                imageToUse: '[502_310]_grey.jpg',
+            }}
+        >
             <Cart initialIsOpen={true} />
         </ComponentWrapper>
     ),

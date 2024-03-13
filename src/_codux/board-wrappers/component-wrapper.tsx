@@ -1,7 +1,12 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-import { FakeWixAPIContextProvider, WixApiSettings } from '../fakeData/FakeWixAPIContextProvider';
+import { FakeWixAPIContextProvider, FakeDataSettings } from '../fakeData/FakeWixAPIContextProvider';
 
-export function ComponentWrapper(props: { children: React.ReactNode; settings?: WixApiSettings }) {
+type Props = {
+    children: React.ReactNode;
+    settings?: FakeDataSettings;
+};
+
+export function ComponentWrapper(props: Props) {
     const router = createMemoryRouter([
         {
             path: '/',

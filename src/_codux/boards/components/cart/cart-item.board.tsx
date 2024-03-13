@@ -1,13 +1,25 @@
 import { createBoard } from '@wixc3/react-board';
-import { CartItem } from '../../../../components/cart/cart-item/cart-item';
-import { createCartItem, createProduct } from '../../../fakeData/fakeData';
+import { CartItem, CartItemProps } from '../../../../components/cart/cart-item/cart-item';
+import { ReactNode } from 'react';
+import { useCart } from '../../../../api/api-hooks';
+import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
 
-const product = createProduct();
-const cartItem = createCartItem(product);
+function CartItemWrapper(props: { children: (cartItem: CartItemProps['cartItem']) => ReactNode }) {
+    const { data: cart } = useCart();
+    const cartItem = cart?.lineItems[0];
+    if (!cartItem) {
+        return null;
+    }
+    return props.children(cartItem);
+}
 
 export default createBoard({
     name: 'Cart Item',
-    Board: () => <CartItem cartItem={cartItem} />,
+    Board: () => (
+        <ComponentWrapper>
+            <CartItemWrapper>{(cartItem) => <CartItem cartItem={cartItem} />}</CartItemWrapper>
+        </ComponentWrapper>
+    ),
     isSnippet: false,
     environmentProps: {
         canvasMargin: {

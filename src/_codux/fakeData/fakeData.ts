@@ -3,23 +3,40 @@ import { faker } from '@faker-js/faker';
 import { PaymentOptionType } from '@wix/ecom/build/cjs/src/ecom-v1-cart-cart.public';
 import { Cart, WixAPI } from '../../api/WixAPIContextProvider';
 import { WeightUnit } from '@wix/ecom/build/cjs/src/ecom-v1-cart-current-cart.universal';
+import {
+    FAKE_IMAGES,
+    FAKE_IMAGES_FOLDER,
+    FAKE_IMAGES_LISTS,
+    FakeImage,
+    FakeImagesListKey,
+} from './fake-images';
 
 type Product = Exclude<Awaited<ReturnType<WixAPI['getProduct']>>, undefined>;
 type Media = Exclude<Exclude<Product['media'], undefined>['mainMedia'], undefined>;
 type CartTotals = Exclude<Awaited<ReturnType<WixAPI['getCartTotals']>>, undefined>;
 
+export type FakeDataSettings = {
+    /** @important */
+    numberOfCartItems?: number;
+    /** @important */
+    numberOfProducts?: number;
+    /** @important */
+    imageToUse?: '' | FakeImage;
+    /** @important */
+    imagesListToLoop?: '' | FakeImagesListKey;
+};
+
 export function createProducts(
-    numOfItems?: number,
-    differentRatioImage?: boolean
+    settings?: FakeDataSettings
 ): Awaited<ReturnType<WixAPI['getAllProducts']>> {
-    return Array.from(new Array(numOfItems || 10)).map((id) =>
-        createProduct(id, differentRatioImage)
+    return Array.from(new Array(settings?.numberOfProducts || 10)).map((id) =>
+        createProduct(id, settings)
     );
 }
 
-export function createProduct(id?: string, differentRatioImage?: boolean): Product {
+export function createProduct(id?: string, settings?: FakeDataSettings): Product {
     const numOfImages = faker.number.int({ min: 2, max: 4 });
-    const images = Array.from(new Array(numOfImages)).map(() => createImage(differentRatioImage));
+    const images = Array.from(new Array(numOfImages)).map(() => createImage(settings));
     const mainImage = images[faker.number.int({ min: 0, max: numOfImages - 1 })];
 
     const price = faker.commerce.price({ symbol: '$' });
@@ -56,21 +73,24 @@ export function createProduct(id?: string, differentRatioImage?: boolean): Produ
     };
 }
 
-export function createImage(differentRatioImage?: boolean): Media {
-    let width = 640;
-    let height = 480;
-    if (differentRatioImage) {
-        width = faker.number.int({ min: 400, max: 900 });
-        height = faker.number.int({ min: 400, max: 900 });
+function createImage(settings?: FakeDataSettings): Media {
+    let image = Object.keys(FAKE_IMAGES)[0];
+    if (settings?.imageToUse) {
+        image = settings.imageToUse;
+    } else if (settings?.imagesListToLoop) {
+        const length = FAKE_IMAGES_LISTS[settings.imagesListToLoop].length;
+        const images = FAKE_IMAGES_LISTS[settings.imagesListToLoop];
+        const imgIndex = faker.number.int({ min: 0, max: length - 1 });
+        image = images[imgIndex];
     }
+    const match = image.match(/\[(\d+)_(\d+)]/);
+    const width = match ? parseInt(match[1]) : 640;
+    const height = match ? parseInt(match[2]) : 480;
+
     return {
         _id: faker.string.uuid(),
         image: {
-            url: faker.image.urlPicsumPhotos({
-                grayscale: true,
-                width: width,
-                height: height,
-            }),
+            url: `${FAKE_IMAGES_FOLDER}${image}`,
             width: width,
             height: height,
         },
@@ -90,7 +110,7 @@ export function createCart(products: products.Product[]): Cart {
     };
 }
 
-export function getCartTotals(numOfProducts: number): CartTotals {
+export function getCartTotals(): CartTotals {
     return {
         currency: '$',
         additionalFees: [],
