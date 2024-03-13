@@ -5,7 +5,11 @@ import { ProductPage } from '../../../../pages/product-page/product-page';
 export default createBoard({
     name: 'Page Product Details',
     Board: () => (
-        <PageWrapper>
+        <PageWrapper
+            settings={{
+                imageToUse: '[502_640]_blue.jpg',
+            }}
+        >
             <ProductPage />
         </PageWrapper>
     ),
@@ -17,7 +21,5 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
-        windowWidth: 1024,
-        windowHeight: 768,
     },
 });
