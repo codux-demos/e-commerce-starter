@@ -24,9 +24,9 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
             <div className={styles.gallery}>
                 {myProducts?.map(
                     (item) =>
-                        item._id &&
+                        item.slug &&
                         item.name && (
-                            <Link to={ROUTES.product.to(item._id)} key={item._id}>
+                            <Link to={ROUTES.product.to(item.slug)} key={item.slug}>
                                 <ProductCard
                                     imageUrl={getImageHttpUrl(
                                         item.media?.items?.at(0)?.image?.url,

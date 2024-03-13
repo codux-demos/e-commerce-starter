@@ -33,8 +33,8 @@ export const HomePage = ({ className }: HomePageProps) => {
             </div>
             <div className={styles.cardsLayout}>
                 {products?.map((product) =>
-                    product._id && product.name ? (
-                        <Link to={ROUTES.product.to(product._id)} key={product._id}>
+                    product.slug && product.name ? (
+                        <Link to={ROUTES.product.to(product.slug)} key={product.slug}>
                             <ProductCard
                                 imageUrl={product.media?.items?.at(0)?.image?.url}
                                 name={product.name}

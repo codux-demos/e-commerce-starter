@@ -1,20 +1,19 @@
 import React, { FC, useMemo } from 'react';
-import { createProducts, createProduct, createCart, getCartTotals } from './fakeData';
-import { WixAPI, WixAPIContext } from '../../api/WixAPIContextProvider';
+import {
+    createProducts,
+    createProduct,
+    createCart,
+    getCartTotals,
+    FakeDataSettings as Settings,
+} from './fake-data';
+import { WixAPI, WixAPIContext } from '../../api/wix-api-context-provider';
 import { faker } from '@faker-js/faker';
 
-export type WixApiSettings = {
-    numberOfCartItems?: number;
-    numberOfProducts?: number;
-    differentRatioImages?: boolean;
-};
+export type FakeDataSettings = Settings;
 
-function getWixApi(settings?: WixApiSettings): WixAPI {
+function getWixApi(settings?: Settings): WixAPI {
     faker.seed(123);
-    const products = createProducts(
-        settings?.numberOfProducts || 10,
-        settings?.differentRatioImages
-    );
+    const products = createProducts(settings);
 
     const api: WixAPI = {
         getAllProducts: async () => {
@@ -22,7 +21,7 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
         },
         getProduct: async (id: string | undefined) => {
             faker.seed(123);
-            return createProduct(id, settings?.differentRatioImages);
+            return createProduct(id, settings);
         },
         getPromotedProducts: async () => {
             return products.slice(0, 4);
@@ -37,7 +36,7 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
         },
         getCartTotals: () => {
             faker.seed(123);
-            return Promise.resolve(getCartTotals(settings?.numberOfCartItems || 2));
+            return Promise.resolve(getCartTotals());
         },
         addToCart: (id: string, quantity: number) => {
             alert(`Add item ${id} to cart with quantity ${quantity}`);
@@ -62,7 +61,7 @@ function getWixApi(settings?: WixApiSettings): WixAPI {
 
 export const FakeWixAPIContextProvider: FC<{
     children: React.ReactElement;
-    settings?: WixApiSettings;
+    settings?: Settings;
 }> = ({ children, settings }) => {
     const api = useMemo(() => {
         return getWixApi(settings);
