@@ -1,7 +1,7 @@
 import { products } from '@wix/stores';
 import { faker } from '@faker-js/faker';
 import { PaymentOptionType } from '@wix/ecom/build/cjs/src/ecom-v1-cart-cart.public';
-import { Cart, WixAPI } from '../../api/WixAPIContextProvider';
+import { Cart, WixAPI } from '../../api/wix-api-context-provider';
 import { WeightUnit } from '@wix/ecom/build/cjs/src/ecom-v1-cart-current-cart.universal';
 import {
     FAKE_IMAGES,

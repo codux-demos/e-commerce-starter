@@ -1,4 +1,4 @@
-import { Cart } from './WixAPIContextProvider';
+import { Cart } from './wix-api-context-provider';
 
 export function findItemIdInCart(
     cart: Cart,

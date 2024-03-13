@@ -1,4 +1,4 @@
-export const FAKE_IMAGES_FOLDER = '/src/_codux/fakeData/images/';
+export const FAKE_IMAGES_FOLDER = '/src/_codux/fake-data/images/';
 
 export const FAKE_IMAGES = {
     '[502_310]_blue.jpg': true,

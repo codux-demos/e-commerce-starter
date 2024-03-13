@@ -2,7 +2,7 @@ import { createBoard } from '@wixc3/react-board';
 import { ProductPage } from '../../../../pages/product-page/product-page';
 import { PageWrapperRealData } from '../../../board-wrappers/page-wrapper-real-data';
 import { ROUTES } from '../../../../router/config';
-import { WixAPI } from '../../../../api/WixAPIContextProvider';
+import { WixAPI } from '../../../../api/wix-api-context-provider';
 
 export default createBoard({
     name: 'Page Product Details Real Data',

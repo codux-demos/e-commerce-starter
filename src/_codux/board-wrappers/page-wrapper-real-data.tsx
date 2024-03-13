@@ -1,6 +1,6 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { SiteWrapper } from '../../components/site-wrapper/site-wrapper';
-import { WixAPI, WixAPIContext, WixAPIContextProvider } from '../../api/WixAPIContextProvider';
+import { WixAPI, WixAPIContext, WixAPIContextProvider } from '../../api/wix-api-context-provider';
 import { useContext, useEffect, useState } from 'react';
 
 type Props = {

@@ -1,5 +1,8 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-import { FakeWixAPIContextProvider, FakeDataSettings } from '../fakeData/FakeWixAPIContextProvider';
+import {
+    FakeWixAPIContextProvider,
+    FakeDataSettings,
+} from '../fake-data/fake-wix-api-context-provider';
 
 type Props = {
     children: React.ReactNode;

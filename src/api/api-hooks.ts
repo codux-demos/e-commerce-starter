@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import useSwr, { Key, useSWRConfig } from 'swr';
 import useSWRMutation from 'swr/mutation';
-import { WixAPIContext } from './WixAPIContextProvider';
+import { WixAPIContext } from './wix-api-context-provider';
 import { products } from '@wix/stores';
 import { findItemIdInCart } from './cart-helpers';
 

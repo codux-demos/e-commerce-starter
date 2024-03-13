@@ -5,8 +5,8 @@ import {
     createCart,
     getCartTotals,
     FakeDataSettings as Settings,
-} from './fakeData';
-import { WixAPI, WixAPIContext } from '../../api/WixAPIContextProvider';
+} from './fake-data';
+import { WixAPI, WixAPIContext } from '../../api/wix-api-context-provider';
 import { faker } from '@faker-js/faker';
 
 export type FakeDataSettings = Settings;
