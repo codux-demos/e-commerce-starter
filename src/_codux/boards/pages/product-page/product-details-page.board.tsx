@@ -5,11 +5,7 @@ import { ProductPage } from '../../../../pages/product-page/product-page';
 export default createBoard({
     name: 'Page Product Details',
     Board: () => (
-        <PageWrapper
-            settings={{
-                imageToUse: '[502_640]_blue.jpg',
-            }}
-        >
+        <PageWrapper settings={{ imagesListToLoop: 'blue' }}>
             <ProductPage />
         </PageWrapper>
     ),
