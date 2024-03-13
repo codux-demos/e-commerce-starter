@@ -16,7 +16,11 @@ function CartItemWrapper(props: { children: (cartItem: CartItemProps['cartItem']
 export default createBoard({
     name: 'Cart Item',
     Board: () => (
-        <ComponentWrapper>
+        <ComponentWrapper
+            settings={{
+                imageToUse: '[100_100]_grey.jpg',
+            }}
+        >
             <CartItemWrapper>{(cartItem) => <CartItem cartItem={cartItem} />}</CartItemWrapper>
         </ComponentWrapper>
     ),

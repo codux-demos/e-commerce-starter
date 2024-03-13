@@ -5,6 +5,7 @@ export const FAKE_IMAGES = {
     '[502_310]_grey.jpg': true,
     '[502_640]_blue.jpg': true,
     '[502_640]_grey.jpg': true,
+    '[100_100]_grey.jpg': true,
 };
 
 export type FakeImage = keyof typeof FAKE_IMAGES;

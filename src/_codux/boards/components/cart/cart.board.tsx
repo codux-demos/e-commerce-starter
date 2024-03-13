@@ -8,7 +8,7 @@ export default createBoard({
         <ComponentWrapper
             settings={{
                 numberOfCartItems: 5,
-                imageToUse: '[502_310]_grey.jpg',
+                imageToUse: '[100_100]_grey.jpg',
             }}
         >
             <Cart initialIsOpen={true} />
