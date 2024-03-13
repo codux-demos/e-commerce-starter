@@ -13,9 +13,9 @@ export interface ProductPageProps {
 }
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
-    const { id: productId } = useParams<RouteParams['/product/:id']>();
+    const { slug: productSlug } = useParams<RouteParams['/product/:slug']>();
 
-    const { data: product, isLoading } = useProduct(productId);
+    const { data: product, isLoading } = useProduct(productSlug);
     const { trigger: addToCart } = useAddToCart();
     const quantityInput = useRef<HTMLInputElement>(null);
 

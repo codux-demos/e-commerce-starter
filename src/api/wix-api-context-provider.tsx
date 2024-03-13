@@ -35,9 +35,10 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
         getPromotedProducts: async () => {
             return (await wixClient.products.queryProducts().limit(4).find()).items;
         },
-        getProduct: async (id: string | undefined) => {
-            return id
-                ? (await wixClient.products.queryProducts().eq('_id', id).limit(1).find()).items[0]
+        getProduct: async (slug: string | undefined) => {
+            return slug
+                ? (await wixClient.products.queryProducts().eq('slug', slug).limit(1).find())
+                      .items[0]
                 : undefined;
         },
         getCart: () => {
