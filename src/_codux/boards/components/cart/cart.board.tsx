@@ -7,7 +7,7 @@ export default createBoard({
     Board: () => (
         <ComponentWrapper
             settings={{
-                numberOfCartItems: 5,
+                numberOfCartItems: 3,
                 imageToUse: '[100_100]_grey.jpg',
             }}
         >

@@ -26,19 +26,22 @@
 }
 
 .header {
-    padding: 1.5rem;
+    padding: 20px;
     background-color: $black;
     color: $white;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    font: $medium-title;
 }
 
 .arrowIcon {
     position: absolute;
     left: 0px;
     margin: 0rem 0rem 0rem 1rem;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .body {
