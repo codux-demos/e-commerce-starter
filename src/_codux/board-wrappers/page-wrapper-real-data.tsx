@@ -1,47 +1,30 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { SiteWrapper } from '../../components/site-wrapper/site-wrapper';
-import { WixAPI, WixAPIContext, WixAPIContextProvider } from '../../api/WixAPIContextProvider';
-import { useContext, useEffect, useState } from 'react';
+import { ROUTES } from '../../router/config';
+import { WixAPIContextProvider } from '../../api/wix-api-context-provider';
 
 type Props = {
-    path?: string | ((wixClient: WixAPI) => Promise<string>);
-    route?: string;
     children: React.ReactNode;
+    productSlug?: string;
 };
 
 export function PageWrapperRealData(props: Props) {
-    return (
-        <WixAPIContextProvider>
-            <PartialRouterProvider {...props} />
-        </WixAPIContextProvider>
-    );
-}
-
-function PartialRouterProvider(props: Props) {
-    const wixClient = useContext(WixAPIContext);
-    const [path, setPath] = useState<string | undefined>(undefined);
-    useEffect(() => {
-        if (props.path) {
-            if (typeof props.path === 'function') {
-                props.path(wixClient).then(setPath);
-            } else {
-                setPath(props.path);
-            }
-        }
-    }, [props.path]);
-
-    if (!path && props.path) return null;
+    const route = props.productSlug ? ROUTES.product.route : undefined;
+    const path = props.productSlug ? ROUTES.product.to(props.productSlug) : '/';
 
     const router = createMemoryRouter(
         [
             {
                 path: '/',
                 element: <SiteWrapper />,
-                children: [{ index: true, element: props.children, path: props.route }],
+                children: [{ index: true, element: props.children, path: route }],
             },
         ],
-        { initialEntries: [path ?? '/'] }
+        { initialEntries: [path] }
     );
-
-    return <RouterProvider router={router} />;
+    return (
+        <WixAPIContextProvider>
+            <RouterProvider router={router} />
+        </WixAPIContextProvider>
+    );
 }

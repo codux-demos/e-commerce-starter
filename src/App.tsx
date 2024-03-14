@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { routes } from './router/routes';
-import { WixAPIContextProvider } from './api/WixAPIContextProvider';
+import { WixAPIContextProvider } from './api/wix-api-context-provider';
 
 function App() {
     const router = useMemo(() => createBrowserRouter(routes), []);

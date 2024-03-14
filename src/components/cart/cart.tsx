@@ -5,7 +5,7 @@ import CommonStyles_module from '../../styles/common-styles.module.scss';
 import { useCart, useCartTotals } from '../../api/api-hooks';
 import { CartItem } from './cart-item/cart-item';
 import styles from './cart.module.scss';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
+import { WixAPIContext } from '../../api/wix-api-context-provider';
 
 export interface CartProps {
     className?: string;
