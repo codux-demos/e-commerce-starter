@@ -40,7 +40,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                         <div>Cart is empty</div>
                     ) : (
                         <div className={styles.cart}>
-                            <div>
+                            <div className={styles.items}>
                                 {cart?.lineItems?.map((item) => (
                                     <CartItem key={item._id} cartItem={item} />
                                 ))}

@@ -32,23 +32,32 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
 
     return (
         <div className={classNames(styles.root, { [styles.divider]: !isLast }, className)}>
+            <div />
             <img src={imageUrl} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
                 <h4 className={styles.description}>{name}</h4>
+
                 <span className={commonStyles.price}>
                     {cartItem.price?.formattedConvertedAmount}
                 </span>
-                <input
-                    type="number"
-                    value={cartItem.quantity}
-                    onChange={updateQuantityHandler}
-                    min={0}
-                    className={commonStyles.numberInput}
-                />
+
+                <div className={styles.container}>
+                    <input
+                        type="number"
+                        value={cartItem.quantity}
+                        onChange={updateQuantityHandler}
+                        min={0}
+                        className={commonStyles.numberInput}
+                    />
+                    <button
+                        onClick={() => removeItem(cartItem._id!)}
+                        aria-label="Remove item"
+                        className={styles.garbage}
+                    >
+                        <TrashIcon height={30} width={30} />
+                    </button>
+                </div>
             </div>
-            <button onClick={() => removeItem(cartItem._id!)} aria-label="Remove item">
-                <TrashIcon />
-            </button>
         </div>
     );
 };

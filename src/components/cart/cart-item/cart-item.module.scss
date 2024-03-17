@@ -2,11 +2,10 @@
 
 .root {
     min-width: auto;
-    max-width: 400px;
     display: flex;
-    padding-right: 4vh;
-    padding-bottom: 6vh;
-    padding-left: 4vh;
+    padding-right: 1.5vh;
+    padding-bottom: 5vh;
+    padding-left: 1.5vh;
     align-items: start;
 }
 
@@ -16,7 +15,7 @@
 }
 
 .infoContainer {
-    margin-left: 1.5vw;
+    margin-left: 1vw;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -25,4 +24,16 @@
 .description {
     text-align: left;
     font: $medium-title;
+}
+
+.garbage {
+    cursor: pointer;
+    height: 35px;
+    margin-top: 12px;
+    padding: 3px 0px 0px;
+    margin-left: 7px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
 }
