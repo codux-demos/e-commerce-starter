@@ -9,12 +9,14 @@
     font: $medium-text;
     color: $snow-white;
     border-radius: 35px;
+    z-index: 1;
 
     &:hover {
         background-color: $white;
         background-color: rgba(255, 255, 255, 0);
         border: 1px solid $charcoal-black;
         color: $charcoal-black;
+        cursor: pointer;
     }
 }
 
@@ -24,12 +26,13 @@
     display: flex;
     align-items: center;
     font: $medium-text;
-    cursor: pointer;
+        cursor: pointer;
 
     &:hover {
         background-color: $white;
         border: 1px solid black;
         border-radius: 35px;
+        cursor: pointer;
     }
 }
 
