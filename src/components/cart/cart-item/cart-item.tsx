@@ -32,7 +32,6 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
 
     return (
         <div className={classNames(styles.root, { [styles.divider]: !isLast }, className)}>
-            <div />
             <img src={imageUrl} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
                 <h4 className={styles.description}>{name}</h4>
@@ -54,7 +53,7 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
                         aria-label="Remove item"
                         className={styles.garbage}
                     >
-                        <TrashIcon height={30} width={30} />
+                        <TrashIcon height={25} width={25} />
                     </button>
                 </div>
             </div>
