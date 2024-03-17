@@ -4,6 +4,7 @@ import { SiteWrapper } from '../../components/site-wrapper/site-wrapper';
 
 type Props = {
     children: React.ReactNode;
+    /** @important */
     settings?: FakeDataSettings;
 };
 }
