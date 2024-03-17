@@ -6,6 +6,7 @@ import {
 
 type Props = {
     children: React.ReactNode;
+    /** @important */
     settings?: FakeDataSettings;
 };
 
