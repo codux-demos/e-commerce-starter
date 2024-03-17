@@ -5,17 +5,15 @@
 }
 
 .cardContent {
-    display: flex;
-    flex-direction: column;
     padding: 1rem 1.4rem;
     font-size: 24px;
-    height: 100%;
 }
 
 .image {
     object-position: 50% 50%;
+    object-fit: contain;
+    aspect-ratio: 4/3;
     width: 100%;
-    height: 100%;
 }
 
 .description {
@@ -23,20 +21,11 @@
     font: $medium-title;
 }
 
-    .cardsLayout {
-        padding-left: 4vw;
-        padding-right: 4vw;
-    }
-
 // --- MEDIA QUERIES ---
 
 @media (1400px <=width) {
     .root {
         background-color: aqua;
-    }
-
-    .content {
-        max-width: 1400px;
     }
 }
 
@@ -44,20 +33,14 @@
     .root {
         background-color: red;
     }
-
 }
 
 @media (420px <=width < 980px) {
     .root {
         background-color: plum;
     }
-       .cardContent {
+    .cardContent {
         font-size: 24px;
-    }
-
-    .cardsLayout {
-        padding-left: 4vw;
-        padding-right: 4vw;
     }
 }
 
@@ -66,12 +49,7 @@
         padding-left: 24px;
         padding-right: 24px;
     }
-       .cardContent {
+    .cardContent {
         font-size: 24px;
-    }
-
-    .cardsLayout {
-        padding-left: 4vw;
-        padding-right: 4vw;
     }
 }

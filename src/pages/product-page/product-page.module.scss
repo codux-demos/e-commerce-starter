@@ -17,22 +17,20 @@
 }
 
 .right {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
     padding-top: 20px;
-    justify-content: space-between;
     flex: 1;
+    margin-top: 0px;
 }
 
 .productDetailsBtn {
     width: 140px;
     margin-top: 20px;
-    height: 47px;
+    height: 40px;
 }
 
 .productInfo {
     display: flex;
+    margin-top: 20px;
 }
 
 .productForm {

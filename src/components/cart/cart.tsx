@@ -37,7 +37,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
                     {isEmpty ? (
-                        <div>Cart is empty</div>
+                        <div className={styles.emptyCart}>Cart is empty</div>
                     ) : (
                         <div className={styles.cart}>
                             <div className={styles.items}>
