@@ -15,7 +15,7 @@ export interface CartItemProps {
 
 export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
     const name = cartItem.productName?.translated || '';
-    const imageUrl = getImageHttpUrl(cartItem.image, 100, 100);
+    const imageUrl = getImageHttpUrl(cartItem.image, 120, 120);
 
     const { trigger: updateQuantity } = useUpdateCartItemQuantity();
     const { trigger: removeItem } = useRemoveItemFromCart();

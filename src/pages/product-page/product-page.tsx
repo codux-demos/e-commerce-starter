@@ -61,7 +61,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                         Quantity: <br />
                         <input
                             ref={quantityInput}
-                            className={commonStyles.numberInput}
+                            className={classNames(commonStyles.numberInput, styles.quantity)}
                             type="number"
                             placeholder="1"
                         />
