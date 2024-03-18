@@ -2,11 +2,9 @@
 
 .root {
     display: flex;
-    padding-right: 1.5vh;
-    padding-bottom: 5vh;
-    padding-left: 1.5vh;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 
 .image {
