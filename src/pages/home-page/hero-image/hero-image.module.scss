@@ -64,7 +64,7 @@
 @media (1400px <=width) {
     .root {
         background-color: yellow;
-        background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
+        // background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
     }
 
     .content {
@@ -75,6 +75,7 @@
 @media (980px <=width < 1400px) {
     .root {
         background-color: red;
+        // background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
     }
 }
 
