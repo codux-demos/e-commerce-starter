@@ -31,11 +31,13 @@
     justify-content: center;
     font: $large-title;
     padding: 10px;
+    letter-spacing: 2px;
 }
 .arrowIcon {
     position: absolute;
     left: 0px;
     margin: 0rem 0rem 0rem 1rem;
+    cursor: pointer;
 }
 
 .body {
