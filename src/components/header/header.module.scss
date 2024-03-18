@@ -2,14 +2,12 @@
 
 .root {
     display: flex;
-    flex-direction: row;
-    padding-left: 1em;
+    padding-left: 15px;
     justify-content: space-between;
-    padding-right: 1em;
+    padding-right: 5px;
     align-items: center;
     height: 4em;
     font: $medium-text;
-    width: 100vw;
 }
 
 .menu {
@@ -22,4 +20,20 @@
         background-color: $white;
         border-radius: 35px;
     }
+}
+
+.logo {
+    font: 700 1.15rem/1.5 $my-prettyfont;
+    height: fit-content;
+}
+
+@media only screen and (max-width: $mobile-width) {
+    .root {
+        justify-content: center;
+    }
+
+    .logo {
+        display: none;
+    }
+
 }
