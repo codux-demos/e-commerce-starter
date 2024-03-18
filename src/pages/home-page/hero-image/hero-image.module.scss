@@ -3,6 +3,9 @@
 .root {
     position: relative;
     color: $white;
+    width: 100vw;
+    height: 100vh;
+
 }
 
 .overlay {
@@ -23,11 +26,10 @@
 .image {
     object-fit: cover;
     object-position: 50% 0%;
-    height: 640px;
-    width: 100vw;
+    // height: 640px;
 }
 
-.overlay-text {
+.small-title {
     display: block;
     text-align: start;
     width: fit-content;
@@ -36,7 +38,7 @@
     margin-top: 2em;
 }
 
-.overlay-header {
+.big-title {
     max-width: 60%;
     font-size: 3vw;
     font: $extra-large-thin-title;
@@ -64,19 +66,55 @@
 @media (1400px <=width) {
     .root {
         background-color: yellow;
-        // background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
+        background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
     }
 
     .content {
         max-width: 1400px;
     }
+
+.small-title {
+    display: block;
+    text-align: start;
+    width: fit-content;
+    font: $paragraph-font;
+    margin-bottom: 0.6em;
+    margin-top: 2em;
+}
+
+.big-title {
+    max-width: 60%;
+    font-size: 3vw;
+    font: $extra-large-thin-title;
+    margin-bottom: 0.8em;
+    text-align: start;
+}
+
 }
 
 @media (980px <=width < 1400px) {
     .root {
         background-color: red;
-        // background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
+        background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
     }
+
+
+.small-title {
+    display: block;
+    text-align: start;
+    width: fit-content;
+    font: $paragraph-font;
+    margin-bottom: 0.6em;
+    margin-top: 2em;
+}
+
+.big-title {
+    max-width: 60%;
+    font-size: 3vw;
+    font: $extra-large-thin-title;
+    margin-bottom: 0.8em;
+    text-align: start;
+}
 }
 
 @media (420px <=width < 980px) {
@@ -84,13 +122,13 @@
         background-color: plum;
     }
 
-    .overlay-text {
+    .small-title {
         font: $medium-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
     }
 
-    .overlay-header {
+    .big-title {
         max-width: 60%;
         font: $small-thin-title;
         margin-bottom: 0.8em;
@@ -100,13 +138,13 @@
 @media (width < 420px) {
     .root {
     }
-    .overlay-text {
+    .small-title {
         font: $small-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
     }
 
-    .overlay-header {
+    .big-title {
         max-width: 60%;
         font: $small-thin-title;
         margin-bottom: 0.8em;
