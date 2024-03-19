@@ -5,7 +5,6 @@
     color: $white;
     width: 100vw;
     height: 100vh;
-
 }
 
 .overlay {
@@ -44,6 +43,7 @@
     font: $extra-large-thin-title;
     margin-bottom: 0.8em;
     text-align: start;
+    letter-spacing: 2px;
 }
 
 .overlay-button {
@@ -73,23 +73,22 @@
         max-width: 1400px;
     }
 
-.small-title {
-    display: block;
-    text-align: start;
-    width: fit-content;
-    font: $paragraph-font;
-    margin-bottom: 0.6em;
-    margin-top: 2em;
-}
+    .small-title {
+        display: block;
+        text-align: start;
+        width: fit-content;
+        font: $paragraph-font;
+        margin-bottom: 0.6em;
+        margin-top: 2em;
+    }
 
-.big-title {
-    max-width: 60%;
-    font-size: 3vw;
-    font: $extra-large-thin-title;
-    margin-bottom: 0.8em;
-    text-align: start;
-}
-
+    .big-title {
+        max-width: 60%;
+        font-size: 3vw;
+        font: $extra-large-thin-title;
+        margin-bottom: 0.8em;
+        text-align: start;
+    }
 }
 
 @media (980px <=width < 1400px) {
@@ -98,23 +97,22 @@
         background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
     }
 
+    .small-title {
+        display: block;
+        text-align: start;
+        width: fit-content;
+        font: $paragraph-font;
+        margin-bottom: 0.6em;
+        margin-top: 2em;
+    }
 
-.small-title {
-    display: block;
-    text-align: start;
-    width: fit-content;
-    font: $paragraph-font;
-    margin-bottom: 0.6em;
-    margin-top: 2em;
-}
-
-.big-title {
-    max-width: 60%;
-    font-size: 3vw;
-    font: $extra-large-thin-title;
-    margin-bottom: 0.8em;
-    text-align: start;
-}
+    .big-title {
+        max-width: 60%;
+        font-size: 3vw;
+        font: $extra-large-thin-title;
+        margin-bottom: 0.8em;
+        text-align: start;
+    }
 }
 
 @media (420px <=width < 980px) {
