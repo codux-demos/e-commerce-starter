@@ -2,41 +2,48 @@ import classNames from 'classnames';
 import styles from './product-page.module.scss';
 import { useParams } from 'react-router-dom';
 import { RouteParams } from '../../router/config';
-import { useContext, useEffect, useState } from 'react';
-import { products } from '@wix/stores';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
 import { ProductInfo } from './product-info/product-info';
+import { useAddToCart, useProduct } from '../../api/api-hooks';
+import { useRef } from 'react';
 
 export interface ProductPageProps {
     className?: string;
 }
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
-    const { id: productId } = useParams<RouteParams['/product/:id']>();
-    const [product, setProduct] = useState<products.Product | null>();
+    const { slug: productSlug } = useParams<RouteParams['/product/:slug']>();
 
-    const wixApi = useContext(WixAPIContext);
-
-    useEffect(() => {
-        wixApi
-            .getProduct(productId)
-            .then((product) => {
-                setProduct(product);
-            })
-            .catch(() => {
-                setProduct(null);
-            });
-    }, [wixApi]);
+    const { data: product, isLoading } = useProduct(productSlug);
+    const { trigger: addToCart } = useAddToCart();
+    const quantityInput = useRef<HTMLInputElement>(null);
 
     if (!product) {
         return (
-            <div className={styles['no-product']}>
-                {product === null ? 'The product is not found' : 'Loading...'}
+            <div className={commonStyles.loading}>
+                {isLoading ? 'Loading...' : 'The product is not found'}
             </div>
         );
     }
+
+    function addToCartHandler() {
+        if (!product?._id) {
+            return;
+        }
+        const quantity = parseInt(quantityInput.current?.value || '1', 10);
+        const options: Record<string, string> = {};
+        //we are selecting here the first option for each product
+        //most products in the default store do not have options.
+        //but, for those who do, we need to specify the option value when we add to cart.
+        product.productOptions?.forEach((option) => {
+            if (option.name && option.choices?.length && option.choices[0].value) {
+                options[option.name] = option.choices[0].value;
+            }
+        });
+        addToCart({ id: product._id, quantity, options });
+    }
+
     return (
         <div className={classNames(styles.root, className)}>
             <ProductImages
@@ -52,14 +59,16 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                     )}
                     <label>
                         Quantity: <br />
-                        <input className={commonStyles.numberInput} type="number" placeholder="1" />
+                        <input
+                            ref={quantityInput}
+                            className={commonStyles.numberInput}
+                            type="number"
+                            placeholder="1"
+                        />
                     </label>
                     <button
-                        onClick={() => wixApi.addToCart(product._id!)}
-                        className={classNames(
-                            commonStyles.secondaryButton,
-                            styles.productDetailsBtn
-                        )}
+                        onClick={addToCartHandler}
+                        className={classNames(commonStyles.primaryButton, styles.productDetailsBtn)}
                     >
                         Add to Cart
                     </button>

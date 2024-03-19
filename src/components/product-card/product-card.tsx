@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import styles from './product-card.module.scss';
 import { products } from '@wix/stores';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
+import noImage from '../../assets/img/noImage/[160_200]_noImage.svg';
 
 export interface GalleryCardProps {
     name: string;
@@ -16,7 +17,7 @@ export const ProductCard = ({ name, imageUrl, className, price }: GalleryCardPro
             {imageUrl ? (
                 <img src={imageUrl} alt={name} className={styles.image} />
             ) : (
-                <div className={styles.noImage}>No image</div>
+                <img src={noImage} alt={name} className={styles.image} />
             )}
             <div className={styles.cardContent}>
                 <p className={styles.description}>{name}</p>

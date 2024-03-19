@@ -3,7 +3,7 @@ import { PageWrapper } from '../../../board-wrappers/page-wrapper';
 import { ProductPage } from '../../../../pages/product-page/product-page';
 
 export default createBoard({
-    name: 'Product Details Page',
+    name: 'Page Product Details',
     Board: () => (
         <PageWrapper>
             <ProductPage />

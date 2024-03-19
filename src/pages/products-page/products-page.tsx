@@ -1,43 +1,43 @@
 import classNames from 'classnames';
 import styles from './products-page.module.scss';
-import { products } from '@wix/stores';
-import { useState, useContext, useEffect } from 'react';
-import { WixAPIContext } from '../../api/WixAPIContextProvider';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
 import { ProductCard } from '../../components/product-card/product-card';
+import { useProducts } from '../../api/api-hooks';
+import { getImageHttpUrl } from '../../api/wix-image';
+import commonStyles from '../../styles/common-styles.module.scss';
 
 export interface ProductsPageProps {
     className?: string;
 }
 
 export const ProductsPage = ({ className }: ProductsPageProps) => {
-    const [myProducts, setMyProducts] = useState<products.Product[]>([]);
+    const { data: myProducts, isLoading } = useProducts();
 
-    const wixApi = useContext(WixAPIContext);
+    if (!myProducts && isLoading) {
+        return <div className={commonStyles.loading}>Loading...</div>;
+    }
 
-    useEffect(() => {
-        wixApi.getAllProducts().then((products) => {
-            setMyProducts(products);
-        });
-    }, [wixApi]);
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles.title}>All Products</div>
             <div className={styles.gallery}>
-                {myProducts.map(
+                {myProducts?.map(
                     (item) =>
-                        item._id &&
+                        item.slug &&
                         item.name && (
-                            <Link to={ROUTES.product.to(item._id)} key={item._id}>
+                            <Link to={ROUTES.product.to(item.slug)} key={item.slug}>
                                 <ProductCard
-                                    imageUrl={item.media?.items?.at(0)?.image?.url}
+                                    imageUrl={getImageHttpUrl(
+                                        item.media?.items?.at(0)?.image?.url,
+                                        240
+                                    )}
                                     name={item.name}
                                     price={item.price ?? undefined}
                                     className={styles.productCard}
                                 />
                             </Link>
-                        ),
+                        )
                 )}
             </div>
         </div>

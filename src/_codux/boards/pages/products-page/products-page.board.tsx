@@ -5,7 +5,11 @@ import { ProductsPage } from '../../../../pages/products-page/products-page';
 export default createBoard({
     name: 'Products Page',
     Board: () => (
-        <PageWrapper>
+        <PageWrapper
+            settings={{
+                imagesListToLoop: 'all',
+            }}
+        >
             <ProductsPage />
         </PageWrapper>
     ),
@@ -17,5 +21,7 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
+        windowWidth: 1024,
+        windowHeight: 768,
     },
 });

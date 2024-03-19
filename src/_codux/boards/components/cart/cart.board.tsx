@@ -1,17 +1,22 @@
 import { createBoard } from '@wixc3/react-board';
 import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
-import { CartDrawer } from '../../../../components/cart/cart-drawer';
+import { Cart } from '../../../../components/cart/cart';
 
 export default createBoard({
     name: 'Cart',
     Board: () => (
-        <ComponentWrapper settings={{ numberOfCartItems: 2 }}>
-            <CartDrawer />
+        <ComponentWrapper
+            settings={{
+                numberOfCartItems: 3,
+                imageToUse: '[100_100]_grey.jpg',
+            }}
+        >
+            <Cart initialIsOpen={true} />
         </ComponentWrapper>
     ),
     isSnippet: false,
     environmentProps: {
-        canvasHeight: 600,
-        canvasWidth: 400,
+        windowHeight: 768,
+        windowWidth: 1036,
     },
 });

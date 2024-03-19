@@ -3,7 +3,7 @@ import { ProductsPage } from '../../../../pages/products-page/products-page';
 import { PageWrapperRealData } from '../../../board-wrappers/page-wrapper-real-data';
 
 export default createBoard({
-    name: 'Products Page Real Data',
+    name: 'Page Products Real Data',
     Board: () => (
         <PageWrapperRealData>
             <ProductsPage />
@@ -17,5 +17,7 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
+        windowWidth: 1024,
+        windowHeight: 768,
     },
 });

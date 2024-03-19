@@ -1,13 +1,38 @@
 import { createBoard } from '@wixc3/react-board';
 import { CartItem } from '../../../../components/cart/cart-item/cart-item';
-import { createCartItem, createProduct } from '../../../fakeData/fakeData';
+import { ReactNode, useEffect, useState } from 'react';
+import { FakeDataSettings, createCartItem, createProduct } from '../../../fake-data/fake-data';
 
-const product = createProduct();
-const cartItem = createCartItem(product);
+function ImageSetting({
+    children,
+    imageToUse,
+    onImageChange,
+}: {
+    children: ReactNode;
+    /** @important */
+    imageToUse?: FakeDataSettings['imageToUse'];
+    onImageChange: (image: FakeDataSettings['imageToUse']) => void;
+}) {
+    useEffect(() => {
+        onImageChange(imageToUse);
+    }, [imageToUse]);
+    return children;
+}
 
 export default createBoard({
     name: 'Cart Item',
-    Board: () => <CartItem cartItem={cartItem} />,
+    Board: () => {
+        const [image, setImage] = useState<FakeDataSettings['imageToUse']>();
+
+        const product = createProduct('1', { imageToUse: image });
+        const cartItem = createCartItem(product);
+
+        return (
+            <ImageSetting onImageChange={setImage} imageToUse="[100_100]_grey.jpg">
+                <CartItem cartItem={cartItem} />
+            </ImageSetting>
+        );
+    },
     isSnippet: false,
     environmentProps: {
         },
