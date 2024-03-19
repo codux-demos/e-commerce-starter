@@ -9,7 +9,7 @@ export const AboutPage = ({ className }: AboutPageProps) => {
     return (
 <div className={classNames(styles.root, className)}>
             <div className={styles.text}>
-                <h1 className={styles.title}>I&apos;M A TITLE</h1>
+                <h1 className={styles.title}>I&apos;m a Title</h1>
                 <p className={styles.paragraph}>
                     I’m a paragraph. Add your own text and edit me on properties panel on the right.
                     It’s easy. Just select me and make changes to the font on the styles panel on
