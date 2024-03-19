@@ -2,12 +2,11 @@
 
 .root {
     display: flex;
-    padding-left: 15px;
     justify-content: space-between;
-    padding-right: 15px;
     align-items: center;
     height: 4em;
     font: $medium-text;
+    padding-left: 15px;
 }
 
 .menu {
@@ -35,5 +34,4 @@
     .logo {
         display: none;
     }
-
 }

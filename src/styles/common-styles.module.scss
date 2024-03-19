@@ -31,9 +31,21 @@
         border: 1px solid black;
         border-radius: 35px;
     }
+
+    
 }
 
-.secondaryButton {
+/* Media query for screens smaller than 360px */
+@media (max-width: 360px) {
+    .secondaryButton {
+        padding: 15px 15px; /* Adjusted padding values */
+    }
+}
+
+
+
+
+.smallSecondaryButton {
     padding: 5px 15px;
     display: flex;
     align-items: center;
