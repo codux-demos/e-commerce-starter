@@ -8,3 +8,12 @@ declare module '*.svg' {
     >;
     export default ReactComponent;
 }
+
+interface ImportMetaEnv {
+    readonly VITE_WIX_CLIENT_ID: string;
+    // more env variables...
+}
+
+interface ImportMeta {
+    readonly env: ImportMetaEnv;
+}
