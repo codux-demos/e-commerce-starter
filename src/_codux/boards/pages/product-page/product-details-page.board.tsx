@@ -5,7 +5,7 @@ import { ProductPage } from '../../../../pages/product-page/product-page';
 export default createBoard({
     name: 'Page Product Details',
     Board: () => (
-        <PageWrapper>
+        <PageWrapper path="/product/fake">
             <ProductPage />
         </PageWrapper>
     ),
