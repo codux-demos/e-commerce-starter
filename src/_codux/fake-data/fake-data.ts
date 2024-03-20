@@ -24,6 +24,12 @@ export type FakeDataSettings = {
     imageToUse?: '' | FakeImage;
     /** @important */
     imagesListToLoop?: '' | FakeImagesListKey;
+    /** @important */
+    numberOfWordsInTitle?: number;
+    /** @important */
+    priceMinValue?: number;
+    /** @important */
+    priceMaxValue?: number;
 };
 
 export function createProducts(
@@ -39,11 +45,15 @@ export function createProduct(id?: string, settings?: FakeDataSettings): Product
     const images = Array.from(new Array(numOfImages)).map(() => createImage(settings));
     const mainImage = images[faker.number.int({ min: 0, max: numOfImages - 1 })];
 
-    const price = faker.commerce.price({ symbol: '$' });
+    const price = faker.commerce.price({
+        symbol: '$',
+        min: settings?.priceMinValue,
+        max: settings?.priceMaxValue,
+    });
     return {
         _id: id ?? faker.string.uuid(),
         slug: faker.lorem.word(),
-        name: faker.commerce.productName(),
+        name: faker.lorem.words(settings?.numberOfWordsInTitle || 2),
         description: faker.commerce.productDescription(),
         media: {
             items: images,
