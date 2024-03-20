@@ -34,11 +34,22 @@
         border-radius: 35px;
         cursor: pointer;
     }
+
+    
 }
 
-.secondaryButton {
-    padding: 20px 25px;
-    height: 40px;
+/* Media query for screens smaller than 360px */
+@media (max-width: 360px) {
+    .secondaryButton {
+        padding: 15px 15px; /* Adjusted padding values */
+    }
+}
+
+
+
+
+.smallSecondaryButton {
+    padding: 5px 15px;
     display: flex;
     align-items: center;
     font: $medium-text;
