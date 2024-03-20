@@ -18,14 +18,14 @@ function getWixApi(settings?: Settings): WixAPI {
 
     const api: WixAPI = {
         getAllProducts: async () => {
-            return products;
+            return Promise.resolve(products);
         },
         getProduct: async (id: string | undefined) => {
             faker.seed(123);
-            return createProduct(id, settings);
+            return Promise.resolve(createProduct(id, settings));
         },
         getPromotedProducts: async () => {
-            return products.slice(0, 4);
+            return Promise.resolve(products.slice(0, 4));
         },
         getCart: () => {
             faker.seed(123);
