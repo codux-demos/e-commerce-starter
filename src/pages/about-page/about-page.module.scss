@@ -1,17 +1,42 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    font: $large-text;
+    font: $large-font;
     display: flex;
-    flex-direction: column;
-    row-gap: 0.5em;
-    background-color: $white;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    flex-direction: row;
+    background-color: $snow-white;
+    column-gap: 5em;
+    justify-content: center;
+    align-content: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 .title {
+    font: $title-font;
+    letter-spacing: 0.4rem;
+}
+
+.paragraph {
+    margin-bottom: 1.5em;
     font: $medium-title;
-    text-align: center;
+}
+
+.text {
+    text-align: start;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.image {
+    align-self: center;
+    width: 20vw;
+}
+
+.title {
+    font: $extra-large-thin-title;
+    text-align: start;
     letter-spacing: 0.4rem;
 }
