@@ -31,15 +31,15 @@
     justify-content: center;
     font: $large-title;
     padding: 10px;
+    letter-spacing: 2px;
 }
 .arrowIcon {
     position: absolute;
     left: 0px;
     margin: 0rem 0rem 0rem 1rem;
-    font-size: 20px;
-    font-weight: 800;
-    font: $small-title;
+    cursor: pointer;
 }
+
 .body {
     position: relative;
     flex-grow: 1;

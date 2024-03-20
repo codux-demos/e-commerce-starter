@@ -15,7 +15,7 @@ export interface CartItemProps {
 
 export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
     const name = cartItem.productName?.translated || '';
-    const imageUrl = getImageHttpUrl(cartItem.image, 100, 100);
+    const imageUrl = getImageHttpUrl(cartItem.image, 120, 120);
 
     const { trigger: updateQuantity } = useUpdateCartItemQuantity();
     const { trigger: removeItem } = useRemoveItemFromCart();
@@ -35,20 +35,28 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
             <img src={imageUrl} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
                 <h4 className={styles.description}>{name}</h4>
+
                 <span className={commonStyles.price}>
                     {cartItem.price?.formattedConvertedAmount}
                 </span>
-                <input
-                    type="number"
-                    value={cartItem.quantity}
-                    onChange={updateQuantityHandler}
-                    min={0}
-                    className={commonStyles.numberInput}
-                />
+
+                <div className={styles.container}>
+                    <input
+                        type="number"
+                        value={cartItem.quantity}
+                        onChange={updateQuantityHandler}
+                        min={0}
+                        className={commonStyles.numberInput}
+                    />
+                    <button
+                        onClick={() => removeItem(cartItem._id!)}
+                        aria-label="Remove item"
+                        className={styles.garbage}
+                    >
+                        <TrashIcon height={25} width={25} />
+                    </button>
+                </div>
             </div>
-            <button onClick={() => removeItem(cartItem._id!)} aria-label="Remove item">
-                <TrashIcon />
-            </button>
         </div>
     );
 };

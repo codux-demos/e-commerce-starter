@@ -9,12 +9,14 @@
     font: $medium-text;
     color: $snow-white;
     border-radius: 35px;
+    z-index: 1;
 
     &:hover {
         background-color: $white;
         background-color: rgba(255, 255, 255, 0);
         border: 1px solid $charcoal-black;
         color: $charcoal-black;
+        cursor: pointer;
     }
 }
 
@@ -30,6 +32,7 @@
         background-color: $white;
         border: 1px solid black;
         border-radius: 35px;
+        cursor: pointer;
     }
 }
 
@@ -54,7 +57,6 @@
     border-radius: 5px;
     padding-left: 10px;
     height: 35px;
-    margin-top: 20px;
     width: 70px;
     padding-right: 10px;
 }

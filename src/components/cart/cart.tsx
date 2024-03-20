@@ -6,6 +6,7 @@ import { useCart, useCartTotals } from '../../api/api-hooks';
 import { CartItem } from './cart-item/cart-item';
 import styles from './cart.module.scss';
 import { WixAPIContext } from '../../api/wix-api-context-provider';
+import Classnames from 'classnames';
 
 export interface CartProps {
     className?: string;
@@ -31,8 +32,8 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.secondaryButton}>
-                Cart
+            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.primaryButton}>
+                {isOpen ? 'Close Cart' : 'Open Cart'}
             </button>
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
@@ -40,7 +41,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                         <div className={styles.emptyCart}>Cart is empty</div>
                     ) : (
                         <div className={styles.cart}>
-                            <div>
+                            <div className={styles.items}>
                                 {cart?.lineItems?.map((item) => (
                                     <CartItem key={item._id} cartItem={item} />
                                 ))}
