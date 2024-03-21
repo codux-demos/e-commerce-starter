@@ -47,6 +47,16 @@ export default createBoard({
                 <h3 className={CommonStyles_board_module.subCategoryTitle}>Main Heading / h1</h3>
                 <div className={CommonStyles_board_module.divider}></div>
             </div>
+            <div className={CommonStyles_board_module.grid}>
+                <div>
+                    <h2>Heading 42</h2>
+                    <span>Open Sans - Normal </span>
+                </div>
+                <div>
+                    <h2>Heading 42</h2>
+                    <span>Open Sans - Normal </span>
+                </div>
+            </div>
             <div className={boardStyle.box}>
                 <button className={commonStyles.primaryButton}>Primary Button</button>
                 <button className={commonStyles.secondaryButton}>Secondary Button</button>
