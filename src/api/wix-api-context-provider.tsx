@@ -21,7 +21,7 @@ function getWixClient() {
             redirects,
         },
         auth: OAuthStrategy({
-            clientId: '84452635-47cb-45b8-be5b-ca3938e93193',
+            clientId: import.meta.env.VITE_WIX_CLIENT_ID || process.env.VITE_WIX_CLIENT_ID || '',
             tokens: getTokens(),
         }),
     });
@@ -68,6 +68,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                     {
                         catalogReference: {
                             catalogItemId: id,
+                            //this is the static ID of the stores app
                             appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
                             options: { options: options },
                         },
