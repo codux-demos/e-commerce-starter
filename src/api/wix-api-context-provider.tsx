@@ -42,12 +42,10 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                 : undefined;
         },
         getCart: () => {
-            return wixClient.currentCart.getCurrentCart().catch(() => console.log('no cart'));
+            return wixClient.currentCart.getCurrentCart();
         },
         getCartTotals: () => {
-            return wixClient.currentCart
-                .estimateCurrentCartTotals()
-                .catch(() => console.log('no cart'));
+            return wixClient.currentCart.estimateCurrentCartTotals();
         },
         updateCartItemQuantity: async (id: string | undefined | null, quantity: number) => {
             const result = await wixClient.currentCart.updateCurrentCartLineItemQuantity([

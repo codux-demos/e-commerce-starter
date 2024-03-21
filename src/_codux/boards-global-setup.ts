@@ -9,4 +9,3 @@ lines.forEach((line: string) => {
         process.env[trimmedKey] = value.trim();
     }
 });
-console.log(process.env);
