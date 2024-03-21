@@ -6,7 +6,7 @@ import { ROUTES } from './config';
 import { ProductPage } from '../pages/product-page/product-page';
 import { ProductsPage } from '../pages/products-page/products-page';
 
-export const routes: RouteObject[] = [
+export const getRoutes: () => RouteObject[] = () => [
     {
         path: '/',
         element: <SiteWrapper />,

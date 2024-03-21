@@ -1,9 +1,9 @@
 import { createBoard } from '@wixc3/react-board';
-import { AppWrapperRealData } from '../board-wrappers/app-wrapper-real-data';
+import { PageWrapperRealData } from '../board-wrappers/page-wrapper-real-data';
 
 export default createBoard({
     name: 'App',
-    Board: () => <AppWrapperRealData />,
+    Board: () => <PageWrapperRealData />,
     isSnippet: false,
     environmentProps: {
         canvasMargin: {

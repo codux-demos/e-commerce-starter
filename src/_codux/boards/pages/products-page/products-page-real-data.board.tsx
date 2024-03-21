@@ -5,7 +5,8 @@ import { PageWrapperRealData } from '../../../board-wrappers/page-wrapper-real-d
 export default createBoard({
     name: 'Page Products Real Data',
     Board: () => (
-        <PageWrapperRealData>
+        //in practice PageWrapperRealData with a path will render the correct page, but it is less convenient to use in a board
+        <PageWrapperRealData path="/products">
             <ProductsPage />
         </PageWrapperRealData>
     ),
