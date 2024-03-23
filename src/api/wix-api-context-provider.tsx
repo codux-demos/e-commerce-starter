@@ -21,7 +21,7 @@ function getWixClient() {
             redirects,
         },
         auth: OAuthStrategy({
-            clientId: '84452635-47cb-45b8-be5b-ca3938e93193',
+            clientId: '244f94e6-eb2c-4c17-bb4e-9c3453701f05',
             tokens: getTokens(),
         }),
     });
