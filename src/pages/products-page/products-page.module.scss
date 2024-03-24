@@ -8,10 +8,7 @@
 
 .title {
     text-align: start;
-    margin-bottom: 0px;
 }
-
-//Selected arbitrary the default size to be between 980px and 1400px
 
 .gallery {
     display: grid;
@@ -21,15 +18,13 @@
     padding-left: 120px;
     column-gap: 20px;
     row-gap: 60px;
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 60px;
 }
 
-@media (1400px <width) {
+@media (1400px < width) {
     .gallery {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding-right: 120px;
-        padding-left: 120px;
         max-width: 1400px;
     }
 }
