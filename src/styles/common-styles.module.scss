@@ -2,8 +2,6 @@
 
 .primaryButton {
     background-color: $charcoal-black;
-    padding: 20px;
-    height: 40px;
     display: flex;
     align-items: center;
     font: $medium-text;
@@ -16,10 +14,12 @@
         border: 1px solid $charcoal-black;
         color: $charcoal-black;
     }
+    height: 40px;
+    padding-left: 22px;
+    padding-right: 22px;
 }
 
 .secondaryButton {
-    padding: 20px 25px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -31,10 +31,11 @@
         border: 1px solid black;
         border-radius: 35px;
     }
+    padding-right: 25px;
+    padding-left: 25px;
 }
 
 .secondaryButton {
-    padding: 20px 25px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -47,6 +48,8 @@
         border: 1px solid black;
         border-radius: 35px;
     }
+    padding-right: 22px;
+    padding-left: 22px;
 }
 
 .numberInput {
