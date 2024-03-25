@@ -7,7 +7,6 @@ import styles from './hero-image.module.scss';
 export interface HeroImageProps {
     className?: string;
     topLabel: string;
-    imageSrc: string;
     topLabelClassName?: string;
     title: string;
     bottomLabel: string;
@@ -20,7 +19,6 @@ export interface HeroImageProps {
 export const HeroImage = ({
     title,
     bottomLabel,
-    imageSrc,
     primaryButtonLabel,
     onPrimaryButtonClick,
     secondaryButtonLabel,

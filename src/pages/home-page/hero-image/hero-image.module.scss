@@ -5,7 +5,8 @@
     color: $white;
     width: 100vw;
     height: 100vh;
-    background-image:../../../../[1024_640]_heroImage04.jpg;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .overlay {
@@ -66,7 +67,7 @@
 
 // --- MEDIA QUERIES ---
 
-@media (1400px <=width) {
+@media (1400px <= width) {
     .root {
         background-color: yellow;
         background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
@@ -89,10 +90,10 @@
     }
 }
 
-@media (980px <=width < 1400px) {
+@media (980px <= width < 1400px) {
     .root {
         background-color: red;
-        background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
+        background-image: url('../../../assets/img/[1024_640]_heroImage04.jpg');
     }
 
     .small-title {
@@ -102,7 +103,7 @@
         font-size: 38px;
     }
 
-      .big-title {
+    .big-title {
         font-size: 85px;
     }
 }
@@ -110,6 +111,7 @@
 @media (430px <=width < 980px) {
     .root {
         background-color: plum;
+        background-image: url('../../../assets/img/[760_460]_heroImage04.jpg');
     }
 
     .overlay {
@@ -132,6 +134,7 @@
 @media (width < 430px) {
     .overlay {
         padding-left: 8vw;
+        background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
     }
 
     .small-title {

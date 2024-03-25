@@ -10,10 +10,10 @@ export default createBoard({
             secondaryButtonLabel="Shop"
             title="Up to 30% off"
             topLabel="Holiday Deals"
-            imageSrc={imgSrc}
         />
     ),
     isSnippet: true,
     environmentProps: {
+        windowWidth: 760,
     },
 });
