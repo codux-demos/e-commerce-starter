@@ -33,7 +33,9 @@ export const Cart = ({ buttonText = 'Cart', className, initialIsOpen }: CartProp
 
     return (
         <>
-            <button className={className} onClick={() => setIsOpen(true)}>{buttonText}</button>
+            <button className={className} onClick={() => setIsOpen(true)}>
+                {buttonText}
+            </button>
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
                     {isEmpty ? (
