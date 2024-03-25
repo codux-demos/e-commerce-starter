@@ -25,7 +25,7 @@ export const Header = ({ className }: HeaderProps) => {
                 <Link to={ROUTES.about.to()} className={CommonStyles_module.secondaryButton}>
                     About
                 </Link>
-                <Cart />
+                <Cart className={CommonStyles_module.secondaryButton} />
             </div>
         </div>
     );

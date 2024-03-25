@@ -10,9 +10,9 @@
     height: 42px;
     padding-left: 22px;
     padding-right: 22px;
+    border: 1px solid $charcoal-black;
     &:hover {
         background-color: $white;
-        background-color: rgba(255, 255, 255, 0);
         border: 1px solid $charcoal-black;
         color: $charcoal-black;
     }
@@ -24,13 +24,14 @@
     font: $medium-text;
     border: 1px solid transparent;
     cursor: pointer;
+    padding-right: 22px;
+    padding-left: 22px;
+    border: 1px solid white;
     &:hover {
         background-color: $white;
         border: 1px solid black;
         border-radius: 35px;
     }
-    padding-right: 22px;
-    padding-left: 22px;
 }
 .numberInput {
     border: 1px solid $black;
