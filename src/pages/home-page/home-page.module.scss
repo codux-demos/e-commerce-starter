@@ -99,28 +99,12 @@
 // --- MEDIA QUERIES ---
 
 @media (1400px <=width) {
-    .root {
-        background-color: aqua;
-    }
-
     .content {
         max-width: 1400px;
     }
 }
 
-/*
-@media (980px <=width < 1400px) {
-    .root {
-        background-color: red;
-    }
-}
-*/
-
 @media (420px <=width < 980px) {
-    .root {
-        background-color: plum;
-    }
-
     .cardsLayout {
         padding-left: 4vw;
         padding-right: 4vw;
@@ -139,9 +123,6 @@
 }
 
 @media (width < 420px) {
-    .root {
-        background-color: yellow;
-    }
     .cardsLayout {
         padding-left: 5vw;
         padding-right: 5vw;
