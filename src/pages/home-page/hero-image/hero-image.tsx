@@ -32,7 +32,7 @@ export const HeroImage = ({
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['image-container']}>
-                <img className={styles.image} src={imageSrc} alt="" />
+                <div className={styles.image} />
                 <div className={styles.overlay}>
                     <div>
                         <p className={styles['small-title']}>{title}</p>
