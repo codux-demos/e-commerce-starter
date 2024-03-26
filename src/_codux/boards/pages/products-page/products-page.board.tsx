@@ -9,6 +9,7 @@ export default createBoard({
             settings={{
                 imagesListToLoop: 'all',
             }}
+            path="/products"
         >
             <ProductsPage />
         </PageWrapper>

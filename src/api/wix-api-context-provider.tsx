@@ -5,6 +5,7 @@ import { redirects } from '@wix/redirects';
 import React, { FC, useMemo } from 'react';
 import Cookies from 'js-cookie';
 import { SWRConfig } from 'swr';
+import { ROUTES } from '../router/config';
 
 export const WIX_SESSION_TOKEN = 'wix_refreshToken';
 
@@ -21,7 +22,7 @@ function getWixClient() {
             redirects,
         },
         auth: OAuthStrategy({
-            clientId: '84452635-47cb-45b8-be5b-ca3938e93193',
+            clientId: import.meta.env.VITE_WIX_CLIENT_ID || process.env.VITE_WIX_CLIENT_ID || '',
             tokens: getTokens(),
         }),
     });
@@ -66,6 +67,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                     {
                         catalogReference: {
                             catalogItemId: id,
+                            //this is the static ID of the stores app
                             appId: '1380b703-ce81-ff05-f115-39571d94dfcd',
                             options: { options: options },
                         },
@@ -93,7 +95,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                 ecomCheckout: { checkoutId },
                 callbacks: {
                     postFlowUrl: window.location.origin,
-                    // thankYouPageUrl: `${window.location.origin}/stores-success`,
+                    thankYouPageUrl: `${window.location.origin}${ROUTES.thankYou.to()}`,
                 },
             });
             return { success: true, url: redirectSession?.fullUrl };

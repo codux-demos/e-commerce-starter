@@ -3,18 +3,21 @@
 .root {
     font: $large-font;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: $snow-white;
-    column-gap: 5em;
+    column-gap: 5px;
     justify-content: center;
     align-content: center;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    row-gap: 30px;
+    align-items: center;
 }
 
 .paragraph {
     margin-bottom: 1.5em;
     font: $medium-title;
+    text-align: center;
 }
 
 .text {
@@ -25,13 +28,8 @@
     row-gap: 1em;
 }
 
-.image {
-    align-self: center;
-    width: 20vw;
-}
-
 .title {
     font: $extra-large-thin-title;
-    text-align: start;
+    text-align: center;
     letter-spacing: 0.4rem;
 }

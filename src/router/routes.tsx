@@ -5,8 +5,9 @@ import { AboutPage } from '../pages/about-page/about-page';
 import { ROUTES } from './config';
 import { ProductPage } from '../pages/product-page/product-page';
 import { ProductsPage } from '../pages/products-page/products-page';
+import { ThankYouPage } from '../components/thank-you-page/thank-you-page';
 
-export const routes: RouteObject[] = [
+export const getRoutes: () => RouteObject[] = () => [
     {
         path: '/',
         element: <SiteWrapper />,
@@ -15,6 +16,7 @@ export const routes: RouteObject[] = [
             { path: ROUTES.products.route, element: <ProductsPage /> },
             { path: ROUTES.product.route, element: <ProductPage /> },
             { path: ROUTES.about.route, element: <AboutPage /> },
+            { path: ROUTES.thankYou.route, element: <ThankYouPage /> },
         ],
     },
 ];

@@ -6,7 +6,8 @@ export default createBoard({
     name: 'Page Product Details Real Data',
     Board: () => {
         return (
-            <PageWrapperRealData productSlug="i-m-a-product-9">
+            //in practice PageWrapperRealData with a path will render the correct page, but it is less convenient to use in a board
+            <PageWrapperRealData path="/product/i-m-a-product-9">
                 <ProductPage />
             </PageWrapperRealData>
         );

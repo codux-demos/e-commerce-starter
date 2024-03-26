@@ -1,27 +1,20 @@
 import { RouterProvider, createMemoryRouter } from 'react-router-dom';
-import { SiteWrapper } from '../../components/site-wrapper/site-wrapper';
-import { ROUTES } from '../../router/config';
 import { WixAPIContextProvider } from '../../api/wix-api-context-provider';
+import { getRoutes } from '../../router/routes';
+import { replaceRouteWithChildren } from './set-children-to-route';
 
 type Props = {
-    children: React.ReactNode;
-    productSlug?: string;
+    children?: React.ReactNode;
+    path?: string;
 };
 
-export function PageWrapperRealData(props: Props) {
-    const route = props.productSlug ? ROUTES.product.route : undefined;
-    const path = props.productSlug ? ROUTES.product.to(props.productSlug) : '/';
+export function PageWrapperRealData({ path, children }: Props) {
+    const routes = getRoutes();
+    if (children && path) {
+        replaceRouteWithChildren(routes, path, children);
+    }
+    const router = createMemoryRouter(routes, { initialEntries: [path || '/'] });
 
-    const router = createMemoryRouter(
-        [
-            {
-                path: '/',
-                element: <SiteWrapper />,
-                children: [{ index: true, element: props.children, path: route }],
-            },
-        ],
-        { initialEntries: [path] }
-    );
     return (
         <WixAPIContextProvider>
             <RouterProvider router={router} />

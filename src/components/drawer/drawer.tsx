@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { ChevronRightIcon } from '@radix-ui/react-icons';
 import styles from './drawer.module.scss';
 import cx from 'classnames';
 import { useEffect, useState } from 'react';
@@ -38,8 +39,8 @@ export const Drawer = ({
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className={styles.header}>
-                    <ArrowRightIcon className={styles.arrowIcon} onClick={handleClose} />
                     <h3>{title}</h3>
+                    <ChevronRightIcon className={styles.arrowIcon} onClick={handleClose} height={35} width={35} />
                 </div>
                 <div className={styles.body}>{children}</div>
             </div>

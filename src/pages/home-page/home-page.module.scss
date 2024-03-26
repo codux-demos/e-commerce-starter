@@ -93,27 +93,16 @@
 
 .productCard {
     width: 20vw;
+    max-height: 100%;
 }
 
 // --- MEDIA QUERIES ---
 
 @media (1400px <=width) {
-    .root {
-        background-color: aqua;
-    }
-
     .content {
         max-width: 1400px;
     }
 }
-
-/*
-@media (980px <=width < 1400px) {
-    .root {
-        background-color: red;
-    }
-}
-*/
 
 @media (430px <=width < 980px) {
     .root {

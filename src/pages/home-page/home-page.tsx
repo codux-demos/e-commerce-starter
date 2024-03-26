@@ -25,7 +25,6 @@ export const HomePage = ({ className }: HomePageProps) => {
                     primaryButtonLabel="Shop Now"
                     topLabelClassName={styles['top-label-highlighted']}
                     onPrimaryButtonClick={() => navigate(ROUTES.products.to())}
-                    imageUrl="https://images.unsplash.com/photo-1622542796254-5b9c46ab0d2f?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dwixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
                 />
                 <h1 className={styles['hero-title']}>
                     Best Sellers<p className={styles.HPprgrp}>Shop our best seller items</p>

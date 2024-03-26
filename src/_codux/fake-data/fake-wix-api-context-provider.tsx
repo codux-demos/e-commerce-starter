@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import {
     createProducts,
     createProduct,
@@ -8,6 +8,7 @@ import {
 } from './fake-data';
 import { WixAPI, WixAPIContext } from '../../api/wix-api-context-provider';
 import { faker } from '@faker-js/faker';
+import { SWRConfig } from 'swr';
 
 export type FakeDataSettings = Settings;
 
@@ -17,14 +18,14 @@ function getWixApi(settings?: Settings): WixAPI {
 
     const api: WixAPI = {
         getAllProducts: async () => {
-            return products;
+            return Promise.resolve(products);
         },
         getProduct: async (id: string | undefined) => {
             faker.seed(123);
-            return createProduct(id, settings);
+            return Promise.resolve(createProduct(id, settings));
         },
         getPromotedProducts: async () => {
-            return products.slice(0, 4);
+            return Promise.resolve(products.slice(0, 4));
         },
         getCart: () => {
             faker.seed(123);
@@ -63,9 +64,15 @@ export const FakeWixAPIContextProvider: FC<{
     children: React.ReactElement;
     settings?: Settings;
 }> = ({ children, settings }) => {
+    const [cache, setCache] = useState(new Map());
     const api = useMemo(() => {
+        setCache(new Map());
         return getWixApi(settings);
     }, [settings]);
 
-    return <WixAPIContext.Provider value={api}>{children}</WixAPIContext.Provider>;
+    return (
+        <SWRConfig value={{ provider: () => cache }}>
+            <WixAPIContext.Provider value={api}>{children}</WixAPIContext.Provider>
+        </SWRConfig>
+    );
 };

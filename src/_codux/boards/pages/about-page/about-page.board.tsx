@@ -5,7 +5,7 @@ import { AboutPage } from '../../../../pages/about-page/about-page';
 export default createBoard({
     name: 'Page About',
     Board: () => (
-        <PageWrapper>
+        <PageWrapper path="/about">
             <AboutPage />
         </PageWrapper>
     ),

@@ -1,12 +1,12 @@
 import { createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '../../../board-wrappers/page-wrapper';
-import { ProductPage } from '../../../../pages/product-page/product-page';
+import { ThankYouPage } from '../../../../components/thank-you-page/thank-you-page';
 
 export default createBoard({
-    name: 'Page Product Details',
+    name: 'Page Thank You',
     Board: () => (
-        <PageWrapper path="/product/fake">
-            <ProductPage />
+        <PageWrapper path="/thank-you">
+            <ThankYouPage />
         </PageWrapper>
     ),
     isSnippet: false,
@@ -17,7 +17,5 @@ export default createBoard({
             right: 0,
             bottom: 0,
         },
-        windowWidth: 1024,
-        windowHeight: 768,
     },
 });

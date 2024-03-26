@@ -1,29 +1,38 @@
 import { createBoard } from '@wixc3/react-board';
-import { CartItem, CartItemProps } from '../../../../components/cart/cart-item/cart-item';
-import { ReactNode } from 'react';
-import { useCart } from '../../../../api/api-hooks';
-import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
+import { CartItem } from '../../../../components/cart/cart-item/cart-item';
+import { ReactNode, useEffect, useState } from 'react';
+import { FakeDataSettings, createCartItem, createProduct } from '../../../fake-data/fake-data';
 
-function CartItemWrapper(props: { children: (cartItem: CartItemProps['cartItem']) => ReactNode }) {
-    const { data: cart } = useCart();
-    const cartItem = cart?.lineItems[0];
-    if (!cartItem) {
-        return null;
-    }
-    return props.children(cartItem);
+function ImageSetting({
+    children,
+    imageToUse,
+    onImageChange,
+}: {
+    children: ReactNode;
+    /** @important */
+    imageToUse?: FakeDataSettings['imageToUse'];
+    onImageChange: (image: FakeDataSettings['imageToUse']) => void;
+}) {
+    useEffect(() => {
+        onImageChange(imageToUse);
+    }, [imageToUse]);
+    return children;
 }
 
 export default createBoard({
     name: 'Cart Item',
-    Board: () => (
-        <ComponentWrapper
-            settings={{
-                imageToUse: '[100_100]_grey.jpg',
-            }}
-        >
-            <CartItemWrapper>{(cartItem) => <CartItem cartItem={cartItem} />}</CartItemWrapper>
-        </ComponentWrapper>
-    ),
+    Board: () => {
+        const [image, setImage] = useState<FakeDataSettings['imageToUse']>();
+
+        const product = createProduct('1', { imageToUse: image });
+        const cartItem = createCartItem(product);
+
+        return (
+            <ImageSetting onImageChange={setImage} imageToUse="[100_100]_grey.jpg">
+                <CartItem cartItem={cartItem} />
+            </ImageSetting>
+        );
+    },
     isSnippet: false,
     environmentProps: {
         canvasMargin: {

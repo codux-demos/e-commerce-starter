@@ -15,7 +15,4 @@ export default createBoard({
         </ComponentWrapper>
     ),
     isSnippet: false,
-    environmentProps: {
-        
-    },
 });
