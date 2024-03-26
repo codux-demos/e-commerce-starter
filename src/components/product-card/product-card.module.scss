@@ -23,22 +23,7 @@
 
 // --- MEDIA QUERIES ---
 
-@media (1400px <=width) {
-    .root {
-        background-color: aqua;
-    }
-}
-
-@media (980px <=width < 1400px) {
-    .root {
-        background-color: red;
-    }
-}
-
 @media (420px <=width < 980px) {
-    .root {
-        background-color: plum;
-    }
     .cardContent {
         font-size: 24px;
     }
