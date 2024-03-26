@@ -13,7 +13,7 @@ type Props = {
 export function ComponentWrapper(props: Props) {
     const router = createMemoryRouter([
         {
-            path: '/',
+            path: '*',
             element: props.children,
         },
     ]);
