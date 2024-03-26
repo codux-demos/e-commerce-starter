@@ -32,8 +32,8 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.primaryButton}>
-                {isOpen ? 'Close Cart' : 'Open Cart'}
+            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.secondaryButton}>
+                Cart
             </button>
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
