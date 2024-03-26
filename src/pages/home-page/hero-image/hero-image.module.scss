@@ -66,11 +66,7 @@
 
 // --- MEDIA QUERIES ---
 
-@media (1400px <= width) {
-    .root {
-        background-color: yellow;
-        background-image: url('../../../assets/img/[1400_640]_heroImage04.jpg');
-    }
+@media (1400px <=width) {
 
     .content {
         max-width: 1400px;
@@ -89,13 +85,9 @@
     }
 }
 
-@media (980px <= width < 1400px) {
-    .root {
-        background-color: red;
-        background-image: url('../../../assets/img/[1024_640]_heroImage04.jpg');
-    }
 
-    .small-title {
+@media (420px <=width < 980px) {
+    .overlay-text {
         font: $medium-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
@@ -107,36 +99,8 @@
     }
 }
 
-@media (430px <=width < 980px) {
-    .root {
-        background-color: plum;
-        background-image: url('../../../assets/img/[760_460]_heroImage04.jpg');
-    }
-
-    .overlay {
-        padding-left: 10vw;
-    }
-
-    .small-title {
-        font: $medium-paragraph-font;
-        margin-bottom: 0.6em;
-        margin-top: 2em;
-        font-size: 22px;
-    }
-
-    .big-title {
-        font: $small-thin-title;
-        font-size: 60px;
-    }
-}
-
-@media (width < 430px) {
-    .overlay {
-        padding-left: 8vw;
-        background-image: url('../../../assets/img/[420_340]_heroImage04.jpg');
-    }
-
-    .small-title {
+@media (width < 420px) {
+    .overlay-text {
         font: $small-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
