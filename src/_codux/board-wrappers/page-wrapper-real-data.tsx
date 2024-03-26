@@ -2,6 +2,7 @@ import { RouterProvider, createMemoryRouter } from 'react-router-dom';
 import { WixAPIContextProvider } from '../../api/wix-api-context-provider';
 import { getRoutes } from '../../router/routes';
 import { replaceRouteWithChildren } from './set-children-to-route';
+import { CartOpenContextProvider } from '../../components/cart/cart-open-context';
 
 type Props = {
     children?: React.ReactNode;
@@ -17,7 +18,9 @@ export function PageWrapperRealData({ path, children }: Props) {
 
     return (
         <WixAPIContextProvider>
-            <RouterProvider router={router} />
+            <CartOpenContextProvider>
+                <RouterProvider router={router} />
+            </CartOpenContextProvider>
         </WixAPIContextProvider>
     );
 }
