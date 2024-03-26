@@ -3,13 +3,11 @@
 .root {
     font: $paragraph-font;
     display: grid;
-    width: 70%;
+    width: auto;
     padding-top: 20px;
     gap: 10px;
     text-wrap: pretty;
-
 }
-
 
 .info-title {
     font: $small-title;
@@ -18,5 +16,6 @@
 
 .info-prgrp {
     font: $extra-small-text;
-    margin-top: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }

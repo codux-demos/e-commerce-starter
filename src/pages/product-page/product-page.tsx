@@ -6,13 +6,15 @@ import commonStyles from '../../styles/common-styles.module.scss';
 import { ProductImages } from './product-images/product-images';
 import { ProductInfo } from './product-info/product-info';
 import { useAddToCart, useProduct } from '../../api/api-hooks';
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
+import { CartOpenContext } from '../../components/cart/cart-open-context';
 
 export interface ProductPageProps {
     className?: string;
 }
 
 export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
+    const { setIsOpen } = useContext(CartOpenContext);
     const { slug: productSlug } = useParams<RouteParams['/product/:slug']>();
 
     const { data: product, isLoading } = useProduct(productSlug);
@@ -27,7 +29,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
         );
     }
 
-    function addToCartHandler() {
+    async function addToCartHandler() {
         if (!product?._id) {
             return;
         }
@@ -41,7 +43,8 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 options[option.name] = option.choices[0].value;
             }
         });
-        addToCart({ id: product._id, quantity, options });
+        await addToCart({ id: product._id, quantity, options });
+        setIsOpen(true);
     }
 
     return (
