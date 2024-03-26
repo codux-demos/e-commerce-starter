@@ -16,7 +16,7 @@ export const getRoutes: () => RouteObject[] = () => [
             { path: ROUTES.products.route, element: <ProductsPage /> },
             { path: ROUTES.product.route, element: <ProductPage /> },
             { path: ROUTES.about.route, element: <AboutPage /> },
-            { path: ROUTES.about.route, element: <ThankYouPage /> },
+            { path: ROUTES.thankYou.route, element: <ThankYouPage /> },
         ],
     },
 ];

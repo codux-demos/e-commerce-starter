@@ -5,6 +5,7 @@ import { redirects } from '@wix/redirects';
 import React, { FC, useMemo } from 'react';
 import Cookies from 'js-cookie';
 import { SWRConfig } from 'swr';
+import { ROUTES } from '../router/config';
 
 export const WIX_SESSION_TOKEN = 'wix_refreshToken';
 
@@ -94,7 +95,7 @@ function getWixApi(wixClient: ReturnType<typeof getWixClient>) {
                 ecomCheckout: { checkoutId },
                 callbacks: {
                     postFlowUrl: window.location.origin,
-                    // thankYouPageUrl: `${window.location.origin}/stores-success`,
+                    thankYouPageUrl: `${window.location.origin}${ROUTES.thankYou.to()}`,
                 },
             });
             return { success: true, url: redirectSession?.fullUrl };
