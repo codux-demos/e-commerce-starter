@@ -1,8 +1,8 @@
-import classNames from 'classnames';
-import styles from './hero-image.module.scss';
 import commonStyles from '@styles/common-styles.module.scss';
 import CommonStyles_module from '../../../styles/common-styles.module.scss';
 import heroImage from '../../../assets/img/[1024_640]_heroImage04.jpg';
+import classNames from 'classnames';
+import styles from './hero-image.module.scss';
 
 export interface HeroImageProps {
     className?: string;
@@ -30,11 +30,11 @@ export const HeroImage = ({
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['image-container']}>
-                <img src={heroImage} className={styles.image} />
+                <div className={styles.image} />
                 <div className={styles.overlay}>
                     <div>
-                        <h1 className={styles['overlay-text']}>{title}</h1>
-                        <p className={styles['overlay-header']}>{bottomLabel}</p>
+                        <p className={styles['small-title']}>{title}</p>
+                        <h1 className={styles['big-title']}>{bottomLabel} </h1>
                         {primaryButtonLabel && (
                             <button
                                 onClick={onPrimaryButtonClick}
@@ -47,7 +47,7 @@ export const HeroImage = ({
                             <button
                                 className={classNames(
                                     CommonStyles_module.primaryButton,
-                                    styles['overlay-button']
+                                    styles['overlay-button'],
                                 )}
                                 onClick={onSecondaryButtonClick}
                             >
