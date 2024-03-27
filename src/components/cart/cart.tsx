@@ -1,12 +1,12 @@
 import commonStyles from '@styles/common-styles.module.scss';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Drawer } from '../drawer/drawer';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
 import { useCart, useCartTotals } from '../../api/api-hooks';
 import { CartItem } from './cart-item/cart-item';
 import styles from './cart.module.scss';
 import { WixAPIContext } from '../../api/wix-api-context-provider';
-import Classnames from 'classnames';
+import { CartOpenContext } from './cart-open-context';
 
 export interface CartProps {
     className?: string;
@@ -14,7 +14,7 @@ export interface CartProps {
 }
 
 export const Cart = ({ className, initialIsOpen }: CartProps) => {
-    const [isOpen, setIsOpen] = useState(initialIsOpen || false);
+    const { isOpen, setIsOpen } = useContext(CartOpenContext);
     const { data: cart } = useCart();
     const { data: cartTotals } = useCartTotals();
     const isEmpty = !cart?.lineItems || cart.lineItems.length === 0;
