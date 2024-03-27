@@ -6,7 +6,6 @@
     align-items: center;
     height: 4em;
     font: $medium-text;
-    padding-left: 15px;
 }
 
 .menu {
@@ -14,21 +13,32 @@
     font: $medium-text;
     align-items: center;
     cursor: pointer;
+    margin-right: 10px;
+}
 
-    &:hover {
-        background-color: $white;
-        border-radius: 35px;
-    }
+.menuButton {
+    padding-right: 22px;
+    padding-left: 22px;
 }
 
 .logo {
     font: 700 1.15rem/1.5 $my-prettyfont;
     height: fit-content;
+    margin-left: 20px;
 }
 
-@media only screen and (max-width: $mobile-width) {
-    .root {
-        justify-content: center;
+// --- MEDIA QUERIES ---
+
+@media (430px <= width < 980px) {
+    .menuButton {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+}
+
+@media (width < 430px) {
+    .menu {
+        margin: 0;
     }
 
     .logo {

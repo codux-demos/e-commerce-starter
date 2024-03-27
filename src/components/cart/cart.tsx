@@ -32,7 +32,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.secondaryButton}>
+            <button onClick={() => setIsOpen(true)} className={Classnames(CommonStyles_module.secondaryButton, className)}>
                 Cart
             </button>
             {isOpen ? (

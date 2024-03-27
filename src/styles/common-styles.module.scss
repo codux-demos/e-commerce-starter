@@ -28,13 +28,9 @@
     font: $medium-text;
     border: 1px solid transparent;
     cursor: pointer;
-    padding-right: 22px;
-    padding-left: 22px;
-    border: 1px solid white;
     z-index: 1;
 
     &:hover {
-        background-color: $white;
         border: 1px solid black;
         border-radius: 35px;
     }

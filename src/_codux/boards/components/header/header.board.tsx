@@ -11,10 +11,9 @@ export default createBoard({
     ),
     isSnippet: true,
     environmentProps: {
+        windowWidth: 600,
         canvasMargin: {
             top: 1,
-            right: 0,
-            left: 0,
         },
     },
 });
