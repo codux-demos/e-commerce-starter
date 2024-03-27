@@ -1,6 +1,8 @@
-import commonStyles from '@styles/common-styles.module.scss';
 import CommonStyles_module from '../../../styles/common-styles.module.scss';
-import heroImage from '../../../assets/img/[1024_640]_heroImage04.jpg';
+import smallHeroImage from '../../../assets/img/[420_340]_heroImage04.jpg';
+import mediumHeroImage from '../../../assets/img/[760_460]_heroImage04.jpg';
+import largeHeroImage from '../../../assets/img/[1024_640]_heroImage04.jpg';
+import xLargeHeroImage from '../../../assets/img/[1400_640]_heroImage04.jpg';
 import classNames from 'classnames';
 import styles from './hero-image.module.scss';
 
@@ -30,7 +32,12 @@ export const HeroImage = ({
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['image-container']}>
-                <div className={styles.image} />
+                <picture>
+                    <source media="(min-width: 1400px)" srcSet={xLargeHeroImage} />
+                    <source media="(min-width: 1024px)" srcSet={largeHeroImage} />
+                    <source media="(min-width: 760px)" srcSet={mediumHeroImage} />
+                    <img src={smallHeroImage} className={styles.image} alt="Hero background" />
+                </picture>
                 <div className={styles.overlay}>
                     <div>
                         <p className={styles['small-title']}>{title}</p>
@@ -47,7 +54,7 @@ export const HeroImage = ({
                             <button
                                 className={classNames(
                                     CommonStyles_module.primaryButton,
-                                    styles['overlay-button'],
+                                    styles['overlay-button']
                                 )}
                                 onClick={onSecondaryButtonClick}
                             >

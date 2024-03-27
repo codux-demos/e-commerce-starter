@@ -48,7 +48,6 @@
 }
 
 .top-label-highlighted {
-    background-color: red;
     color: $white;
     padding: 0 5px;
     display: inline-block;
@@ -105,10 +104,6 @@
 }
 
 @media (430px <=width < 980px) {
-    .root {
-        background-color: plum;
-    }
-
     .cardsLayout {
         padding-left: 4vw;
         padding-right: 4vw;
@@ -127,9 +122,6 @@
 }
 
 @media (width < 430px) {
-    .root {
-        background-color: yellow;
-    }
     .cardsLayout {
         padding-left: 5vw;
         padding-right: 5vw;
