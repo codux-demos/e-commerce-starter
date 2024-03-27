@@ -3,6 +3,9 @@
 .root {
     position: relative;
     color: $white;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
 }
 
 .overlay {
@@ -23,11 +26,9 @@
 .image {
     object-fit: cover;
     object-position: 50% 0%;
-    height: 640px;
-    width: 100vw;
 }
 
-.overlay-text {
+.small-title {
     display: block;
     text-align: start;
     width: fit-content;
@@ -36,12 +37,16 @@
     margin-top: 2em;
 }
 
-.overlay-header {
-    max-width: 60%;
-    font-size: 3vw;
-    font: $extra-large-thin-title;
+.big-title {
+    max-width: 80%;
     margin-bottom: 0.8em;
     text-align: start;
+    letter-spacing: 2px;
+    font-weight: 100;
+    line-height: 1.2;
+    font-style: normal;
+    font-size: 3vw;
+    font: $extra-large-thin-title;
 }
 
 .overlay-button {
@@ -62,24 +67,33 @@
 // --- MEDIA QUERIES ---
 
 @media (1400px <=width) {
-
     .content {
         max-width: 1400px;
     }
-}
 
+    .small-title {
+        font-size: 42px;
+    }
+
+    .big-title {
+        font-size: 85px;
+    }
+
+    .overlay-button {
+        height: 47px;
+    }
+}
 
 @media (420px <=width < 980px) {
     .overlay-text {
         font: $medium-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
+        font-size: 38px;
     }
 
-    .overlay-header {
-        max-width: 60%;
-        font: $small-thin-title;
-        margin-bottom: 0.8em;
+    .big-title {
+        font-size: 85px;
     }
 }
 
@@ -88,11 +102,12 @@
         font: $small-paragraph-font;
         margin-bottom: 0.6em;
         margin-top: 2em;
+        font-size: 20px;
     }
 
-    .overlay-header {
-        max-width: 60%;
+    .big-title {
         font: $small-thin-title;
         margin-bottom: 0.8em;
+        font-size: 50px;
     }
 }

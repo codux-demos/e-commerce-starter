@@ -1,11 +1,10 @@
-import classNames from 'classnames';
-import styles from './hero-image.module.scss';
-import commonStyles from '@styles/common-styles.module.scss';
 import CommonStyles_module from '../../../styles/common-styles.module.scss';
 import smallHeroImage from '../../../assets/img/[420_340]_heroImage04.jpg';
 import mediumHeroImage from '../../../assets/img/[760_460]_heroImage04.jpg';
 import largeHeroImage from '../../../assets/img/[1024_640]_heroImage04.jpg';
 import xLargeHeroImage from '../../../assets/img/[1400_640]_heroImage04.jpg';
+import classNames from 'classnames';
+import styles from './hero-image.module.scss';
 
 export interface HeroImageProps {
     className?: string;
@@ -41,8 +40,8 @@ export const HeroImage = ({
                 </picture>
                 <div className={styles.overlay}>
                     <div>
-                        <h1 className={styles['overlay-text']}>{title}</h1>
-                        <p className={styles['overlay-header']}>{bottomLabel}</p>
+                        <p className={styles['small-title']}>{title}</p>
+                        <h1 className={styles['big-title']}>{bottomLabel} </h1>
                         {primaryButtonLabel && (
                             <button
                                 onClick={onPrimaryButtonClick}

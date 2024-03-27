@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './product-card.module.scss';
 import { products } from '@wix/stores';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
-import noImage from '../../assets/img/noImage/[160_200]_noImage.svg';
+import noImage from '../../assets/img/noImage/[160_200]_noImage.svg'; 
 
 export interface GalleryCardProps {
     name: string;
