@@ -11,9 +11,11 @@ import { CartOpenContext } from './cart-open-context';
 export interface CartProps {
     className?: string;
     initialIsOpen?: boolean;
+    buttonText?: string;
+
 }
 
-export const Cart = ({ className, initialIsOpen }: CartProps) => {
+export const Cart = ({ buttonText = 'Cart', className, initialIsOpen }: CartProps) => {
     const { isOpen, setIsOpen } = useContext(CartOpenContext);
     const { data: cart } = useCart();
     const { data: cartTotals } = useCartTotals();
@@ -32,8 +34,8 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)} className={CommonStyles_module.primaryButton}>
-                {isOpen ? 'Close Cart' : 'Open Cart'}
+            <button className={className} onClick={() => setIsOpen(true)}>
+                {buttonText}
             </button>
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
