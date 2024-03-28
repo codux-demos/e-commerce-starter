@@ -9,6 +9,9 @@
     "componentsPath": "src/components",
     "templatesPath": "src/_codux/component-templates"
   },
+  "newBoard": {
+    "templatesPath": "src/_codux/board-templates"
+  },
   "safeRender": {
     "maxInstancesPerComponent": 1000
   },
