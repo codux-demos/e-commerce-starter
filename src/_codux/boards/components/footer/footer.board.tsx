@@ -1,9 +1,13 @@
-import { createBoard } from '@wixc3/react-board';
 import { Footer } from '../../../../components/site-footer/site-footer';
+import { ContentSlot, createBoard } from '@wixc3/react-board';
 
 export default createBoard({
     name: 'Footer',
-    Board: () => <Footer />,
+    Board: () => (
+        <ContentSlot>
+            <Footer />
+        </ContentSlot>
+    ),
     isSnippet: true,
     environmentProps: {
         canvasMargin: {
