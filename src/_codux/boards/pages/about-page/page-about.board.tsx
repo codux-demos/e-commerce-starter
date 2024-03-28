@@ -1,14 +1,13 @@
-import { ThankYouPage } from '../../../../components/thank-you-page/thank-you-page';
+import { AboutPage } from '../../../../pages/about-page/about-page';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '/src/_codux/board-wrappers/page-wrapper';
 
 export default createBoard({
-    name: 'Page Thank You',
+    name: 'Page About',
     Board: () => (
-        //in practice PageWrapper with a path will render the correct page, but it is less convenient to use in a board
-        <PageWrapper path="/thank-you?orderId=1234567">
+        <PageWrapper path="/about">
             <ContentSlot>
-                <ThankYouPage />
+                <AboutPage />
             </ContentSlot>
         </PageWrapper>
     ),
