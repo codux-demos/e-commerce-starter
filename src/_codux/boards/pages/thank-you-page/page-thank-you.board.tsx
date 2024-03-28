@@ -6,7 +6,7 @@ export default createBoard({
     name: 'Page Thank You',
     Board: () => (
         //in practice PageWrapper with a path will render the correct page, but it is less convenient to use in a board
-        <PageWrapper path="/thank-you">
+        <PageWrapper path="/thank-you?orderId=1234567">
             <ContentSlot>
                 <ThankYouPage />
             </ContentSlot>

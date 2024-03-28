@@ -8,6 +8,7 @@ import { ProductInfo } from './product-info/product-info';
 import { useAddToCart, useProduct } from '../../api/api-hooks';
 import { useContext, useRef } from 'react';
 import { CartOpenContext } from '../../components/cart/cart-open-context';
+import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
 
 export interface ProductPageProps {
     className?: string;
@@ -40,7 +41,10 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
         //but, for those who do, we need to specify the option value when we add to cart.
         product.productOptions?.forEach((option) => {
             if (option.name && option.choices?.length && option.choices[0].value) {
-                options[option.name] = option.choices[0].value;
+                options[option.name] =
+                    option.optionType === OptionType.color
+                        ? option.choices[0].description!
+                        : option.choices[0].value;
             }
         });
         await addToCart({ id: product._id, quantity, options });
