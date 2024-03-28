@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import useSwr, { Key, useSWRConfig } from 'swr';
 import useSWRMutation from 'swr/mutation';
 import { WixAPIContext } from './wix-api-context-provider';
@@ -55,10 +55,15 @@ export const useCart = () => {
 
 export const useCartTotals = () => {
     const wixApi = useContext(WixAPIContext);
-    return useSwr('cart-totals', wixApi.getCartTotals, {
-        revalidateOnMount: true,
-        revalidateIfStale: true,
-    });
+    const { data } = useCart();
+
+    const cartTotals = useSwr('cart-totals', wixApi.getCartTotals);
+
+    useEffect(() => {
+        cartTotals.mutate();
+    }, [data]);
+
+    return cartTotals;
 };
 
 type Args = { id: string; quantity: number };
