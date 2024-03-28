@@ -1,12 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import useSwr, { Key, useSWRConfig } from 'swr';
 import useSWRMutation from 'swr/mutation';
 import { WixAPIContext } from './wix-api-context-provider';
-import { products } from '@wix/stores';
 import { findItemIdInCart } from './cart-helpers';
 
-type ProductsMap = { [slug: string]: products.Product };
-const PRODUCTS_MAP_KEY = 'map';
+const getProductKey = (slug: string) => `product/${slug}`;
 
 export function useProducts() {
     const wixApi = useContext(WixAPIContext);
@@ -15,11 +13,12 @@ export function useProducts() {
     return useSwr('products', wixApi.getAllProducts, {
         //here we add a map of items to the cache so we can read a single item from it later
         onSuccess: (products) => {
-            const productsMap: ProductsMap = Object.fromEntries(
-                products.map((it) => [it.slug, it])
-            );
-            mutate(PRODUCTS_MAP_KEY, productsMap).catch((e) => {
-                console.error('mutate failed', e);
+            products.forEach((product) => {
+                //there has to be a slug
+                const key = getProductKey(product.slug!);
+                mutate(key, product).catch((e) => {
+                    console.error('mutate failed', e);
+                });
             });
         },
     });
@@ -27,20 +26,7 @@ export function useProducts() {
 
 export function useProduct(slug?: string) {
     const wixApi = useContext(WixAPIContext);
-    const { cache } = useSWRConfig();
-    const productsMap = cache.get(PRODUCTS_MAP_KEY);
-    const productFromCache = slug
-        ? (productsMap?.data as ProductsMap | undefined)?.[slug]
-        : undefined;
-
-    //we fetch the item from the server only if we don't have it in the cached map
-    const fetched = useSwr(!productFromCache ? `product/${slug}` : null, () =>
-        wixApi.getProduct(slug)
-    );
-
-    return productFromCache
-        ? { data: productFromCache, isLoading: false }
-        : { isLoading: fetched.isLoading, data: fetched.data };
+    return useSwr(slug ? getProductKey(slug) : null, () => wixApi.getProduct(slug));
 }
 
 export const usePromotedProducts = () => {
@@ -55,10 +41,15 @@ export const useCart = () => {
 
 export const useCartTotals = () => {
     const wixApi = useContext(WixAPIContext);
-    return useSwr('cart-totals', wixApi.getCartTotals, {
-        revalidateOnMount: true,
-        revalidateIfStale: true,
-    });
+    const { data } = useCart();
+
+    const cartTotals = useSwr('cart-totals', wixApi.getCartTotals);
+
+    useEffect(() => {
+        cartTotals.mutate();
+    }, [data]);
+
+    return cartTotals;
 };
 
 type Args = { id: string; quantity: number };
