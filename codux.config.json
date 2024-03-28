@@ -32,7 +32,8 @@
   "resolve": {
     "alias": {
       "@styles": "./src/styles",
-      "@styles/*": "./src/styles/*"
+      "@styles/*": "./src/styles/*",
+      "/*": "./*"
     }
   },
   "svgLoader": "both"
