@@ -3,7 +3,7 @@
 .root {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 15px;
     margin-top: 10px;
 }
@@ -15,7 +15,10 @@
 
 .infoContainer {
     margin-left: 1.5vw;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 4px;
 }
 
 .description {
@@ -26,11 +29,8 @@
 .garbage {
     cursor: pointer;
     margin-left: 6px;
-    position: absolute;
-    height: 25px;
-    padding-top: 2px;
+    line-height: 0px;
 }
-.container {
-    position: absolute;
-    bottom: 4px;
+.actionsContainer {
+    display: flex;
 }
