@@ -1,5 +1,5 @@
 import commonStyles from '@styles/common-styles.module.scss';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Drawer } from '../drawer/drawer';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
 import { useCart, useCartTotals } from '../../api/api-hooks';
@@ -18,6 +18,12 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
     const { data: cart } = useCart();
     const { data: cartTotals } = useCartTotals();
     const isEmpty = !cart?.lineItems || cart.lineItems.length === 0;
+
+    useEffect(() => {
+        if (initialIsOpen !== undefined) {
+            setIsOpen(initialIsOpen);
+        }
+    }, [setIsOpen]);
 
     const wixClient = useContext(WixAPIContext);
 
