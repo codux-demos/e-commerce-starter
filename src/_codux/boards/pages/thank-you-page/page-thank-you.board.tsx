@@ -5,7 +5,7 @@ import { ThankYouPage } from '../../../../components/thank-you-page/thank-you-pa
 export default createBoard({
     name: 'Page Thank You',
     Board: () => (
-        <PageWrapper path="/thank-you">
+        <PageWrapper path="/thank-you?orderId=1234567">
             <ThankYouPage />
         </PageWrapper>
     ),
