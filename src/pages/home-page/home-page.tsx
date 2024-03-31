@@ -22,9 +22,9 @@ export const HomePage = ({ className }: HomePageProps) => {
                     title="Incredible Prices on All Your Favorite Items"
                     topLabel="Best Prices"
                     bottomLabel="Get more for less on selected brands"
-                    primaryButtonLabel="Shop Now"
+                    buttonLabel="Shop Now"
                     topLabelClassName={styles['top-label-highlighted']}
-                    onPrimaryButtonClick={() => navigate(ROUTES.products.to())}
+                    onButtonClick={() => navigate(ROUTES.products.to())}
                 />
                 <h1 className={styles['hero-title']}>
                     Best Sellers<p className={styles.HPprgrp}>Shop our best seller items</p>

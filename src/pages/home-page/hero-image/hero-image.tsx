@@ -12,15 +12,15 @@ export interface HeroImageProps {
     topLabelClassName?: string;
     title: string;
     bottomLabel: string;
-    primaryButtonLabel?: string;
-    onPrimaryButtonClick?: () => void;
+    buttonLabel?: string;
+    onButtonClick?: () => void;
 }
 
 export const HeroImage = ({
     title,
     bottomLabel,
-    primaryButtonLabel,
-    onPrimaryButtonClick,
+    buttonLabel: primaryButtonLabel,
+    onButtonClick: onPrimaryButtonClick,
     className,
 }: HeroImageProps) => {
     return (
