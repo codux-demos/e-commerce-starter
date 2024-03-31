@@ -38,9 +38,17 @@
     gap: 15px;
     align-items: end;
     direction: ltr;
+    margin: 14px;
 }
 .checkout {
     width: 100%;
     text-align: center;
     justify-content: center;
+}
+.subtotal-label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
 }

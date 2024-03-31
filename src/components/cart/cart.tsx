@@ -54,8 +54,8 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                                 ))}
                             </div>
                             <div className={styles['subtotal-chekout']}>
-                                <label>
-                                    Subtotal:{' '}
+                                <label className={styles['subtotal-label']}>
+                                    <span>Subtotal:</span>
                                     {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
                                 </label>
                                 <button
