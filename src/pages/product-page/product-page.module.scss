@@ -44,3 +44,10 @@
 .quantity {
     margin-top: 12px;
 }
+
+@media (width <= 450px) {
+    .root {
+        flex-direction: column;
+        align-items: center;
+    }
+}
