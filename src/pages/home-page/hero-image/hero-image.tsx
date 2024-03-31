@@ -19,8 +19,8 @@ export interface HeroImageProps {
 export const HeroImage = ({
     title,
     bottomLabel,
-    buttonLabel: primaryButtonLabel,
-    onButtonClick: onPrimaryButtonClick,
+    buttonLabel,
+    onButtonClick,
     className,
 }: HeroImageProps) => {
     return (
@@ -34,15 +34,15 @@ export const HeroImage = ({
             <div className={styles.overlay}>
                 <p className={styles['small-title']}>{title}</p>
                 <h1 className={styles['big-title']}>{bottomLabel} </h1>
-                {primaryButtonLabel && (
+                {buttonLabel && (
                     <button
-                        onClick={onPrimaryButtonClick}
+                        onClick={onButtonClick}
                         className={classNames(
                             CommonStyles_module.primaryButton,
                             styles['overlay-button']
                         )}
                     >
-                        {primaryButtonLabel}
+                        {buttonLabel}
                     </button>
                 )}
             </div>
