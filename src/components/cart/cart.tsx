@@ -7,6 +7,7 @@ import { CartItem } from './cart-item/cart-item';
 import styles from './cart.module.scss';
 import { WixAPIContext } from '../../api/wix-api-context-provider';
 import { CartOpenContext } from './cart-open-context';
+import Classnames from 'classnames';
 
 export interface CartProps {
     className?: string;
@@ -52,12 +53,18 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                                     <CartItem key={item._id} cartItem={item} />
                                 ))}
                             </div>
-                            <div className={styles['subtotal-chekout']}>
-                                <label>
-                                    Subtotal:{' '}
+                            <div className={styles['subtotal-checkout']}>
+                                <label className={styles['subtotal-label']}>
+                                    <span>Subtotal:</span>
                                     {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
                                 </label>
-                                <button className={commonStyles.primaryButton} onClick={checkout}>
+                                <button
+                                    className={Classnames(
+                                        CommonStyles_module.primaryButton,
+                                        styles.checkout
+                                    )}
+                                    onClick={checkout}
+                                >
                                     Checkout
                                 </button>
                             </div>

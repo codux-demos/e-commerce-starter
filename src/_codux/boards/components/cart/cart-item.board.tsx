@@ -40,7 +40,7 @@ export default createBoard({
         canvasMargin: {
             right: 0,
             left: 0,
-            top: 0,
+            top: 1,
         },
     },
 });
