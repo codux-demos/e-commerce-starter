@@ -35,3 +35,15 @@
     text-align: start;
     letter-spacing: 0.4rem;
 }
+
+@media (width <= 430px) {
+    .root {
+        flex-direction: column;
+    }
+    .text {
+        width: auto;
+    }
+    .image {
+        width: auto;
+    }
+}
