@@ -39,8 +39,8 @@ export default createBoard({
     environmentProps: {
         canvasMargin: {
             right: 0,
-            bottom: 0,
             left: 0,
+            top: 1,
         },
     },
 });
