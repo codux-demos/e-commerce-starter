@@ -14,8 +14,6 @@ export interface HeroImageProps {
     bottomLabel: string;
     primaryButtonLabel?: string;
     onPrimaryButtonClick?: () => void;
-    secondaryButtonLabel?: string;
-    onSecondaryButtonClick?: () => void;
 }
 
 export const HeroImage = ({
@@ -23,46 +21,30 @@ export const HeroImage = ({
     bottomLabel,
     primaryButtonLabel,
     onPrimaryButtonClick,
-    secondaryButtonLabel,
-    onSecondaryButtonClick,
-    topLabel,
-    topLabelClassName,
     className,
 }: HeroImageProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles['image-container']}>
-                <picture>
-                    <source media="(1400px <= width)" srcSet={xLargeHeroImage} />
-                    <source media="(1024px <= width)" srcSet={largeHeroImage} />
-                    <source media="(760px <= width)" srcSet={mediumHeroImage} />
-                    <img src={smallHeroImage} className={styles.image} alt="Hero background" />
-                </picture>
-                <div className={styles.overlay}>
-                    <div>
-                        <p className={styles['small-title']}>{title}</p>
-                        <h1 className={styles['big-title']}>{bottomLabel} </h1>
-                        {primaryButtonLabel && (
-                            <button
-                                onClick={onPrimaryButtonClick}
-                                className={CommonStyles_module.primaryButton}
-                            >
-                                {primaryButtonLabel}
-                            </button>
+            <picture>
+                <source media="(1400px <= width)" srcSet={xLargeHeroImage} />
+                <source media="(1024px <= width)" srcSet={largeHeroImage} />
+                <source media="(760px <= width)" srcSet={mediumHeroImage} />
+                <img src={smallHeroImage} className={styles.image} alt="Hero background" />
+            </picture>
+            <div className={styles.overlay}>
+                <p className={styles['small-title']}>{title}</p>
+                <h1 className={styles['big-title']}>{bottomLabel} </h1>
+                {primaryButtonLabel && (
+                    <button
+                        onClick={onPrimaryButtonClick}
+                        className={classNames(
+                            CommonStyles_module.primaryButton,
+                            styles['overlay-button']
                         )}
-                        {secondaryButtonLabel && (
-                            <button
-                                className={classNames(
-                                    CommonStyles_module.primaryButton,
-                                    styles['overlay-button']
-                                )}
-                                onClick={onSecondaryButtonClick}
-                            >
-                                {secondaryButtonLabel}
-                            </button>
-                        )}
-                    </div>
-                </div>
+                    >
+                        {primaryButtonLabel}
+                    </button>
+                )}
             </div>
         </div>
     );
