@@ -46,7 +46,7 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
                         aria-label="Remove item"
                         className={styles.remove}
                     >
-                        <Cross2Icon height={20} width={18} />
+                        <Cross2Icon height={18} width={18} />
                     </button>
                 </div>
 
