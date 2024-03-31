@@ -40,9 +40,16 @@ export const Drawer = ({
             >
                 <div className={styles.header}>
                     <h3>{title}</h3>
-                    <ChevronRightIcon className={styles.arrowIcon} onClick={handleClose} height={35} width={35} />
+                    <ChevronRightIcon
+                        className={styles.arrowIcon}
+                        onClick={handleClose}
+                        height={35}
+                        width={35}
+                    />
                 </div>
-                <div className={styles.body}>{children}</div>
+                <div className={styles.body}>
+                    {children}
+                </div>
             </div>
         </div>
     );
