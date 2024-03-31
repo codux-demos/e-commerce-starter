@@ -24,7 +24,6 @@
 
 .productDetailsBtn {
     width: 140px;
-    margin-top: 20px;
     height: 40px;
 }
 
@@ -50,4 +49,9 @@
         flex-direction: column;
         align-items: center;
     }
+}
+.addToCart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
