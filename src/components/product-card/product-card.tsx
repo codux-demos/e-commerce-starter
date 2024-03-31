@@ -2,18 +2,24 @@ import classNames from 'classnames';
 import styles from './product-card.module.scss';
 import { products } from '@wix/stores';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
-import noImage from '../../assets/img/noImage/[160_200]_noImage.svg'; 
+import noImage from '../../assets/img/noImage/[160_200]_noImage.svg';
 
-export interface GalleryCardProps {
+export type GalleryCardProps = {
     name: string;
     imageUrl?: string;
     className?: string;
     price?: products.PriceData;
-}
+} & React.HTMLAttributes<HTMLDivElement>;
 
-export const ProductCard = ({ name, imageUrl, className, price }: GalleryCardProps) => {
+export const ProductCard = ({
+    name,
+    imageUrl,
+    className,
+    price,
+    ...divProps
+}: GalleryCardProps) => {
     return (
-        <div className={classNames(styles.root, className)}>
+        <div className={classNames(styles.root, className)} {...divProps}>
             {imageUrl ? (
                 <img src={imageUrl} alt={name} className={styles.image} />
             ) : (
