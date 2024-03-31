@@ -2,7 +2,7 @@
 
 .cart {
     background-color: $white;
-    padding: 15px 10px 10px 10px;
+    padding: 15px 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,6 +24,7 @@
     justify-items: center;
     align-content: center;
     height: 100%;
+    padding: 20px;
 }
 
 .items {
@@ -31,10 +32,23 @@
     margin: 0px 10px 10px;
 }
 
-.subtotal-chekout {
+.subtotal-checkout {
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: end;
     direction: ltr;
+    margin: 14px;
+}
+.checkout {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.subtotal-label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
 }
