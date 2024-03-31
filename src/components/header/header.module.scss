@@ -4,16 +4,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4em;
+    height: 64px;
     font: $medium-text;
-    width: 100vw;
+    padding: 0 20px;
 }
 
 .menu {
     display: flex;
-    font: $medium-text;
     align-items: center;
-    cursor: pointer;
 }
 
 .menuButton {
@@ -24,13 +22,13 @@
 .logo {
     font: 700 1.15rem/1.5 $my-prettyfont;
     height: fit-content;
-    margin-left: 20px;
 }
 
 @media (width < 455px) {
     .root {
         display: flex;
         justify-content: center;
+        padding: 0px;
     }
     .logo {
         display: none;
