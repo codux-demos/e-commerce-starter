@@ -7,7 +7,7 @@ export default createBoard({
         <ContentSlot>
             <HeroImage
                 bottomLabel="Selected Smartphone Brands"
-                secondaryButtonLabel="Shop"
+                buttonLabel="Shop"
                 title="Up to 30% off"
                 topLabel="Holiday Deals"
             />
