@@ -35,3 +35,27 @@
     text-align: start;
     letter-spacing: 0.4rem;
 }
+
+@media (430px <=width < 980px) {
+    .root {
+        flex-direction: column;
+    }
+    .text {
+        width: auto;
+    }
+    .image {
+        width: 80vw;
+    }
+}
+
+@media (width < 430px) {
+    .root {
+        flex-direction: column;
+    }
+    .text {
+        width: auto;
+    }
+    .image {
+        width: auto;
+    }
+}
