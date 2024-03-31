@@ -7,6 +7,7 @@ import { CartItem } from './cart-item/cart-item';
 import styles from './cart.module.scss';
 import { WixAPIContext } from '../../api/wix-api-context-provider';
 import { CartOpenContext } from './cart-open-context';
+import Classnames from 'classnames';
 
 export interface CartProps {
     className?: string;
@@ -44,9 +45,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
             {isOpen ? (
                 <Drawer title="Cart" onClose={() => setIsOpen(false)} initialIsOpen={initialIsOpen}>
                     {isEmpty ? (
-                        <div className={styles.emptyCart}>
-                            Cart is empty
-                        </div>
+                        <div className={styles.emptyCart}>Cart is empty</div>
                     ) : (
                         <div className={styles.cart}>
                             <div className={styles.items}>
@@ -59,7 +58,13 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                                     Subtotal:{' '}
                                     {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
                                 </label>
-                                <button className={commonStyles.primaryButton} onClick={checkout}>
+                                <button
+                                    className={Classnames(
+                                        CommonStyles_module.primaryButton,
+                                        styles.checkout,
+                                    )}
+                                    onClick={checkout}
+                                >
                                     Checkout
                                 </button>
                             </div>
