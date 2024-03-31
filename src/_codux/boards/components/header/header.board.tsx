@@ -1,12 +1,14 @@
-import { createBoard } from '@wixc3/react-board';
 import { Header } from '../../../../components/header/header';
-import { ComponentWrapper } from '../../../board-wrappers/component-wrapper';
+import { ContentSlot, createBoard } from '@wixc3/react-board';
+import { ComponentWrapper } from '/src/_codux/board-wrappers/component-wrapper';
 
 export default createBoard({
     name: 'Header',
     Board: () => (
         <ComponentWrapper>
-            <Header />
+            <ContentSlot>
+                <Header />
+            </ContentSlot>
         </ComponentWrapper>
     ),
     isSnippet: true,
