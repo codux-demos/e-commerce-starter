@@ -2,28 +2,28 @@
 
 .root {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-bottom: 15px;
-    margin-top: 10px;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0 -1px rgba(40, 43, 45, 0.25);
 }
 
 .image {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 .infoContainer {
-    margin-left: 1.5vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 4px;
+    flex-grow: 1;
 }
 
 .description {
     text-align: left;
-    font: $medium-title;
+    font: $medium-text;
 }
 
 .garbage {
@@ -33,4 +33,11 @@
 }
 .actionsContainer {
     display: flex;
+}
+.item-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    padding-top: 4px;
 }

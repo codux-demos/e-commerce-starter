@@ -5,7 +5,7 @@ import { ChangeEvent } from 'react';
 import commonStyles from '../../../styles/common-styles.module.scss';
 import { getImageHttpUrl } from '../../../api/wix-image';
 import { useRemoveItemFromCart, useUpdateCartItemQuantity } from '../../../api/api-hooks';
-import { TrashIcon } from '@radix-ui/react-icons';
+import { Cross2Icon } from '@radix-ui/react-icons';
 
 export interface CartItemProps {
     className?: string;
@@ -34,11 +34,20 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
         <div className={classNames(styles.root, { [styles.divider]: !isLast }, className)}>
             <img src={imageUrl} alt={name || ''} className={styles.image} />
             <div className={styles.infoContainer}>
-                <div>
-                    <h4 className={styles.description}>{name}</h4>
-                    <span className={commonStyles.price}>
-                        {cartItem.price?.formattedConvertedAmount}
-                    </span>
+                <div className={styles['item-line']}>
+                    <div>
+                        <h4 className={styles.description}>{name}</h4>
+                        <span className={commonStyles.price}>
+                            {cartItem.price?.formattedConvertedAmount}
+                        </span>
+                    </div>
+                    <button
+                        onClick={() => removeItem(cartItem._id!)}
+                        aria-label="Remove item"
+                        className={styles.garbage}
+                    >
+                        <Cross2Icon height={25} width={25} />
+                    </button>
                 </div>
 
                 <div className={styles.actionsContainer}>
@@ -49,13 +58,6 @@ export const CartItem = ({ cartItem, className, isLast }: CartItemProps) => {
                         min={0}
                         className={commonStyles.numberInput}
                     />
-                    <button
-                        onClick={() => removeItem(cartItem._id!)}
-                        aria-label="Remove item"
-                        className={styles.garbage}
-                    >
-                        <TrashIcon height={25} width={25} />
-                    </button>
                 </div>
             </div>
         </div>
