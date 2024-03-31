@@ -33,9 +33,9 @@ export const HeroImage = ({
         <div className={classNames(styles.root, className)}>
             <div className={styles['image-container']}>
                 <picture>
-                    <source media="(min-width: 1400px)" srcSet={xLargeHeroImage} />
-                    <source media="(min-width: 1024px)" srcSet={largeHeroImage} />
-                    <source media="(min-width: 760px)" srcSet={mediumHeroImage} />
+                    <source media="(1400px <= width)" srcSet={xLargeHeroImage} />
+                    <source media="(1024px <= width)" srcSet={largeHeroImage} />
+                    <source media="(760px <= width)" srcSet={mediumHeroImage} />
                     <img src={smallHeroImage} className={styles.image} alt="Hero background" />
                 </picture>
                 <div className={styles.overlay}>
