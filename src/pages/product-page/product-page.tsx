@@ -66,19 +66,24 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                     )}
                     <label>
                         Quantity: <br />
-                        <input
-                            ref={quantityInput}
-                            className={classNames(commonStyles.numberInput, styles.quantity)}
-                            type="number"
-                            placeholder="1"
-                        />
+                        <div className={styles.addToCart}>
+                            <input
+                                ref={quantityInput}
+                                className={classNames(commonStyles.numberInput, styles.quantity)}
+                                type="number"
+                                placeholder="1"
+                            />
+                            <button
+                                onClick={addToCartHandler}
+                                className={classNames(
+                                    commonStyles.primaryButton,
+                                    styles.productDetailsBtn,
+                                )}
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
                     </label>
-                    <button
-                        onClick={addToCartHandler}
-                        className={classNames(commonStyles.primaryButton, styles.productDetailsBtn)}
-                    >
-                        Add to Cart
-                    </button>
                 </div>
                 <div className={styles.productInfo}>
                     <ProductInfo productInfo={product.additionalInfoSections} />
