@@ -2,8 +2,6 @@
 
 .root {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     gap: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -20,7 +18,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 4px;
-    width: 100%;
+    flex-grow: 1;
 }
 
 .description {
@@ -40,7 +38,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
     align-items: start;
     padding-top: 4px;
 }
