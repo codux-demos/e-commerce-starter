@@ -29,16 +29,15 @@
 .remove {
     cursor: pointer;
     margin-left: 6px;
-    line-height: 0px;
-    margin-top: 2px;
+    margin-top: 4px;
 }
+
 .actionsContainer {
     display: flex;
 }
+
 .item-line {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: start;
     padding-top: 4px;
 }
