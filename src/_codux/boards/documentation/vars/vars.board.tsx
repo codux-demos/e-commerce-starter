@@ -4,7 +4,7 @@ import cx from 'classnames';
 import documentationStyles from '/src/_codux/boards/documentation/documentation.module.scss';
 
 export default createBoard({
-    name: 'Vars',
+    name: 'Theme Variables',
     Board: () => (
         <div className={documentationStyles.root}>
             <div className={styles.colors}>
