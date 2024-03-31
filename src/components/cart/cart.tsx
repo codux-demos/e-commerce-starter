@@ -53,7 +53,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                                     <CartItem key={item._id} cartItem={item} />
                                 ))}
                             </div>
-                            <div className={styles['subtotal-chekout']}>
+                            <div className={styles['subtotal-checkout']}>
                                 <label className={styles['subtotal-label']}>
                                     <span>Subtotal:</span>
                                     {cartTotals?.priceSummary?.subtotal?.formattedConvertedAmount}
@@ -61,7 +61,7 @@ export const Cart = ({ className, initialIsOpen }: CartProps) => {
                                 <button
                                     className={Classnames(
                                         CommonStyles_module.primaryButton,
-                                        styles.checkout,
+                                        styles.checkout
                                     )}
                                     onClick={checkout}
                                 >
