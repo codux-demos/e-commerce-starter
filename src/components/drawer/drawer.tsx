@@ -23,12 +23,21 @@ export const Drawer = ({
 
     useEffect(() => {
         setIsOpen(true);
+        const scrollBarWidth = window.innerWidth - document.body.clientWidth;
+        if (scrollBarWidth > 0) {
+            document.body.style.paddingRight = `${scrollBarWidth}px`;
+        }
+        document.body.style.overflow = 'hidden';
+
+        console.log(scrollBarWidth);
     }, []);
 
     function handleClose() {
         setIsOpen(false);
         setTimeout(() => {
             onclose && onclose();
+            document.body.style.paddingRight = `0px`;
+            document.body.style.overflow = 'auto';
         }, 300);
     }
 
@@ -47,9 +56,7 @@ export const Drawer = ({
                         width={35}
                     />
                 </div>
-                <div className={styles.body}>
-                    {children}
-                </div>
+                <div className={styles.body}>{children}</div>
             </div>
         </div>
     );
