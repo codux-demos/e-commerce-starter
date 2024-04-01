@@ -1,37 +1,5 @@
 @import '@styles/theme.module.scss';
 
-.extraLargeTitle {
-    font: $extra-large-title;
-}
-
-.largeTitle {
-    font: $large-title;
-}
-
-.mediumTitle {
-    font: $medium-title;
-}
-
-.smallTitle {
-    font: $small-title;
-}
-
-.extraLargeText {
-    font: $extra-large-text;
-}
-
-.largeText {
-    font: $large-text;
-}
-
-.MediumText {
-    font: $small-text;
-}
-
-.extraSmallText {
-    font: $extra-small-text;
-}
-
 .circle {
     width: 60px;
     height: 60px;
@@ -42,6 +10,7 @@
 .circleTitle {
     font: $extra-small-text;
     text-align: center;
+    margin-top: 10px;
 }
 
 .white {
@@ -54,17 +23,22 @@
 
 .colors {
     display: flex;
-    column-gap: 10px;
+    column-gap: 20px;
+    flex-direction: row;
+    justify-items: center;
 }
 
-.disabled {
+.charcoalBlack {
     background-color: $charcoal-black;
-    opacity: 0.4;
 }
 
-.dirtyWhite {
+.snowWhite {
     background-color: $snow-white;
 }
-.smallFont {
-    font: $small-font;
+
+.wraper {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
 }

@@ -8,32 +8,28 @@ $snow-white: #f5f5f5;
 $my-prettyfont: 'DM Sans', sans-serif;
 
 //text
-$small-font: 300 16px/1.4 $my-prettyfont;
-$large-font: 700 32px/1.2 $my-prettyfont;
-$button-font: 400 16px/1.3 $my-prettyfont;
-
-//text
-$small-title: 700 11px/1.4 $my-prettyfont;
-$extra-small-text: 400 12px/1.45 $my-prettyfont;
-$title-font: 800 26px/1.4 $my-prettyfont;
-$extra-large-title: 100 45px/1.4 $my-prettyfont;
-$extra-large-thin-title: 100 65px/1.2 $my-prettyfont;
-$paragraph-font: 1000 34px/1.4 $my-prettyfont;
-// $small-thin-title: 100 45px/1.2 $my-prettyfont;
-$small-paragraph-font: 1000 24px/1.4 $my-prettyfont;
-$medium-paragraph-font: 1000 42px/1.4 $my-prettyfont;
-$large-paragraph: 400 52px/1.4 $my-prettyfont;
-
-$medium-title: 300 20px/1.4 $my-prettyfont;
-$medium-text: 300 20px/1.4 $my-prettyfont;
-
-$large-title: 400 45px/1.4 $my-prettyfont;
-
 $large-text: 400 60px/1.4 $my-prettyfont;
-$extra-large-text: 400 24px/1.4 $my-prettyfont;
-$small-text: 400 16px/1.4 $my-prettyfont;
-$large-text-bold: 700 20px/1.4 $my-prettyfont;
 $medium-text: 400 16px/1.4 $my-prettyfont;
+$small-text: 400 16px/1.4 $my-prettyfont;
+$extra-small-text: 400 12px/1.45 $my-prettyfont;
+
+//paragrph
+$large-paragraph: 400 52px/1.4 $my-prettyfont;
+$medium-paragraph-font: 1000 42px/1.4 $my-prettyfont;
+$small-paragraph-font: 1000 24px/1.4 $my-prettyfont;
+$paragraph-font: 1000 34px/1.4 $my-prettyfont;
+
+
+//titles
+$extra-large-thin-title: 100 65px/1.2 $my-prettyfont;
+$extra-large-title: 100 45px/1.4 $my-prettyfont;
+$large-title: 400 45px/1.4 $my-prettyfont;
+$medium-title-bold: 800 26px/1.4 $my-prettyfont;
+$medium-title: 300 20px/1.4 $my-prettyfont;
+$extra-small-title: 700 11px/1.4 $my-prettyfont;
+
+
+
 
 $mobile-width: 430px;
 $large-desktop: 1400px;
