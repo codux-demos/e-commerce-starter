@@ -71,6 +71,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                             ref={quantityInput}
                             className={classNames(commonStyles.numberInput, styles.quantity)}
                             type="number"
+                            min={1}
                             placeholder="1"
                         />
                     </label>

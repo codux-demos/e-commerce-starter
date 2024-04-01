@@ -28,8 +28,7 @@
 
 @media (1400px < width) {
     .gallery {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        max-width: 1400px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
 
