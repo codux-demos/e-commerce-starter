@@ -2,49 +2,6 @@
 
 .root {
     padding-bottom: 90px;
-    display: flex;
-    flex-direction: column;
-}
-
-.title {
-    font: $medium-title;
-    text-align: center;
-    letter-spacing: 6px;
-}
-
-.text {
-    width: 60%;
-}
-
-.button {
-    font: $medium-text;
-    text-align: center;
-    background-color: $black;
-    color: $white;
-    border-radius: 9999px;
-    align-self: center;
-    padding-right: 26px;
-    padding-left: 26px;
-    padding-bottom: 12px;
-    padding-top: 12px;
-}
-
-.image {
-    align-self: center;
-    height: 14em;
-    margin-top: 1em;
-    width: 24em;
-}
-
-.two-hero-images {
-    display: flex;
-    column-gap: 20px;
-}
-
-.top-banner {
-    height: 565px;
-    margin-bottom: 20px;
-    display: block;
 }
 
 .top-label-highlighted {
@@ -55,31 +12,22 @@
     text-align: start;
 }
 
-.home-page-carousel {
-    background-color: $white;
-    margin: 20px;
-}
-
-.overlay-header-small {
-    max-width: 100%;
-    font: $small-thin-title;
-}
-
-.overlay-text-small {
-    font: $small-paragraph-font;
-}
 .cardsLayout {
-    display: grid;
-    padding-left: 8vw;
-    padding-right: 8vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 20px;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-flow: row;
+    margin: 0 auto;
 }
+
+.productCard {
+    width: 20vw;
+}
+
 .HPprgrp {
     font: $large-paragraph;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .hero-title {
@@ -88,25 +36,11 @@
     text-align: center;
 }
 
-.productCard {
-    width: 20vw;
-    max-height: 100%;
-}
-
 // --- MEDIA QUERIES ---
 
-@media (1400px <=width) {
-    .content {
-        max-width: 1400px;
-    }
-}
-
-@media (430px <=width < 980px) {
+@media (430px < width < 980px) {
     .cardsLayout {
-        padding-left: 4vw;
-        padding-right: 4vw;
         column-gap: 4vw;
-        grid-template-columns: 1fr 1fr;
     }
 
     .productCard {
@@ -115,16 +49,12 @@
 
     .HPprgrp {
         font: $medium-paragraph-font;
-        margin-bottom: 40px;
     }
 }
 
-@media (width < 430px) {
+@media (width <= 430px) {
     .cardsLayout {
-        padding-left: 5vw;
-        padding-right: 5vw;
         column-gap: 20px;
-        grid-template-columns: 1fr;
     }
 
     .productCard {

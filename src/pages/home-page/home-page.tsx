@@ -25,9 +25,8 @@ export const HomePage = ({ className }: HomePageProps) => {
                 topLabelClassName={styles['top-label-highlighted']}
                 onButtonClick={() => navigate(ROUTES.products.to())}
             />
-            <h1 className={styles['hero-title']}>
-                Best Sellers<p className={styles.HPprgrp}>Shop our best seller items</p>
-            </h1>
+            <h1 className={styles['hero-title']}>Best Sellers</h1>
+            <p className={styles.HPprgrp}>Shop our best seller items</p>
             <div className={styles.cardsLayout}>
                 {products?.map((product) =>
                     product.slug && product.name ? (
