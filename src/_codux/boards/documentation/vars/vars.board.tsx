@@ -26,9 +26,19 @@ export default createBoard({
                 </div>
             </div>
             <div>
-                Text
-                <h1>Heading 1</h1>
-                <p>This is a paragraph.</p>
+                <div className={styles['large-text']}>This is a paragraph.</div>
+                <div className={styles['small-text']}>This is a paragraph.</div>
+                <div className={styles['extra-small-text']}>This is a paragraph.</div>
+                <div className={styles['large-paragraph']}>This is a paragraph.</div>
+                <div className={styles['medium-paragraph-font']}>This is a paragraph.</div>
+                <div className={styles['small-paragraph-font']}>This is a paragraph.</div>
+                <div className={styles['paragraph-font']}>This is a paragraph.</div>
+                <div className={styles['extra-large-thin-title']}>This is a paragraph.</div>
+                <div className={styles['extra-large-title']}>This is a paragraph.</div>
+                <div className={styles['large-title']}>This is a paragraph.</div>
+                <div className={styles['medium-title-bold']}>This is a paragraph.</div>
+                <div className={styles['medium-title']}>This is a paragraph.</div>
+                <div className={styles['extra-small-title']}>This is a paragraph.</div>
             </div>
         </div>
     ),
