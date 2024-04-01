@@ -26,19 +26,19 @@ export default createBoard({
                 </div>
             </div>
             <div>
-                <div className={styles['large-text']}>This is a paragraph.</div>
-                <div className={styles['small-text']}>This is a paragraph.</div>
-                <div className={styles['extra-small-text']}>This is a paragraph.</div>
-                <div className={styles['large-paragraph']}>This is a paragraph.</div>
-                <div className={styles['medium-paragraph-font']}>This is a paragraph.</div>
-                <div className={styles['small-paragraph-font']}>This is a paragraph.</div>
-                <div className={styles['paragraph-font']}>This is a paragraph.</div>
-                <div className={styles['extra-large-thin-title']}>This is a paragraph.</div>
-                <div className={styles['extra-large-title']}>This is a paragraph.</div>
-                <div className={styles['large-title']}>This is a paragraph.</div>
-                <div className={styles['medium-title-bold']}>This is a paragraph.</div>
-                <div className={styles['medium-title']}>This is a paragraph.</div>
-                <div className={styles['extra-small-title']}>This is a paragraph.</div>
+                <div className={styles['large-text']}>Large text</div>
+                <div className={styles['small-text']}>Small text</div>
+                <div className={styles['extra-small-text']}>Extra small text</div>
+                <div className={styles['large-paragraph']}>Large paragraph</div>
+                <div className={styles['medium-paragraph-font']}>Medium paragraph font</div>
+                <div className={styles['small-paragraph-font']}>Small paragraph font</div>
+                <div className={styles['paragraph-font']}>Paragraph font</div>
+                <div className={styles['extra-large-thin-title']}>Extra large thin title</div>
+                <div className={styles['extra-large-title']}>Extra large title</div>
+                <div className={styles['large-title']}>Large title</div>
+                <div className={styles['medium-title-bold']}>Medium title bold</div>
+                <div className={styles['medium-title']}>Medium title</div>
+                <div className={styles['extra-small-title']}>Extra small title</div>
             </div>
         </div>
     ),
