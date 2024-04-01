@@ -2,7 +2,6 @@ import { createBoard } from '@wixc3/react-board';
 import styles from './vars.module.scss';
 import cx from 'classnames';
 import documentationStyles from '/src/_codux/boards/documentation/documentation.module.scss';
-import Vars_board_module from './vars.board.module.scss';
 
 export default createBoard({
     name: 'Vars',
@@ -25,6 +24,11 @@ export default createBoard({
                     <div className={cx(styles.circle, styles.snowWhite)}></div>
                     <p className={styles.circleTitle}>Snow White</p>
                 </div>
+            </div>
+            <div>
+                Text
+                <h1>Heading 1</h1>
+                <p>This is a paragraph.</p>
             </div>
         </div>
     ),
