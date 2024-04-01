@@ -3,7 +3,6 @@
 .root {
     position: relative;
     color: $white;
-    width: 100vw;
 }
 
 .overlay {
@@ -20,7 +19,7 @@
     object-fit: cover;
     object-position: 50% 0%;
     height: 640px;
-    width: 100vw;
+    width: 100%;
 }
 
 .small-title {
