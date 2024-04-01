@@ -25,6 +25,7 @@ export default createBoard({
                     <p className={styles.circleTitle}>Dirty White</p>
                 </div>
             </div>
+            <p className={styles.smallFont}>Small Font</p>
             <h1 className={styles.extraLargeTitle}>Extra Large Title</h1>
             <h2 className={styles.largeTitle}>Large Title</h2>
             <h3 className={styles.mediumTitle}>Medium Title</h3>
