@@ -1,0 +1,19 @@
+@import '@styles/theme.module.scss';
+
+.root {
+    width: 90vw;
+    margin: 5vh 5vw;
+    background-color: $charcoal-black;
+    border-radius: 30px;
+}
+
+.myStyle {
+    font: $small-thin-title;
+    color: $white;
+    padding: 20px;
+}
+.myParagraph {
+    font: $small-paragraph-font;
+    color: $white;
+    padding: 20px;
+}
