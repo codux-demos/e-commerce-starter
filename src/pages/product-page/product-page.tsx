@@ -59,35 +59,32 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 className={styles.left}
             />
             <div className={styles.right}>
-                <div className={styles.productForm}>
-                    <div className={styles.productTitle}>{product.name}</div>
-                    {product.price && (
-                        <div className={commonStyles.price}>{product.price?.formatted?.price}</div>
-                    )}
+                <div className={styles.productTitle}>{product.name}</div>
+                {product.price && (
+                    <div className={commonStyles.price}>{product.price?.formatted?.price}</div>
+                )}
+
+                <div className={styles.addToCart}>
                     <label>
                         Quantity: <br />
-                        <div className={styles.addToCart}>
-                            <input
-                                ref={quantityInput}
-                                className={classNames(commonStyles.numberInput, styles.quantity)}
-                                type="number"
-                                placeholder="1"
-                            />
-                            <button
-                                onClick={addToCartHandler}
-                                className={classNames(
-                                    commonStyles.primaryButton,
-                                    styles.productDetailsBtn,
-                                )}
-                            >
-                                Add to Cart
-                            </button>
-                        </div>
+                        <input
+                            ref={quantityInput}
+                            className={classNames(commonStyles.numberInput, styles.quantity)}
+                            type="number"
+                            placeholder="1"
+                        />
                     </label>
+                    <button
+                        onClick={addToCartHandler}
+                        className={classNames(commonStyles.primaryButton, styles.addToCartBtn)}
+                    >
+                        Add to Cart
+                    </button>
                 </div>
-                <div className={styles.productInfo}>
-                    <ProductInfo productInfo={product.additionalInfoSections} />
-                </div>
+                <ProductInfo
+                    className={styles.productInfo}
+                    productInfo={product.additionalInfoSections}
+                />
             </div>
         </div>
     );

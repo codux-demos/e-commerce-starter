@@ -20,7 +20,7 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
 
     return (
         <div className={classNames(styles.root, className)}>
-            <div className={styles.title}>All Products</div>
+            <h1 className={styles.title}>All Products</h1>
             <div className={styles.gallery}>
                 {myProducts?.map(
                     (item) =>

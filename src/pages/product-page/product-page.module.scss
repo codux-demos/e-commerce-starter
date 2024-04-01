@@ -12,29 +12,21 @@
 }
 
 .left {
-    grid-auto-flow: row;
     flex: 2;
 }
 
 .right {
     padding-top: 20px;
     flex: 1;
-    margin-top: 0px;
 }
 
-.productDetailsBtn {
+.addToCartBtn {
     width: 140px;
     height: 40px;
 }
 
 .productInfo {
-    display: flex;
     margin-top: 20px;
-}
-
-.productForm {
-    display: flex;
-    flex-direction: column;
 }
 
 .productTitle {
@@ -46,7 +38,7 @@
 
 .addToCart {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
 }
 
