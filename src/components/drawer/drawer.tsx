@@ -1,4 +1,3 @@
-import { ArrowRightIcon } from '@radix-ui/react-icons';
 import { ChevronRightIcon } from '@radix-ui/react-icons';
 import styles from './drawer.module.scss';
 import cx from 'classnames';
