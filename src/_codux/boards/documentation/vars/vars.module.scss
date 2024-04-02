@@ -55,8 +55,8 @@
 .large-paragraph {
     font: $large-paragraph;
 }
-.medium-paragraph-font {
-    font: $medium-paragraph-font;
+.medium-paragraph-bold {
+    font: $medium-paragraph-bold;
 }
 .small-paragraph-font {
     font: $small-paragraph-font;
@@ -73,12 +73,15 @@
 .large-title {
     font: $large-title;
 }
-.medium-title-bold {
-    font: $medium-title-bold;
-}
+
 .medium-title {
     font: $medium-title;
 }
 .extra-small-title {
     font: $extra-small-title;
+}
+.fonts-layout {
+    display: flex;
+    width: 100vw;
+    margin-top: 80px;
 }
