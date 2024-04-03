@@ -7,10 +7,11 @@
     border-radius: 30px;
 }
 
-.circleTitle {
+.miniTitle {
     font: $extra-small-text;
     text-align: start;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .white {
@@ -23,9 +24,9 @@
 
 .colors {
     display: flex;
-    column-gap: 20px;
     flex-direction: row;
     justify-items: center;
+    gap: 80px;
 }
 
 .charcoalBlack {
@@ -36,11 +37,8 @@
     background-color: $snow-white;
 }
 
-.wraper {
-    display: flex;
-    flex-direction: column;
+.wrapper {
     width: 100px;
-    align-items: center;
 }
 
 .small-text {
@@ -77,14 +75,19 @@
 .medium-title {
     font: $medium-title;
 }
+
 .extra-small-title {
     font: $extra-small-title;
 }
+
 .fonts-layout {
     display: grid;
-    width: 100vw;
-    margin-top: 80px;
-    grid-auto-flow: column;
-    column-gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 60px;
+    margin-bottom: 80px;
+}
+.Title {
+    font-size: 40px;
+    font-weight: 600;
+    font-style: italic;
 }
