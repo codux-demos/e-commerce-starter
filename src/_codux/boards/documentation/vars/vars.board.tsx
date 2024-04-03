@@ -7,7 +7,7 @@ export default createBoard({
     name: 'Vars',
     Board: () => (
         <div className={documentationStyles.root}>
-            <p className={styles.Title}>Project Fonts</p>
+            <p className={styles.Title}>Fonts</p>
             <div className={styles['fonts-layout']}>
                 <div>
                     <p className={styles.miniTitle}>------ Title styles -----</p>
@@ -31,7 +31,7 @@ export default createBoard({
                     <div className={styles['extra-small-text']}>Extra small text</div>
                 </div>
             </div>
-            <p className={styles.Title}>Project Colores</p>
+            <p className={styles.Title}>Colors</p>
             <div className={styles.colors}>
                 <div className={styles.wrapper}>
                     <div className={cx(styles.circle, styles.white)}></div>
