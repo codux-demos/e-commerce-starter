@@ -9,7 +9,7 @@
 
 .circleTitle {
     font: $extra-small-text;
-    text-align: center;
+    text-align: start;
     margin-top: 10px;
 }
 
@@ -81,7 +81,10 @@
     font: $extra-small-title;
 }
 .fonts-layout {
-    display: flex;
+    display: grid;
     width: 100vw;
     margin-top: 80px;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
