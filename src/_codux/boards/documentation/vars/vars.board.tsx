@@ -12,21 +12,22 @@ export default createBoard({
                 <div>
                     <p className={styles.miniTitle}>------ Title styles -----</p>
                     <div className={styles['extra-large-thin-title']}>Extra large thin title</div>
-                    <div className={styles['extra-large-title']}>Extra large title</div>
+                    <div className={styles['large-thin-title']}>Large thin title</div>
                     <div className={styles['large-title']}>Large title</div>
+                    <div className={styles['large-title-mobile']}>Large title mobile</div>
                     <div className={styles['medium-title']}>Medium title</div>
                     <div className={styles['extra-small-title']}>Extra small title</div>
                 </div>
                 <div>
                     <p className={styles.miniTitle}>------ Paragraph styles -----</p>
                     <div className={styles['large-paragraph']}>Large paragraph</div>
-                    <div className={styles['paragraph-font']}>Paragraph font</div>
                     <div className={styles['medium-paragraph-bold']}>Medium paragraph bold</div>
+                    <div className={styles['paragraph-font']}>Paragraph font</div>
                     <div className={styles['small-paragraph-font']}>Small paragraph font</div>
                 </div>
                 <div>
                     <p className={styles.miniTitle}>------ Running text styles -----</p>
-                    <div className={styles['large-text']}>Large text</div>
+                    <div className={styles['extra-large-text']}>Large text</div>
                     <div className={styles['small-text']}>Small text</div>
                     <div className={styles['extra-small-text']}>Extra small text</div>
                 </div>

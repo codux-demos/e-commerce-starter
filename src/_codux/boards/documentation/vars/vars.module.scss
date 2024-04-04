@@ -46,8 +46,8 @@
 .small-text {
     font: $small-text;
 }
-.large-text {
-    font: $large-text;
+.extra-large-text {
+    font: $extra-large-text;
 }
 .extra-small-text {
     font: $extra-small-text;
@@ -67,8 +67,8 @@
 .extra-large-thin-title {
     font: $extra-large-thin-title;
 }
-.extra-large-title {
-    font: $extra-large-title;
+.large-thin-title {
+    font: $large-thin-title;
 }
 .large-title {
     font: $large-title;
@@ -85,11 +85,14 @@
 .fonts-layout {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 60px;
+    column-gap: 80px;
     margin-bottom: 80px;
 }
 .Title {
     font-size: 20px;
     font-weight: 600;
     font-style: italic;
+}
+.large-title-mobile {
+    font: $large-title-mobile;
 }
