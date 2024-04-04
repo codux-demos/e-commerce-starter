@@ -1,8 +1,8 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    width: 90vw;
-    margin: 5vh 5vw;
+    width: 70vw;
+    margin: 5vh 15vw;
     background-color: $charcoal-black;
     border-radius: 30px;
 }
@@ -11,9 +11,11 @@
     font: $small-thin-title;
     color: $white;
     padding: 20px;
+    text-align: center;
+    border: 1px solid $white;
 }
 .myParagraph {
-    font: $small-paragraph-font;
     color: $white;
     padding: 20px;
+    font: $extra-large-title;
 }
