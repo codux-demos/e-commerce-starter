@@ -7,6 +7,8 @@
 .title {
     font: $large-paragraph;
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 .gallery {
@@ -30,6 +32,8 @@
     .gallery {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

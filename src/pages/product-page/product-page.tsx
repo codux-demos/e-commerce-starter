@@ -59,7 +59,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                 className={styles.left}
             />
             <div className={styles.right}>
-                <div className={styles.productTitle}>{product.name}</div>
+                <div>{product.name}</div>
                 {product.price && (
                     <div className={commonStyles.price}>{product.price?.formatted?.price}</div>
                 )}
@@ -71,6 +71,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
                             ref={quantityInput}
                             className={classNames(commonStyles.numberInput, styles.quantity)}
                             type="number"
+                            min={1}
                             placeholder="1"
                         />
                     </label>

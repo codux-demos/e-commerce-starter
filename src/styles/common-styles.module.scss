@@ -4,7 +4,7 @@
     background-color: $charcoal-black;
     display: flex;
     align-items: center;
-    font: $medium-text;
+    font: $small-text;
     color: $snow-white;
     border-radius: 35px;
     height: 42px;
@@ -25,7 +25,7 @@
     height: 42px;
     display: flex;
     align-items: center;
-    font: $medium-text;
+    font: $small-text;
     border: 1px solid transparent;
     cursor: pointer;
     padding-right: 22px;
@@ -57,5 +57,5 @@
 
 .loading {
     padding: 30px;
-    font: $large-text;
+    font: $extra-large-text;
 }

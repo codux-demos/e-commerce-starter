@@ -7,32 +7,47 @@ export default createBoard({
     name: 'Vars',
     Board: () => (
         <div className={documentationStyles.root}>
-            <div className={styles.colors}>
-                <div>
-                    <div className={cx(styles.circle, styles.white)}></div>
-                    <p className={styles.circleTitle}>White</p>
+            <p className={styles.Title}>Fonts</p>
+            <div className={styles['fonts-layout']}>
+                <div className={styles.flex}>
+                    <p className={styles.miniTitle}>------ Title styles -----</p>
+                    <div className={styles['extra-large-thin-title']}>Extra large thin title</div>
+                    <div className={styles['large-thin-title']}>Large thin title</div>
+                    <div className={styles['large-title']}>Large title</div>
+                    <div className={styles['large-title-mobile']}>Large title mobile</div>
+                    <div className={styles['medium-title']}>Medium title</div>
+                    <div className={styles['extra-small-title']}>Extra small title</div>
                 </div>
-                <div>
-                    <div className={cx(styles.circle, styles.black)}></div>
-                    <p className={styles.circleTitle}>Black</p>
-                </div>
-                <div>
-                    <div className={cx(styles.circle, styles.disabled)}></div>
-                    <p className={styles.circleTitle}>disabled</p>
-                </div>
-                <div>
-                    <div className={cx(styles.circle, styles.dirtyWhite)}></div>
-                    <p className={styles.circleTitle}>Dirty White</p>
+                <div className={styles.flex}>
+                    <p className={styles.miniTitle}>------ Paragraph styles -----</p>
+                    <div className={styles['extra-large-text']}>Extra Large text</div>
+                    <div className={styles['large-paragraph']}>Large paragraph</div>
+                    <div className={styles['medium-paragraph']}>Medium paragraph</div>
+                    <div className={styles['medium-paragraph-bold']}>Medium paragraph bold</div>
+                    <div className={styles['small-text-font-bold']}>Small text font bold</div>
+                    <div className={styles['small-text']}>Small text</div>
+                    <div className={styles['extra-small-text']}>Extra small text</div>
                 </div>
             </div>
-            <h1 className={styles.extraLargeTitle}>Extra Large Title</h1>
-            <h2 className={styles.largeTitle}>Large Title</h2>
-            <h3 className={styles.mediumTitle}>Medium Title</h3>
-            <h4 className={styles.smallTitle}>Small Title</h4>
-            <p className={styles.extraLargeText}>Extra Large Text</p>
-            <p className={styles.largeText}>Large Text</p>
-            <p className={styles.MediumText}>Small Text</p>
-            <p className={styles.extraSmallText}>Extra Small Text</p>
+            <p className={styles.Title}>Colors</p>
+            <div className={styles.colors}>
+                <div className={styles.wrapper}>
+                    <div className={cx(styles.circle, styles.white)}></div>
+                    <p className={styles.miniTitle}>White</p>
+                </div>
+                <div className={styles.wrapper}>
+                    <div className={cx(styles.circle, styles.snowWhite)}></div>
+                    <p className={styles.miniTitle}>Snow White</p>
+                </div>
+                <div className={styles.wrapper}>
+                    <div className={cx(styles.circle, styles.black)}></div>
+                    <p className={styles.miniTitle}>Black</p>
+                </div>
+                <div className={styles.wrapper}>
+                    <div className={cx(styles.circle, styles.charcoalBlack)}></div>
+                    <p className={styles.miniTitle}>Charcoal Black</p>
+                </div>
+            </div>
         </div>
     ),
     isSnippet: false,
@@ -43,5 +58,7 @@ export default createBoard({
             bottom: 0,
             left: 0,
         },
+        windowWidth: 1400,
+        windowHeight: 768,
     },
 });
