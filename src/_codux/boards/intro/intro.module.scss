@@ -11,20 +11,22 @@
     display: grid;
     justify-content: center;
     width: 70vw;
+    margin-top: 80px;
 }
 
 .myStyle {
-    font: $medium-paragraph-bold;
+    font: $medium-paragraph;
     color: $snow-white;
-    padding: 50px;
+    padding: 50px 100px;
     text-align: center;
     margin-bottom: 20px;
     background-color: $charcoal-black;
     text-wrap: pretty;
+    letter-spacing: 10px;
 }
 .myParagraph {
     color: $snow-white;
-    padding: 50px;
+    padding: 50px 100px;
     text-align: center;
     font: $extra-large-text;
     background-color: $charcoal-black;
