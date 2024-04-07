@@ -1,22 +1,23 @@
 @import '@styles/theme.module.scss';
 
 .root {
-    width: 70vw;
-    margin: 5vh 15vw;
-    background-color: $charcoal-black;
-    border-radius: 30px;
+    background-color: $white;
+    border-radius: 10px;
+    width: 40vw;
 }
 
 .myStyle {
-    font: $large-thin-title;
-    color: $white;
+    font: $medium-paragraph-bold;
+    color: $charcoal-black;
     padding: 20px;
     text-align: center;
-    border: 1px solid $white;
+    margin-bottom: 20px;
+    background-color: $snow-white;
 }
 .myParagraph {
-    color: $white;
+    color: $charcoal-black;
     padding: 20px;
-    font: $medium-paragraph-bold;
-    font-size: 38px;
+    text-align: center;
+    font: $medium-title;
+    background-color: $snow-white;
 }
