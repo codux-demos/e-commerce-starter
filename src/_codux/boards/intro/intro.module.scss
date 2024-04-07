@@ -10,7 +10,7 @@
     border-radius: 10px;
     display: grid;
     justify-content: center;
-    width: 70vw;
+    width: 1000px;
     margin-top: 80px;
 }
 
@@ -26,11 +26,15 @@
 }
 .myParagraph {
     color: $snow-white;
-    padding: 50px 100px;
+    padding: 80px 120px;
     text-align: center;
-    font: $extra-large-text;
+    font: $medium-paragraph;
     background-color: $charcoal-black;
     text-wrap: pretty;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
 }
 .root {
 }
