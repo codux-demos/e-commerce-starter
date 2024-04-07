@@ -22,6 +22,7 @@ export default createBoard({
                     <p className={styles.miniTitle}>------ Paragraph styles -----</p>
                     <div className={styles['extra-large-text']}>Extra Large text</div>
                     <div className={styles['large-paragraph']}>Large paragraph</div>
+                    <div className={styles['medium-paragraph']}>Medium paragraph</div>
                     <div className={styles['medium-paragraph-bold']}>Medium paragraph bold</div>
                     <div className={styles['small-text-font-bold']}>Small text font bold</div>
                     <div className={styles['small-text']}>Small text</div>
