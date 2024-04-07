@@ -58,12 +58,10 @@
 .medium-paragraph-bold {
     font: $medium-paragraph-bold;
 }
-.small-paragraph-font {
-    font: $small-paragraph-font;
+.small-text-font-bold {
+    font: $small-text-font-bold;
 }
-.paragraph-font {
-    font: $paragraph-font;
-}
+
 .extra-large-thin-title {
     font: $extra-large-thin-title;
 }
@@ -84,9 +82,9 @@
 
 .fonts-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 80px;
-    margin-bottom: 80px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 100px;
+    margin-bottom: 100px;
 }
 .Title {
     font-size: 20px;
@@ -95,4 +93,9 @@
 }
 .large-title-mobile {
     font: $large-title-mobile;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }
