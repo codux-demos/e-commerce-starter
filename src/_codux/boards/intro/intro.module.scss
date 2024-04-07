@@ -3,7 +3,7 @@
 .root {
     background-color: $white;
     border-radius: 10px;
-    width: 40vw;
+    width: 60vw;
 }
 
 .myStyle {
@@ -13,11 +13,13 @@
     text-align: center;
     margin-bottom: 20px;
     background-color: $snow-white;
+    text-wrap: pretty;
 }
 .myParagraph {
     color: $charcoal-black;
     padding: 20px;
     text-align: center;
-    font: $medium-title;
+    font: $extra-large-text;
     background-color: $snow-white;
+    text-wrap: pretty;
 }
