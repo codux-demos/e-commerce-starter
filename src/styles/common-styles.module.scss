@@ -9,6 +9,18 @@
     color: $charcoal-black;
     border-radius: 30px;
     margin-top: 20px;
+    &:hover {
+        background-color: #db08eb;
+        color: $white;
+        background-image: linear-gradient(#ed0aff, #ed0aff);
+        background-position: 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        cursor: pointer;
+    }
 }
 
 .primaryButton {
