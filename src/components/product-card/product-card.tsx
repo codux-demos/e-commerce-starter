@@ -21,9 +21,9 @@ export const ProductCard = ({
     return (
         <div className={classNames(styles.root, className)} {...divProps}>
             {imageUrl ? (
-                <img src={imageUrl} alt={name} className={styles.image} />
+                <img src={imageUrl} alt={name} className={styles.image} data-testid="product-img" />
             ) : (
-                <img src={noImage} alt={name} className={styles.image} />
+                <img src={noImage} alt={name} className={styles.image} data-testid="product-img" />
             )}
             <div className={styles.cardContent}>
                 <p className={styles.description}>{name}</p>
