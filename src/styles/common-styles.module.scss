@@ -1,5 +1,16 @@
 @import './theme.module.scss';
 
+.intro-button {
+    text-align: center;
+    font: $small-text;
+    background-color: $snow-white;
+    padding: 10px;
+    width: 160px;
+    color: $charcoal-black;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
 .primaryButton {
     background-color: $charcoal-black;
     display: flex;
