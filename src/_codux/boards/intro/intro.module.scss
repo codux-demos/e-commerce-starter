@@ -1,32 +1,32 @@
 @import '@styles/theme.module.scss';
 
-.root {
-    display: grid;
-    justify-content: center;
-}
-
 .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: $white;
     border-radius: 10px;
     display: grid;
     justify-content: center;
     width: 1000px;
-    margin-top: 80px;
 }
 
 .myStyle {
     font: $medium-paragraph;
     color: $snow-white;
-    padding: 50px 100px;
+    padding: 40px 100px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     background-color: $charcoal-black;
     text-wrap: pretty;
     letter-spacing: 10px;
+    border-radius: 20px 20px 0 0;
 }
+
 .myParagraph {
     color: $snow-white;
-    padding: 80px 120px;
+    padding: 70px 120px;
     text-align: center;
     font: $medium-paragraph;
     background-color: $charcoal-black;
@@ -35,6 +35,22 @@
     flex-direction: column;
     row-gap: 40px;
     align-items: center;
+    border-radius: 0 0 20px 20px;
 }
-.root {
+
+@media (width <= 768px) {
+    .container {
+        width: 100vw;
+        margin-top: unset;
+    }
+    
+    .myStyle, .myParagraph {
+        padding: 50px 40px;
+    }
+}
+
+@media (width <= $mobile-width) {
+    .myStyle, .myParagraph {
+        font-size: 20px;
+    }
 }
