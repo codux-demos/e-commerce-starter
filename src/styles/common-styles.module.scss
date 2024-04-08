@@ -9,17 +9,10 @@
     color: $charcoal-black;
     border-radius: 30px;
     margin-top: 20px;
+    cursor: pointer;
     &:hover {
         background-color: #b6c1f0;
         color: $black;
-        background-image: none;
-        background-position: 0%;
-        background-size: auto;
-        background-repeat: repeat;
-        background-attachment: scroll;
-        background-origin: padding-box;
-        background-clip: border-box;
-        cursor: pointer;
     }
 }
 
