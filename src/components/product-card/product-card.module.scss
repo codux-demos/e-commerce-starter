@@ -2,6 +2,7 @@
 
 .root {
     cursor: pointer;
+    height: auto;
 }
 
 .cardContent {
@@ -11,14 +12,14 @@
 
 .image {
     object-position: 50% 50%;
-    aspect-ratio: 4/3;
-    width: 100%;
     object-fit: cover;
+    width: 430px;
+    height: 644px;
 }
 
 .description {
     text-align: left;
-    font: $medium-title;
+    font: $small-text;
 }
 
 // --- MEDIA QUERIES ---
