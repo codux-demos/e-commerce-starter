@@ -4,7 +4,7 @@ import { PageWrapper } from '/src/_codux/board-wrappers/page-wrapper';
 import { waitForProductImage } from '/src/_codux/board-wrappers/wait-for-helpers';
 
 export default createBoard({
-    name: 'Page Home',
+    name: 'Test Home Page',
     Board: () => (
         //in practice PageWrapper with a path will render the correct page, but it is less convenient to use in a board
         <PageWrapper>
@@ -16,7 +16,8 @@ export default createBoard({
     isSnippet: false,
     environmentProps: {
         canvasMargin: { right: 0, bottom: 0, left: 0 },
-        windowWidth: 400,
+        windowWidth: 1024,
+        windowHeight: 768,
     },
     readyToSnapshot: waitForProductImage,
 });

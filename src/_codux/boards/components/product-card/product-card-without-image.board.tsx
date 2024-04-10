@@ -2,7 +2,7 @@ import { ProductCard } from '../../../../components/product-card/product-card';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 
 export default createBoard({
-    name: 'ProductCardWithoutImage',
+    name: 'Product Card No Image',
     Board: () => (
         <ContentSlot>
             <ProductCard

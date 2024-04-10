@@ -2,7 +2,7 @@ import { createBoard } from '@wixc3/react-board';
 import { PageWrapperRealData } from '../board-wrappers/page-wrapper-real-data';
 
 export default createBoard({
-    name: 'App',
+    name: '0 - App',
     Board: () => <PageWrapperRealData />,
     isSnippet: false,
     environmentProps: {

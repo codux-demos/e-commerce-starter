@@ -4,7 +4,7 @@ import { PageWrapperRealData } from '/src/_codux/board-wrappers/page-wrapper-rea
 import { waitForProductImage } from '/src/_codux/board-wrappers/wait-for-helpers';
 
 export default createBoard({
-    name: 'Page Product Details Real Data',
+    name: '3 - Product Details Page',
     Board: () => (
         //in practice PageWrapperRealData with a path will render the correct page, but it is less convenient to use in a board
         <PageWrapperRealData path="/product/i-m-a-product-9">

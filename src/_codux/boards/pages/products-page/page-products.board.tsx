@@ -4,7 +4,7 @@ import { PageWrapper } from '/src/_codux/board-wrappers/page-wrapper';
 import { waitForProductImage } from '/src/_codux/board-wrappers/wait-for-helpers';
 
 export default createBoard({
-    name: 'Page Products',
+    name: 'Test Products Gallery Page',
     Board: () => (
         //in practice PageWrapper with a path will render the correct page, but it is less convenient to use in a board
         <PageWrapper
