@@ -14,7 +14,9 @@ export default createBoard({
                 Welcome to Codux e-commerce starter. <br /> This template was built to help you
                 create your own store easily. Use Codux to design your website the way you want, and
                 Wix Headless e-commerce services to manage your store.
-                <button className={CommonStyles_module['intro-button']}>Learn more</button>
+                <a href={'https://help.codux.com/kb/en/article/kb37137'}>
+                    <button className={CommonStyles_module['intro-button']}>Learn more</button>
+                </a>
             </p>
         </div>
     ),
