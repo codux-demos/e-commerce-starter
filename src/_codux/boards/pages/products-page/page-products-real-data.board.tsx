@@ -16,8 +16,8 @@ export default createBoard({
     isSnippet: false,
     environmentProps: {
         canvasMargin: { right: 0, bottom: 0, left: 0 },
-        windowHeight: 1584,
-        windowWidth: 1948,
+        windowHeight: 1182,
+        windowWidth: 1976,
     },
     readyToSnapshot: waitForProductImage,
 });

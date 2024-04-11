@@ -30,14 +30,14 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
                                 <ProductCard
                                     imageUrl={getImageHttpUrl(
                                         item.media?.items?.at(0)?.image?.url,
-                                        240
+                                        240,
                                     )}
                                     name={item.name}
                                     price={item.price ?? undefined}
-                                    className={styles.productCard}
+                                    className={classNames(styles.productCard, commonStyles.border)}
                                 />
                             </Link>
-                        )
+                        ),
                 )}
             </div>
         </div>
