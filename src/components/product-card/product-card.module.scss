@@ -3,6 +3,7 @@
 .root {
     cursor: pointer;
     height: auto;
+    display: grid;
 }
 
 .cardContent {
@@ -15,7 +16,7 @@
     object-fit: cover;
     width: 430px;
     height: 644px;
-  justify-self: center;
+    justify-self: center;
 }
 
 .description {

@@ -5,6 +5,7 @@ import { ROUTES } from '../../router/config';
 import { Link, useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../components/product-card/product-card';
 import { usePromotedProducts } from '../../api/api-hooks';
+import CommonStyles_module from '../../styles/common-styles.module.scss';
 
 export interface HomePageProps {
     className?: string;
@@ -35,10 +36,13 @@ export const HomePage = ({ className }: HomePageProps) => {
                                 imageUrl={product.media?.items?.at(0)?.image?.url}
                                 name={product.name}
                                 price={product.price ?? undefined}
-                                className={styles.productCard}
+                                className={classNames(
+                                    styles.productCard,
+                                    CommonStyles_module.border,
+                                )}
                             />
                         </Link>
-                    ) : null
+                    ) : null,
                 )}
             </div>
         </div>
