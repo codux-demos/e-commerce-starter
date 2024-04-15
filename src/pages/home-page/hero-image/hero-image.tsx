@@ -25,9 +25,9 @@ export const HeroImage = ({
     return (
         <div className={classNames(styles.root, className)}>
             <picture>
-                // <source media="(1400px <= width)" srcSet={xLargeHeroImage} />
-                // <source media="(1024px <= width)" srcSet={largeHeroImage} />
-                // <source media="(760px <= width)" srcSet={mediumHeroImage} />
+                {/*<source media="(1400px <= width)" srcSet={xLargeHeroImage} />
+                <source media="(1024px <= width)" srcSet={largeHeroImage} />
+                <source media="(760px <= width)" srcSet={mediumHeroImage} />*/}
                 <img
                     src="https://static.wixstatic.com/media/c837a6_60fe596fc6124c9dabbb90df008507d3~mv2.jpg/v1/fill/w_3456,h_1526,fp_0.50_0.62,q_90,usm_0.66_1.00_0.01,enc_auto/welcome%20image_2.jpg"
                     className={styles.image}
