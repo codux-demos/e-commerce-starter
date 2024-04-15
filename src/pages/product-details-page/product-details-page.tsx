@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import styles from './product-page.module.scss';
+import styles from './product-details-page.module.scss';
 import { useParams } from 'react-router-dom';
 import { RouteParams } from '../../router/config';
 import commonStyles from '../../styles/common-styles.module.scss';
@@ -10,11 +10,11 @@ import { useContext, useRef } from 'react';
 import { CartOpenContext } from '../../components/cart/cart-open-context';
 import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
 
-export interface ProductPageProps {
+export interface ProductDetailsPageProps {
     className?: string;
 }
 
-export const ProductPage: React.FC<ProductPageProps> = ({ className }) => {
+export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ className }) => {
     const { setIsOpen } = useContext(CartOpenContext);
     const { slug: productSlug } = useParams<RouteParams['/product/:slug']>();
 

@@ -1,15 +1,20 @@
-import { ProductPage } from '../../../../pages/product-page/product-page';
+import { ProductsPage } from '../../../../pages/products-page/products-page';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '/src/_codux/board-wrappers/page-wrapper';
 import { waitForProductImage } from '/src/_codux/board-wrappers/wait-for-helpers';
 
 export default createBoard({
-    name: 'Page Product Details',
+    name: 'Test Products Gallery Page',
     Board: () => (
         //in practice PageWrapper with a path will render the correct page, but it is less convenient to use in a board
-        <PageWrapper path="/product/fake">
+        <PageWrapper
+            path="/products"
+            settings={{
+                imagesListToLoop: 'all',
+            }}
+        >
             <ContentSlot>
-                <ProductPage />
+                <ProductsPage />
             </ContentSlot>
         </PageWrapper>
     ),

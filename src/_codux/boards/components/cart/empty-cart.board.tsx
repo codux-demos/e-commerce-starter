@@ -3,7 +3,7 @@ import { ComponentWrapper } from '/src/_codux/board-wrappers/component-wrapper';
 import { Cart } from '/src/components/cart/cart';
 
 export default createBoard({
-    name: 'EmptyCart',
+    name: '5 - Cart Empty',
     Board: () => (
         <ComponentWrapper
             settings={{

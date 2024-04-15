@@ -2,7 +2,7 @@ import { HeroImage } from '../../../../pages/home-page/hero-image/hero-image';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 
 export default createBoard({
-    name: 'HeroImage',
+    name: 'Hero Image',
     Board: () => (
         <ContentSlot>
             <HeroImage

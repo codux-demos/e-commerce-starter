@@ -1,15 +1,15 @@
-import { HomePage } from '../../../../pages/home-page/home-page';
+import { ProductDetailsPage } from '../../../../pages/product-details-page/product-details-page';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 import { PageWrapperRealData } from '/src/_codux/board-wrappers/page-wrapper-real-data';
 import { waitForProductImage } from '/src/_codux/board-wrappers/wait-for-helpers';
 
 export default createBoard({
-    name: 'Page Home Real Data',
+    name: '3 - Product Details Page',
     Board: () => (
         //in practice PageWrapperRealData with a path will render the correct page, but it is less convenient to use in a board
-        <PageWrapperRealData path="/">
+        <PageWrapperRealData path="/product/i-m-a-product-9">
             <ContentSlot>
-                <HomePage />
+                <ProductDetailsPage/>
             </ContentSlot>
         </PageWrapperRealData>
     ),
