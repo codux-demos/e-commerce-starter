@@ -4,7 +4,7 @@ import Classnames from 'classnames';
 import CommonStyles_module from '../../../styles/common-styles.module.scss';
 
 export default createBoard({
-    name: '🌱 intro',
+    name: '🌱 Intro',
     Board: () => (
         <div className={styles.container}>
             <p className={styles.myStyle}>
