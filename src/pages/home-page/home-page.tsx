@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import styles from './home-page.module.scss';
 import { HeroImage } from './hero-image/hero-image';
 import { ROUTES } from '../../router/config';
@@ -6,17 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ProductCard } from '../../components/product-card/product-card';
 import { usePromotedProducts } from '../../api/api-hooks';
 
-export interface HomePageProps {
-    className?: string;
-}
-
-export const HomePage = ({ className }: HomePageProps) => {
+export const HomePage = () => {
     const navigate = useNavigate();
 
     const { data: products } = usePromotedProducts();
 
     return (
-        <div className={classNames(styles.root, className)}>
+        <div className={styles.root}>
             <HeroImage
                 title="Incredible Prices on All Your Favorite Items"
                 topLabel="Best Prices"

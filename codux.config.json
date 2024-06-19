@@ -7,7 +7,12 @@
   },
   "newComponent": {
     "componentsPath": "src/components",
-    "templatesPath": "src/_codux/component-templates"
+    "templatesPath": "src/_codux/component-templates",
+    "templatesConfig": {
+      "page": {
+        "path": "src/pages"
+      }
+    }
   },
   "newBoard": {
     "templatesPath": "src/_codux/board-templates",
