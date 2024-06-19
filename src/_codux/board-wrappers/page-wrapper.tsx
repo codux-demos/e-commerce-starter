@@ -10,8 +10,9 @@ import { CartOpenContextProvider } from '/src/components/cart/cart-open-context'
 type Props = {
     children: React.ReactNode;
     /** @important */
-    settings?: FakeDataSettings;
     path?: string;
+    /** @important */
+    settings?: FakeDataSettings;
 };
 
 export function PageWrapper(props: Props) {

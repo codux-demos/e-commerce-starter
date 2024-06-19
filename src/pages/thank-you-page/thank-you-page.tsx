@@ -1,19 +1,14 @@
-import classNames from 'classnames';
 import styles from './thank-you-page.module.scss';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
 
-export interface ThankYouPageProps {
-    className?: string;
-}
-
-export const ThankYouPage = ({ className }: ThankYouPageProps) => {
+export const ThankYouPage = () => {
     const [search] = useSearchParams();
     const orderId = search.get('orderId');
 
     return (
-        <div className={classNames(styles.root, className)}>
+        <div className={styles.root}>
             <div className={styles.text}>
                 <h1 className={styles.title}>Thank You!</h1>
                 <p className={styles.paragraph}>
