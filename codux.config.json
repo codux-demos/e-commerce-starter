@@ -10,7 +10,8 @@
     "templatesPath": "src/_codux/component-templates",
     "templatesConfig": {
       "page": {
-        "path": "src/pages"
+        "path": "src/pages",
+        "boardTemplate": "2-page-fake-data"
       }
     }
   },
