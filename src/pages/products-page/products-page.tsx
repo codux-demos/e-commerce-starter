@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import styles from './products-page.module.scss';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../router/config';
@@ -7,11 +6,7 @@ import { useProducts } from '../../api/api-hooks';
 import { getImageHttpUrl } from '../../api/wix-image';
 import commonStyles from '../../styles/common-styles.module.scss';
 
-export interface ProductsPageProps {
-    className?: string;
-}
-
-export const ProductsPage = ({ className }: ProductsPageProps) => {
+export const ProductsPage = () => {
     const { data: myProducts, isLoading } = useProducts();
 
     if (!myProducts && isLoading) {
@@ -19,7 +14,7 @@ export const ProductsPage = ({ className }: ProductsPageProps) => {
     }
 
     return (
-        <div className={classNames(styles.root, className)}>
+        <div className={styles.root}>
             <h1 className={styles.title}>All Products</h1>
             <div className={styles.gallery}>
                 {myProducts?.map(
