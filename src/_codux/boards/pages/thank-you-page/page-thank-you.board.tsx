@@ -1,4 +1,4 @@
-import { ThankYouPage } from '../../../../components/thank-you-page/thank-you-page';
+import { ThankYouPage } from '../../../../pages/thank-you-page/thank-you-page';
 import { ContentSlot, createBoard } from '@wixc3/react-board';
 import { PageWrapper } from '/src/_codux/board-wrappers/page-wrapper';
 

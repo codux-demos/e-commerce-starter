@@ -10,11 +10,7 @@ import { useContext, useRef } from 'react';
 import { CartOpenContext } from '../../components/cart/cart-open-context';
 import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
 
-export interface ProductDetailsPageProps {
-    className?: string;
-}
-
-export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ className }) => {
+export const ProductDetailsPage = () => {
     const { setIsOpen } = useContext(CartOpenContext);
     const { slug: productSlug } = useParams<RouteParams['/product/:slug']>();
 
@@ -52,7 +48,7 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ classNam
     }
 
     return (
-        <div className={classNames(styles.root, className)}>
+        <div className={styles.root}>
             <ProductImages
                 mainImage={product.media?.mainMedia}
                 images={product.media?.items}
