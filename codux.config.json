@@ -49,14 +49,7 @@
     "solution": "scss modules"
   },
   "styleFilesConfig": {
-    "commonStyleFilePattern": "**/common-styles.module.scss"
-  },
-  "resolve": {
-    "alias": {
-      "@styles": "./src/styles",
-      "@styles/*": "./src/styles/*",
-      "/*": "./*"
-    }
+    "commonStyleFilePattern": "**/styles/*.scss"
   },
   "svgLoader": "both"
 }
