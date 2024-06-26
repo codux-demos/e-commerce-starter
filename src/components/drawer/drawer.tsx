@@ -27,8 +27,6 @@ export const Drawer = ({
             document.body.style.paddingRight = `${scrollBarWidth}px`;
         }
         document.body.style.overflow = 'hidden';
-
-        console.log(scrollBarWidth);
     }, []);
 
     function handleClose() {

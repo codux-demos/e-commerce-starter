@@ -7,10 +7,32 @@
   },
   "newComponent": {
     "componentsPath": "src/components",
-    "templatesPath": "src/_codux/component-templates"
+    "templatesPath": "src/_codux/component-templates",
+    "templatesConfig": {
+      "page": {
+        "path": "src/pages"
+      }
+    }
   },
   "newBoard": {
-    "templatesPath": "src/_codux/board-templates"
+    "templatesPath": "src/_codux/board-templates",
+    "templatesConfig": {
+      "5-documentation": {
+        "path": "src/_codux/boards/documentation"
+      },
+      "1-component-with-data": {
+        "path": "src/_codux/boards/components"
+      },
+      "4-component-empty": {
+        "path": "src/_codux/boards/components"
+      },
+      "2-page-fake-data": {
+        "path": "src/_codux/boards/pages"
+      },
+      "3-page-real-data": {
+        "path": "src/_codux/boards/pages"
+      }
+    }
   },
   "safeRender": {
     "maxInstancesPerComponent": 1000
@@ -27,14 +49,7 @@
     "solution": "scss modules"
   },
   "styleFilesConfig": {
-    "commonStyleFilePattern": "**/common-styles.module.scss"
-  },
-  "resolve": {
-    "alias": {
-      "@styles": "./src/styles",
-      "@styles/*": "./src/styles/*",
-      "/*": "./*"
-    }
+    "commonStyleFilePattern": "**/styles/*.scss"
   },
   "svgLoader": "both"
 }

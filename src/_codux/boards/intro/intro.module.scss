@@ -1,5 +1,4 @@
-@import '@styles/theme.module.scss';
-
+@import '../../../styles/theme.module.scss';
 .container {
     position: absolute;
     top: 50%;
@@ -43,14 +42,16 @@
         width: 100vw;
         margin-top: unset;
     }
-    
-    .myStyle, .myParagraph {
+
+    .myStyle,
+    .myParagraph {
         padding: 50px 40px;
     }
 }
 
 @media (width <= $mobile-width) {
-    .myStyle, .myParagraph {
+    .myStyle,
+    .myParagraph {
         font-size: 20px;
     }
 }

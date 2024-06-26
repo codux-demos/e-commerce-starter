@@ -1,13 +1,8 @@
-import classNames from 'classnames';
 import styles from './about-page.module.scss';
 
-export interface AboutPageProps {
-    className?: string;
-}
-
-export const AboutPage = ({ className }: AboutPageProps) => {
+export const AboutPage = () => {
     return (
-<div className={classNames(styles.root, className)}>
+        <div className={styles.root}>
             <div className={styles.text}>
                 <h1 className={styles.title}>I&apos;m a Title</h1>
                 <p className={styles.paragraph}>

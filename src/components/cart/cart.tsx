@@ -1,4 +1,3 @@
-import commonStyles from '@styles/common-styles.module.scss';
 import { useContext, useEffect } from 'react';
 import { Drawer } from '../drawer/drawer';
 import CommonStyles_module from '../../styles/common-styles.module.scss';
@@ -10,11 +9,10 @@ import { CartOpenContext } from './cart-open-context';
 import Classnames from 'classnames';
 
 export interface CartProps {
-    className?: string;
     initialIsOpen?: boolean;
 }
 
-export const Cart = ({ className, initialIsOpen }: CartProps) => {
+export const Cart = ({ initialIsOpen }: CartProps) => {
     const { isOpen, setIsOpen } = useContext(CartOpenContext);
     const { data: cart } = useCart();
     const { data: cartTotals } = useCartTotals();

@@ -4,7 +4,6 @@ export async function waitForProductImage() {
             if (checkImageReady('img[data-testid="product-img"]')) {
                 clearInterval(interval);
                 clearTimeout(timeout);
-                console.log('FOUND');
                 resolve();
             }
         });
