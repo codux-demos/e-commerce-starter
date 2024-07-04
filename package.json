@@ -13,13 +13,13 @@
     "@types/node": "^20.14.9",
     "@wix/ecom": "^1.0.444",
     "@wix/redirects": "^1.0.48",
-    "@wix/sdk": "^1.10.2",
+    "@wix/sdk": "^1.11.1",
     "@wix/stores": "^1.0.121",
     "classnames": "^2.5.1",
     "js-cookie": "^3.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.0",
+    "react-router-dom": "^6.24.1",
     "swr": "^2.2.5"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@vitejs/plugin-react": "^4.3.1",
     "@wixc3/react-board": "^2.5.0",
     "sass": "^1.77.6",
-    "typescript": "^5.5.2",
+    "typescript": "^5.5.3",
     "vite": "^4.5.2",
     "vite-plugin-svgr": "^3.3.0"
   }
