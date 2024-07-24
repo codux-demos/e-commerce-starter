@@ -3,19 +3,44 @@ import commonStyles from '../../../styles/common-styles.module.scss';
 import boardStyle from './documentation.module.scss';
 import styles from './vars.module.scss';
 import cx from 'classnames';
+import { ProductCard } from '/src/components/product-card/product-card';
 
 export default createBoard({
-    name: 'Theme Styles',
+    name: 'UI Kit',
     Board: () => (
         <div className={boardStyle.root}>
             <div className={boardStyle.box}>
                 <button className={commonStyles.primaryButton}>Primary Button</button>
                 <button className={commonStyles.secondaryButton}>Secondary Button</button>
             </div>
+
             <div className={boardStyle.box}>
                 Input Number
                 <input type="number" className={commonStyles.numberInput} />
             </div>
+
+            <div className={boardStyle.row}>
+                <ProductCard name={'Placeholder'} />
+                <ProductCard
+                    name="TV"
+                    price={{ formatted: { price: '$85' } }}
+                    style={{ width: '100px' }}
+                    imageUrl="https://wixmp-b7f7090100b13623109851bc.wixmp.com/layouters-starters/img_02.jpg"
+                />
+                <ProductCard
+                    name="TV"
+                    price={{ formatted: { price: '$85' } }}
+                    style={{ width: '200px' }}
+                    imageUrl="https://wixmp-b7f7090100b13623109851bc.wixmp.com/layouters-starters/img_02.jpg"
+                />
+                <ProductCard
+                    name="TV"
+                    price={{ formatted: { price: '$85' } }}
+                    style={{ width: '300px' }}
+                    imageUrl="https://wixmp-b7f7090100b13623109851bc.wixmp.com/layouters-starters/img_02.jpg"
+                />
+            </div>
+
             <div>
                 <p className={styles.Title}>Fonts</p>
                 <div className={styles['fonts-layout']}>
