@@ -21,4 +21,28 @@
 .row {
     display: flex;
     gap: 20px;
+    width: 100%;
+    background-color: $snow-white;
+    margin-bottom: 30px;
+}
+.strip {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+}
+.section {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+.imageSection {
+    position: relative;
+}
+.floatingContent {
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    left: 8%;
+    gap: 10px;
+    top: 35%;
 }

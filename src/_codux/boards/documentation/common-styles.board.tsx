@@ -4,20 +4,25 @@ import boardStyle from './documentation.module.scss';
 import styles from './vars.module.scss';
 import cx from 'classnames';
 import { ProductCard } from '/src/components/product-card/product-card';
+import HeroImage03Jpg from '../../../assets/img/[1024_640]_heroImage03.jpg';
 
 export default createBoard({
     name: 'UI Kit',
     Board: () => (
         <div className={boardStyle.root}>
-            <div className={boardStyle.box}>
-                <button className={commonStyles.primaryButton}>Primary Button</button>
-                <button className={commonStyles.secondaryButton}>Secondary Button</button>
-            </div>
+            <div className={styles['large-thin-title']}>HTML Elements</div>
+            <div className={boardStyle.row}>
+                <div className={boardStyle.box}>
+                    <button className={commonStyles.primaryButton}>Primary Button</button>
+                    <button className={commonStyles.secondaryButton}>Secondary Button</button>
+                </div>
 
-            <div className={boardStyle.box}>
-                Input Number
-                <input type="number" className={commonStyles.numberInput} />
+                <div className={boardStyle.box}>
+                    Input Number
+                    <input type="number" className={commonStyles.numberInput} />
+                </div>
             </div>
+            <div className={styles['large-thin-title']}>Components</div>
 
             <div className={boardStyle.row}>
                 <ProductCard name={'Placeholder'} />
@@ -39,6 +44,31 @@ export default createBoard({
                     style={{ width: '300px' }}
                     imageUrl="https://wixmp-b7f7090100b13623109851bc.wixmp.com/layouters-starters/img_02.jpg"
                 />
+            </div>
+            <div className={styles['large-thin-title']}>Page Strips</div>
+            <div className={boardStyle.row}>
+                <div className={boardStyle.strip}>
+                    <div className={boardStyle.section}>
+                        <div className={styles['medium-paragraph']}>
+                            Great Deals Are <br /> Just a Click Away
+                        </div>
+                    </div>
+                    <div>
+                        <div className={boardStyle.imageSection}>
+                            <div className={boardStyle.floatingContent}>
+                                <div className={styles['small-text']}>
+                                    Explore our latest deals 
+                                    <br />
+                                    and products
+                                </div>
+                                <div>
+                                    <button className={commonStyles.primaryButton}>Shop Now</button>
+                                </div>
+                            </div>
+                            <img src={HeroImage03Jpg} alt="" />
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div>
@@ -90,13 +120,4 @@ export default createBoard({
         </div>
     ),
     isSnippet: false,
-    environmentProps: {
-        canvasHeight: 52,
-        canvasMargin: {
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-        },
-    },
 });
