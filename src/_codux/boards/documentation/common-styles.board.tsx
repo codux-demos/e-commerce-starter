@@ -64,19 +64,6 @@ export default createBoard({
                         <div className={cx(styles['extra-small-title'], boardStyle.row)}>
                             Heading 6
                         </div>
-                        <p className={cx(styles.miniTitle, styles.Title)}>Paragraphs -</p>
-                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 52px</p>
-                        <div className={styles['large-paragraph']}>Paragraph 1</div>
-                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 34px</p>
-                        <div className={styles['medium-paragraph']}>Paragraph 2</div>
-                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 1000, 42px</p>
-                        <div className={styles['medium-paragraph-bold']}>Paragraph 1 bold</div>
-                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 1000, 24px</p>
-                        <div className={styles['small-text-font-bold']}>Paragraph 2 bold</div>
-                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 16px</p>
-                        <div className={styles['small-text']}>Small text</div>
-                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 12px</p>
-                        <div className={styles['extra-small-text']}>Extra small text</div>
                     </div>
                     <div className={cx(styles.flex, boardStyle.row)}>
                         <p className={cx(styles.miniTitle, styles.Title)}>Paragraphs -</p>
