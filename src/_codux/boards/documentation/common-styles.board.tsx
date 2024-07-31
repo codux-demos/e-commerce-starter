@@ -46,21 +46,26 @@ export default createBoard({
             </div>
 
             <div>
-                <p className={styles.Title}>Fonts</p>
+                <p className={styles['large-thin-title']}>Typography</p>
                 <div className={styles['fonts-layout']}>
-                    <div className={styles.flex}>
-                        <p className={styles.miniTitle}>------ Title styles -----</p>
-                        <div className={styles['extra-large-thin-title']}>
-                            Extra large thin title
+                    <div className={cx(styles.flex, boardStyle.row)}>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 100, 65px</p>
+                        <div className={styles['extra-large-thin-title']}>Heading 1</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 100, 45px</p>
+                        <div className={styles['large-thin-title']}>Heading 2</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 45px</p>
+                        <div className={styles['large-title']}>Heading 3</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 30px</p>
+                        <div className={styles['large-title-mobile']}>Heading 4</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 300, 20px</p>
+                        <div className={styles['medium-title']}>Heading 5</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 700, 11px</p>
+                        <div className={cx(styles['extra-small-title'], boardStyle.row)}>
+                            Heading 6
                         </div>
-                        <div className={styles['large-thin-title']}>Large thin title</div>
-                        <div className={styles['large-title']}>Large title</div>
-                        <div className={styles['large-title-mobile']}>Large title mobile</div>
-                        <div className={styles['medium-title']}>Medium title</div>
-                        <div className={styles['extra-small-title']}>Extra small title</div>
                     </div>
                     <div className={styles.flex}>
-                        <p className={styles.miniTitle}>------ Paragraph styles -----</p>
+                        <p className={cx(styles.miniTitle, styles.Title)}>Paragraphs</p>
                         <div className={styles['extra-large-text']}>Extra Large text</div>
                         <div className={styles['large-paragraph']}>Large paragraph</div>
                         <div className={styles['medium-paragraph']}>Medium paragraph</div>
