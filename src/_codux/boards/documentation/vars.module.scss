@@ -60,6 +60,7 @@
 }
 .large-paragraph {
     font: $large-paragraph;
+    width: 100%;
 }
 .medium-paragraph-bold {
     font: $medium-paragraph-bold;
@@ -73,6 +74,7 @@
 }
 .large-thin-title {
     font: $large-thin-title;
+    margin-bottom: 10px;
 }
 .large-title {
     font: $large-title;
@@ -90,9 +92,9 @@
     display: flex;
     grid-template-columns: 1fr 1fr;
     column-gap: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     grid-auto-flow: column;
-    flex-direction: column;
+    flex-direction: row;
 }
 .Title {
     font-style: normal;
@@ -103,7 +105,7 @@
 .flex {
     display: flex;
     flex-direction: column;
-    padding-right: 100px;
+    padding-right: 0px;
     padding-left: 20px;
     row-gap: 0px;
 }

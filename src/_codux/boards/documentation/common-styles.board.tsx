@@ -49,6 +49,7 @@ export default createBoard({
                 <p className={styles['large-thin-title']}>Typography</p>
                 <div className={styles['fonts-layout']}>
                     <div className={cx(styles.flex, boardStyle.row)}>
+                        <p className={cx(styles.miniTitle, styles.Title)}>Titles -</p>
                         <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 100, 65px</p>
                         <div className={styles['extra-large-thin-title']}>Heading 1</div>
                         <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 100, 45px</p>
@@ -63,15 +64,33 @@ export default createBoard({
                         <div className={cx(styles['extra-small-title'], boardStyle.row)}>
                             Heading 6
                         </div>
-                    </div>
-                    <div className={styles.flex}>
-                        <p className={cx(styles.miniTitle, styles.Title)}>Paragraphs</p>
-                        <div className={styles['extra-large-text']}>Extra Large text</div>
-                        <div className={styles['large-paragraph']}>Large paragraph</div>
-                        <div className={styles['medium-paragraph']}>Medium paragraph</div>
-                        <div className={styles['medium-paragraph-bold']}>Medium paragraph bold</div>
-                        <div className={styles['small-text-font-bold']}>Small text font bold</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>Paragraphs -</p>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 52px</p>
+                        <div className={styles['large-paragraph']}>Paragraph 1</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 34px</p>
+                        <div className={styles['medium-paragraph']}>Paragraph 2</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 1000, 42px</p>
+                        <div className={styles['medium-paragraph-bold']}>Paragraph 1 bold</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 1000, 24px</p>
+                        <div className={styles['small-text-font-bold']}>Paragraph 2 bold</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 16px</p>
                         <div className={styles['small-text']}>Small text</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 12px</p>
+                        <div className={styles['extra-small-text']}>Extra small text</div>
+                    </div>
+                    <div className={cx(styles.flex, boardStyle.row)}>
+                        <p className={cx(styles.miniTitle, styles.Title)}>Paragraphs -</p>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 52px</p>
+                        <div className={styles['large-paragraph']}>Paragraph 1</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 1000, 42px</p>
+                        <div className={styles['medium-paragraph-bold']}>Paragraph 2</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 34px</p>
+                        <div className={styles['medium-paragraph']}>Paragraph 3</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 1000, 24px</p>
+                        <div className={styles['small-text-font-bold']}>Paragraph 4</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 16px</p>
+                        <div className={styles['small-text']}>Small text</div>
+                        <p className={cx(styles.miniTitle, styles.Title)}>DM Sans 400, 12px</p>
                         <div className={styles['extra-small-text']}>Extra small text</div>
                     </div>
                 </div>
