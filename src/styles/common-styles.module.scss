@@ -10,6 +10,7 @@
     border-radius: 30px;
     margin-top: 20px;
     cursor: pointer;
+
     &:hover {
         background-color: #b6c1f0;
         color: $black;
@@ -74,4 +75,48 @@
 .loading {
     padding: 30px;
     font: $extra-large-text;
+}
+
+.coverImage {
+    width: 100%;
+}
+
+.shopNowContent {
+    left: 8%;
+    gap: 10px;
+    top: 35%;
+}
+
+.exploreContent {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 20px;
+}
+
+.strip {
+    width: 100%;
+    position: relative;
+}
+
+.dividedStrip {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.imageSection {
+    position: relative;
+}
+
+.floatingContent {
+    position: absolute;
+    display: grid;
+    justify-items: center;
 }
