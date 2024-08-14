@@ -8,7 +8,7 @@ import { ProductInfo } from './product-info/product-info';
 import { useAddToCart, useProduct } from '../../api/api-hooks';
 import { useContext, useRef } from 'react';
 import { CartOpenContext } from '../../components/cart/cart-open-context';
-import { OptionType } from '@wix/stores/build/cjs/src/stores-catalog-v1-product.universal';
+import { OptionType } from '@wix/stores_products/build/cjs/src/stores-catalog-v1-product-products.types';
 
 export interface ProductDetailsPageProps {
     className?: string;

@@ -1,8 +1,8 @@
 import { products } from '@wix/stores';
 import { faker } from '@faker-js/faker';
-import { PaymentOptionType } from '@wix/ecom/build/cjs/src/ecom-v1-cart-cart.public';
+import { PaymentOptionType } from '@wix/ecom_cart/build/cjs/src/ecom-v1-cart-cart.types';
 import { Cart, WixAPI } from '../../api/wix-api-context-provider';
-import { WeightUnit } from '@wix/ecom/build/cjs/src/ecom-v1-cart-current-cart.universal';
+import { WeightUnit } from '@wix/ecom_cart/build/cjs/src/ecom-v1-cart-cart.types';
 import {
     FAKE_IMAGES,
     FAKE_IMAGES_FOLDER,
@@ -147,6 +147,11 @@ export function createCartItem(product: products.Product): Cart['lineItems'][0] 
         price: createPrice(),
         descriptionLines: [],
         url: '',
+        couponScopes: [],
+        customLineItem: false,
+        priceUndetermined: false,
+        savePaymentMethod: false,
+        fixedQuantity: false,
     };
 }
 
